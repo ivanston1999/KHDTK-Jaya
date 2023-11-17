@@ -29,9 +29,11 @@
           <span class="nav-link-text ms-1">Beranda</span>
         </a>
       </li>
-      <li class="nav-item mt-2">
+
+      {{-- <li class="nav-item mt-2">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Alat</h6>
-      </li>
+      </li> --}}
+
       <li class="nav-item">
         <a class="nav-link {{ (Request::is('user-profile') ? 'active' : '') }} " href="{{ url('user-profile') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -61,9 +63,11 @@
             <span class="nav-link-text ms-1">User Management</span>
         </a>
       </li>
-      <li class="nav-item mt-2">
+
+      {{-- <li class="nav-item mt-2">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Fitur Admin</h6>
-      </li>
+      </li> --}}
+
       <li class="nav-item">
         <a class="nav-link {{ (Request::is('tables') ? 'active' : '') }}" href="{{ url('tables') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -125,7 +129,8 @@
           <span class="nav-link-text ms-1">Upload Foto Drone</span>
         </a>
       </li>
-      <li class="nav-item">
+
+      {{-- <li class="nav-item">
         <a class="nav-link {{ (Request::is('rtl') ? 'active' : '') }}" href="{{ url('rtl') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -145,8 +150,9 @@
           </div>
           <span class="nav-link-text ms-1">RTL</span>
         </a>
-      </li>
-      <li class="nav-item mt-3">
+      </li> --}}
+
+      {{-- <li class="nav-item mt-3">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
       </li>
       <li class="nav-item">
@@ -215,7 +221,7 @@
       <li class="nav-link mb-0">
         <a href="https://www.creative-tim.com/product/soft-ui-dashboard-pro-laravel" class="btn btn-primary btn-md active px-5 text-white" target="_blank" role="button" aria-pressed="true">
             Upgrade to PRO</a>
-      </li>
+      </li> --}}
     </ul>
   </div>
 </aside>
