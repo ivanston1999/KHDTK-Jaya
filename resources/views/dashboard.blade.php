@@ -1,5 +1,7 @@
 @extends('layouts.user_type.auth')
 
+@section('title', 'Taripar Hub')
+
 @section('content')
 
   <div class="row">
