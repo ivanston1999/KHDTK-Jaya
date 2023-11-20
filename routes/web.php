@@ -29,6 +29,10 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('beranda');
 	})->name('beranda');
 
+	Route::middleware(['auth', 'Admin'])->group(function () {
+		Route::get('/admin', 'AdminController@index');
+	});
+
 	Route::get('billing', function () {
 		return view('billing');
 	})->name('billing');
