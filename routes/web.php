@@ -25,9 +25,9 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/', [HomeController::class, 'home']);
-	Route::get('dashboard', function () {
-		return view('dashboard');
-	})->name('dashboard');
+	Route::get('beranda', function () {
+		return view('beranda');
+	})->name('beranda');
 
 	Route::middleware(['auth', 'Admin'])->group(function () {
 		Route::get('/admin', 'AdminController@index');
@@ -69,7 +69,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/user-profile', [InfoUserController::class, 'store']);
     Route::get('/login', function () {
-		return view('dashboard');
+		return view('beranda');
 	})->name('sign-up');
 });
 
