@@ -29,7 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('beranda');
 	})->name('beranda');
 
-	Route::middleware(['auth', 'Admin'])->group(function () {
+	Route::middleware(['auth', 'admin'])->group(function () {
 		Route::get('/admin', 'AdminController@index');
 	});
 
