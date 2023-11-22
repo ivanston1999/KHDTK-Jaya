@@ -27,7 +27,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
+                {{-- <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
                     <div class="nav-wrapper position-relative end-0">
                         <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
                             <li class="nav-item">
@@ -93,14 +93,14 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
     <div class="container-fluid py-4">
         <div class="card">
             <div class="card-header pb-0 px-3">
-                <h6 class="mb-0">{{ __('Profile Information') }}</h6>
+                <h6 class="mb-0">{{ __('Informasi Pengguna') }}</h6>
             </div>
             <div class="card-body pt-4 p-3">
                 <form action="/user-profile" method="POST" role="form text-left">
@@ -147,8 +147,9 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="row">
-                        <div class="col-md-6">
+                        {{-- <div class="col-md-6">
                             <div class="form-group">
                                 <label for="user.phone" class="form-control-label">{{ __('Phone') }}</label>
                                 <div class="@error('user.phone')border border-danger rounded-3 @enderror">
@@ -158,22 +159,24 @@
                                         @enderror
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
+                        </div> --}}
+
+                        {{-- <div class="col-md-6">
                             <div class="form-group">
                                 <label for="user.location" class="form-control-label">{{ __('Location') }}</label>
                                 <div class="@error('user.location') border border-danger rounded-3 @enderror">
                                     <input class="form-control" type="text" placeholder="Location" id="name" name="location" value="{{ auth()->user()->location }}">
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
-                    <div class="form-group">
+                    
+                    {{-- <div class="form-group">
                         <label for="about">{{ 'About Me' }}</label>
                         <div class="@error('user.about')border border-danger rounded-3 @enderror">
                             <textarea class="form-control" id="about" rows="3" placeholder="Say something about yourself" name="about_me">{{ auth()->user()->about_me }}</textarea>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Save Changes' }}</button>
                     </div>
