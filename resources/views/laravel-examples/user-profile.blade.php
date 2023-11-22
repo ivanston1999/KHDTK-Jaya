@@ -12,9 +12,9 @@
                 <div class="col-auto">
                     <div class="avatar avatar-xl position-relative">
                         <img src="../assets/img/bruce-mars.jpg" alt="..." class="w-100 border-radius-lg shadow-sm">
-                        <a href="javascript:;" class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2">
+                        {{-- <a href="javascript:;" class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2">
                             <i class="fa fa-pen top-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Image"></i>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
                 <div class="col-auto my-auto">
@@ -178,7 +178,7 @@
                         </div>
                     </div> --}}
                     <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Save Changes' }}</button>
+                        <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Simpan' }}</button>
                     </div>
                 </form>
 
