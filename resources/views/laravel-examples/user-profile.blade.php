@@ -124,7 +124,7 @@
                         </div>
                     @endif
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12"> <!-- Ubah menjadi col-md-12 atau hapus class col-md-6 untuk stacking secara vertikal -->
                             <div class="form-group">
                                 <label for="user-name" class="form-control-label">{{ __('Nama Lengkap') }}</label>
                                 <div class="@error('user.name')border border-danger rounded-3 @enderror">
@@ -135,7 +135,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12"> <!-- Sama di sini, ubah atau hapus class col-md-6 -->
                             <div class="form-group">
                                 <label for="user-email" class="form-control-label">{{ __('Email') }}</label>
                                 <div class="@error('email')border border-danger rounded-3 @enderror">
