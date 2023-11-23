@@ -23,6 +23,7 @@ class RegisterController extends Controller
             'agreement' => ['accepted']
         ]);
         $attributes['password'] = bcrypt($attributes['password'] );
+        $attributes['role']='user';
 
         
 
