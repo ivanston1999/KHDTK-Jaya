@@ -16,12 +16,25 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'id' => 1,
-            'name' => 'admin',
-            'email' => 'admin@softui.com',
-            'password' => Hash::make('secret'),
-            'created_at' => now(),
-            'updated_at' => now()
+            [
+                'id' => 1,
+                'role' => 'admin',
+                'name' => 'admin',
+                'email' => 'admin@softui.com',
+                'password' => Hash::make('secret'),
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'id' => 100,
+                'role' => 'user',
+                'name' => 'dummy',
+                'email' => 'dummy@dummy.com',
+                'password' => Hash::make('dummy'),
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+            // Add more users here if needed
         ]);
     }
 }
