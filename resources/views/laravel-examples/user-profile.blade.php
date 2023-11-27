@@ -33,7 +33,9 @@
                         <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
                             <li class="nav-item">
                                 <a class="d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-logout btn-md mt-3 mb-3">{{ 'Keluar' }}</button>
+                                    <button type="submit" class="btn btn-logout btn-md mt-3 mb-3" style="border: 1px solid red;">
+                                        <a href="{{ url('/logout')}}" style="color: red;">Keluar</a>
+                                    </button>
                                     {{-- <svg class="text-dark" width="16px" height="16px" viewBox="0 0 42 42" version="1.1"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <g id="Basic-Elements" stroke="none" stroke-width="1" fill="none"
