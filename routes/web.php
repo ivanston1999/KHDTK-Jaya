@@ -65,6 +65,14 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('static-sign-up');
 	})->name('sign-up');
 
+	Route::get('upload-lahan', function () {
+		return view('upload-lahan');
+	})->name('upload-lahan');
+
+	Route::get('upload-drone', function () {
+		return view('upload-drone');
+	})->name('upload-drone');
+
     Route::get('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/user-profile', [InfoUserController::class, 'store']);
