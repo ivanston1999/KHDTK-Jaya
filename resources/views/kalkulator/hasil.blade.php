@@ -65,24 +65,19 @@
                                         {{ $kalkulator->date }}
                                     </td>
 
-                                    <td class="text-center">
-                                        <a href="{{ url('detail/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="View Detail">
+                                    <td class="text-center horizontal-icons">
+                                        <a href="{{ url('detail/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View Detail">
                                             <i class="fas fa-user-edit text-secondary"></i>
                                         </a>
-                                        <span>
-                                            <a hhref="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
-                                                <i class="fas fa-user-edit text-secondary"></i>
-                                            </a>
-                                        </span>
-
-                                        <form action="{{ route('kalkulators.destroy', $kalkulator->id) }}" method="POST">
+                                        <a href="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
+                                            <i class="fas fa-user-edit text-secondary"></i>
+                                        </a>
+                                        <form action="{{ route('kalkulators.destroy', $kalkulator->id) }}" method="POST" class="icon-link">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="cursor-pointer fas fa-trash text-secondary">
                                             </button>
                                         </form>
-
-
                                     </td>
                                 </tr>
 
@@ -112,6 +107,7 @@
 
     body {
         font-family: 'Arial', sans-serif;
+        font-size: 14px;
     }
 
     h5 {
@@ -154,5 +150,19 @@
         color: #6c757d;
         margin-right: 5px;
     }
+
+    .text-xxs {
+    font-size: 100px; 
+}
+
+    .horizontal-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .icon-link {
+    margin: 0 5px; 
+}
 </style>
 @endsection
