@@ -5,6 +5,7 @@
 @section('content')
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <html>
     <style>
         .sensor-status-container {
@@ -103,6 +104,10 @@
 =======
 
 @endsection
+=======
+
+@endsection
+>>>>>>> d432caf548e0981b823d91748c9395dbe3dcced3
 =======
 
 @endsection
