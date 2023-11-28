@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\kalkulatorController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\SensorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -131,3 +132,5 @@ Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
 Route::get('hasil', function () {
     return view('kalkulator/hasil');
 });
+
+Route::get('/sensor', [SensorController::class, 'LineChart']);
