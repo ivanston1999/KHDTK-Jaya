@@ -1,5 +1,7 @@
 @extends('layouts.user_type.auth')
 
+@section('title', 'Kalkulator')
+
 @section('content')
 <body class="bg-gray-300">
     <div class="container mx-auto  p-8 bg-white shadow-lg rounded-lg" style="border-radius: 40px;">
