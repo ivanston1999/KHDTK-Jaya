@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
-class AdminController extends Controller
+class adminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +18,10 @@ class AdminController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function createUser()
     {
-        //
+        $users = User::all();
+        return view('admin/user-management', compact('users'));
     }
 
     /**
@@ -35,7 +37,8 @@ class AdminController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $users = User::all();
+        return view('admin/user-management', compact('users'));
     }
 
     /**
