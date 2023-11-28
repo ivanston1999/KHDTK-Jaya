@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\kalkulatorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,14 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('user-management', function () {
 		return view('laravel-examples/user-management');
 	})->name('user-management');
+
+    Route::get('kalkulator', function () {
+		return view('kalkulator/kalkulator');
+	})->name('kalkulator');
+
+      Route::get('detail', function () {
+		return view('kalkulator/detail');
+	})->name('detail');
 
 	Route::get('tables', function () {
 		return view('tables');
@@ -103,4 +112,19 @@ Route::get('/login', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+});
+
+
+
+Route::resource('kalkulators', kalkulatorController::class);
+Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
+
+ //DetailCOntroller
+Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
+Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
+
+
+
+Route::get('hasil', function () {
+    return view('kalkulator/hasil');
 });
