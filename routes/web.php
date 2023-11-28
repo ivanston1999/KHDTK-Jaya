@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\kalkulatorController;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\SensorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,10 +49,12 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('rtl');
 	})->name('rtl');
 
-	Route::get('user-management', function () {
-		return view('laravel-examples/user-management');
-	})->name('user-management');
+	//ADMIN - User Management
+	Route::get('user-management', 'adminController@show');
+	Route::post('/user-management', 'adminController@createUser');
 
+
+	//
     Route::get('kalkulator', function () {
 		return view('kalkulator/kalkulator');
 	})->name('kalkulator');
@@ -128,3 +132,5 @@ Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
 Route::get('hasil', function () {
     return view('kalkulator/hasil');
 });
+
+Route::get('/sensor', [SensorController::class, 'LineChart']);

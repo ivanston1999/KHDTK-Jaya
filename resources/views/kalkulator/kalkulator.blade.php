@@ -11,10 +11,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; margin-top: -30px; ">
     <div class="wrapper">
         <div class="form">
-            <h1 class="title">Kalkulator Pertanian</h1>
+<div style="text-align: end;">
+      <a href="{{ route('kalkulators') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button" >Lihat Hasil </a>
+
+</div>
+<h1 class="title">Kalkulator Pertanian</h1>
+
+
+
             <form  action="{{ route('kalkulators.store') }}" method="POST" class="myform">
                 @csrf
 
