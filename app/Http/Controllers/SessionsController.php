@@ -19,11 +19,10 @@ class SessionsController extends Controller
             'email'=>'required|email',
             'password'=>'required' 
         ]);
-
         if(Auth::attempt($attributes))
         {
             session()->regenerate();
-            return redirect('beranda')->with(['success'=>'You are logged in.']);
+            return redirect('beranda');
         }
         else{
 

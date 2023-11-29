@@ -3,795 +3,521 @@
 @section('title', 'Taripar Hub')
 
 @section('content')
+    <style>
+        .sensor-status-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                /* Ini akan memungkinkan kartu untuk bungkus jika tidak cukup ruang */
+                margin-bottom: 20px;
+            }
 
-  {{-- <div class="row">
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-      <div class="card">
-        <div class="card-body p-3">
-          <div class="row">
-            <div class="col-8">
-              <div class="numbers">
-                <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Money</p>
-                <h5 class="font-weight-bolder mb-0">
-                  $53,000
-                  <span class="text-success text-sm font-weight-bolder">+55%</span>
-                </h5>
-              </div>
-            </div>
-            <div class="col-4 text-end">
-              <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-      <div class="card">
-        <div class="card-body p-3">
-          <div class="row">
-            <div class="col-8">
-              <div class="numbers">
-                <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
-                <h5 class="font-weight-bolder mb-0">
-                  2,300
-                  <span class="text-success text-sm font-weight-bolder">+3%</span>
-                </h5>
-              </div>
-            </div>
-            <div class="col-4 text-end">
-              <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-      <div class="card">
-        <div class="card-body p-3">
-          <div class="row">
-            <div class="col-8">
-              <div class="numbers">
-                <p class="text-sm mb-0 text-capitalize font-weight-bold">New Clients</p>
-                <h5 class="font-weight-bolder mb-0">
-                  +3,462
-                  <span class="text-danger text-sm font-weight-bolder">-2%</span>
-                </h5>
-              </div>
-            </div>
-            <div class="col-4 text-end">
-              <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xl-3 col-sm-6">
-      <div class="card">
-        <div class="card-body p-3">
-          <div class="row">
-            <div class="col-8">
-              <div class="numbers">
-                <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
-                <h5 class="font-weight-bolder mb-0">
-                  $103,430
-                  <span class="text-success text-sm font-weight-bolder">+5%</span>
-                </h5>
-              </div>
-            </div>
-            <div class="col-4 text-end">
-              <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> --}}
+            @media (max-width: 768px) {
+                /* Adjust this value as needed for your responsive breakpoint */
+                .sensor-status-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    /* Center the cards */
+                }
 
-  <div class="row">
-    <div class="col-lg-7 mb-lg-0 mb-4">
-      <div class="card">
-        <div class="card-body p-3">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="d-flex flex-column h-100">
-                <p class="mb-1 pt-2 text-bold">Built by developers</p>
-                <h5 class="font-weight-bolder">Soft UI Dashboard</h5>
-                <p class="mb-5">From colors, cards, typography to complex elements, you will find the full documentation.</p>
-                <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-                  Read More
-                  <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
-              <div class="bg-gradient-primary border-radius-lg h-100">
-                <img src="../assets/img/shapes/waves-white.svg" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
-                <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                  <img class="w-100 position-relative z-index-2 pt-4" src="../assets/img/illustrations/rocket-white.png" alt="rocket">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-5">
-      <div class="card h-100 p-3">
-        <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../assets/img/ivancik.jpg');">
-          <span class="mask bg-gradient-dark"></span>
-          <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-            <h5 class="text-white font-weight-bolder mb-4 pt-2">Work with the rockets</h5>
-            <p class="text-white">Wealth creation is an evolutionarily recent positive-sum game. It is all about who take the opportunity first.</p>
-            <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-              Read More
-              <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row mt-4">
-    <div class="col-lg-5 mb-lg-0 mb-4">
-      <div class="card z-index-2">
-        <div class="card-body p-3">
-          <div class="bg-gradient-dark border-radius-lg py-3 pe-1 mb-3">
-            <div class="chart">
-              <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
-            </div>
-          </div>
-          <h6 class="ms-2 mt-4 mb-0"> Active Users </h6>
-          <p class="text-sm ms-2"> (<span class="font-weight-bolder">+23%</span>) than last week </p>
-          <div class="container border-radius-lg">
-            <div class="row">
-              <div class="col-3 py-3 ps-0">
-                <div class="d-flex mb-2">
-                  <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-primary text-center me-2 d-flex align-items-center justify-content-center">
-                    <svg width="10px" height="10px" viewBox="0 0 40 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                      <title>document</title>
-                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g transform="translate(-1870.000000, -591.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                          <g transform="translate(1716.000000, 291.000000)">
-                            <g transform="translate(154.000000, 300.000000)">
-                              <path class="color-background" d="M40,40 L36.3636364,40 L36.3636364,3.63636364 L5.45454545,3.63636364 L5.45454545,0 L38.1818182,0 C39.1854545,0 40,0.814545455 40,1.81818182 L40,40 Z" opacity="0.603585379"></path>
-                              <path class="color-background" d="M30.9090909,7.27272727 L1.81818182,7.27272727 C0.814545455,7.27272727 0,8.08727273 0,9.09090909 L0,41.8181818 C0,42.8218182 0.814545455,43.6363636 1.81818182,43.6363636 L30.9090909,43.6363636 C31.9127273,43.6363636 32.7272727,42.8218182 32.7272727,41.8181818 L32.7272727,9.09090909 C32.7272727,8.08727273 31.9127273,7.27272727 30.9090909,7.27272727 Z M18.1818182,34.5454545 L7.27272727,34.5454545 L7.27272727,30.9090909 L18.1818182,30.9090909 L18.1818182,34.5454545 Z M25.4545455,27.2727273 L7.27272727,27.2727273 L7.27272727,23.6363636 L25.4545455,23.6363636 L25.4545455,27.2727273 Z M25.4545455,20 L7.27272727,20 L7.27272727,16.3636364 L25.4545455,16.3636364 L25.4545455,20 Z"></path>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                  </div>
-                  <p class="text-xs mt-1 mb-0 font-weight-bold">Users</p>
-                </div>
-                <h4 class="font-weight-bolder">36K</h4>
-                <div class="progress w-75">
-                  <div class="progress-bar bg-dark w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="col-3 py-3 ps-0">
-                <div class="d-flex mb-2">
-                  <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center">
-                    <svg width="10px" height="10px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                      <title>spaceship</title>
-                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g transform="translate(-1720.000000, -592.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                          <g transform="translate(1716.000000, 291.000000)">
-                            <g transform="translate(4.000000, 301.000000)">
-                              <path class="color-background" d="M39.3,0.706666667 C38.9660984,0.370464027 38.5048767,0.192278529 38.0316667,0.216666667 C14.6516667,1.43666667 6.015,22.2633333 5.93166667,22.4733333 C5.68236407,23.0926189 5.82664679,23.8009159 6.29833333,24.2733333 L15.7266667,33.7016667 C16.2013871,34.1756798 16.9140329,34.3188658 17.535,34.065 C17.7433333,33.98 38.4583333,25.2466667 39.7816667,1.97666667 C39.8087196,1.50414529 39.6335979,1.04240574 39.3,0.706666667 Z M25.69,19.0233333 C24.7367525,19.9768687 23.3029475,20.2622391 22.0572426,19.7463614 C20.8115377,19.2304837 19.9992882,18.0149658 19.9992882,16.6666667 C19.9992882,15.3183676 20.8115377,14.1028496 22.0572426,13.5869719 C23.3029475,13.0710943 24.7367525,13.3564646 25.69,14.31 C26.9912731,15.6116662 26.9912731,17.7216672 25.69,19.0233333 L25.69,19.0233333 Z"></path>
-                              <path class="color-background" d="M1.855,31.4066667 C3.05106558,30.2024182 4.79973884,29.7296005 6.43969145,30.1670277 C8.07964407,30.6044549 9.36054508,31.8853559 9.7979723,33.5253085 C10.2353995,35.1652612 9.76258177,36.9139344 8.55833333,38.11 C6.70666667,39.9616667 0,40 0,40 C0,40 0,33.2566667 1.855,31.4066667 Z"></path>
-                              <path class="color-background" d="M17.2616667,3.90166667 C12.4943643,3.07192755 7.62174065,4.61673894 4.20333333,8.04166667 C3.31200265,8.94126033 2.53706177,9.94913142 1.89666667,11.0416667 C1.5109569,11.6966059 1.61721591,12.5295394 2.155,13.0666667 L5.47,16.3833333 C8.55036617,11.4946947 12.5559074,7.25476565 17.2616667,3.90166667 L17.2616667,3.90166667 Z" opacity="0.598539807"></path>
-                              <path class="color-background" d="M36.0983333,22.7383333 C36.9280725,27.5056357 35.3832611,32.3782594 31.9583333,35.7966667 C31.0587397,36.6879974 30.0508686,37.4629382 28.9583333,38.1033333 C28.3033941,38.4890431 27.4704606,38.3827841 26.9333333,37.845 L23.6166667,34.53 C28.5053053,31.4496338 32.7452344,27.4440926 36.0983333,22.7383333 L36.0983333,22.7383333 Z" opacity="0.598539807"></path>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                  </div>
-                  <p class="text-xs mt-1 mb-0 font-weight-bold">Clicks</p>
-                </div>
-                <h4 class="font-weight-bolder">2m</h4>
-                <div class="progress w-75">
-                  <div class="progress-bar bg-dark w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="col-3 py-3 ps-0">
-                <div class="d-flex mb-2">
-                  <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-warning text-center me-2 d-flex align-items-center justify-content-center">
-                    <svg width="10px" height="10px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                      <title>credit-card</title>
-                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                          <g transform="translate(1716.000000, 291.000000)">
-                            <g transform="translate(453.000000, 454.000000)">
-                              <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
-                              <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                  </div>
-                  <p class="text-xs mt-1 mb-0 font-weight-bold">Sales</p>
-                </div>
-                <h4 class="font-weight-bolder">435$</h4>
-                <div class="progress w-75">
-                  <div class="progress-bar bg-dark w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-              <div class="col-3 py-3 ps-0">
-                <div class="d-flex mb-2">
-                  <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-danger text-center me-2 d-flex align-items-center justify-content-center">
-                    <svg width="10px" height="10px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                      <title>settings</title>
-                      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g transform="translate(-2020.000000, -442.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                          <g transform="translate(1716.000000, 291.000000)">
-                            <g transform="translate(304.000000, 151.000000)">
-                              <polygon class="color-background" opacity="0.596981957" points="18.0883333 15.7316667 11.1783333 8.82166667 13.3333333 6.66666667 6.66666667 0 0 6.66666667 6.66666667 13.3333333 8.82166667 11.1783333 15.315 17.6716667"></polygon>
-                              <path class="color-background" d="M31.5666667,23.2333333 C31.0516667,23.2933333 30.53,23.3333333 30,23.3333333 C29.4916667,23.3333333 28.9866667,23.3033333 28.48,23.245 L22.4116667,30.7433333 L29.9416667,38.2733333 C32.2433333,40.575 35.9733333,40.575 38.275,38.2733333 L38.275,38.2733333 C40.5766667,35.9716667 40.5766667,32.2416667 38.275,29.94 L31.5666667,23.2333333 Z" opacity="0.596981957"></path>
-                              <path class="color-background" d="M33.785,11.285 L28.715,6.215 L34.0616667,0.868333333 C32.82,0.315 31.4483333,0 30,0 C24.4766667,0 20,4.47666667 20,10 C20,10.99 20.1483333,11.9433333 20.4166667,12.8466667 L2.435,27.3966667 C0.95,28.7083333 0.0633333333,30.595 0.00333333333,32.5733333 C-0.0583333333,34.5533333 0.71,36.4916667 2.11,37.89 C3.47,39.2516667 5.27833333,40 7.20166667,40 C9.26666667,40 11.2366667,39.1133333 12.6033333,37.565 L27.1533333,19.5833333 C28.0566667,19.8516667 29.01,20 30,20 C35.5233333,20 40,15.5233333 40,10 C40,8.55166667 39.685,7.18 39.1316667,5.93666667 L33.785,11.285 Z"></path>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                  </div>
-                  <p class="text-xs mt-1 mb-0 font-weight-bold">Items</p>
-                </div>
-                <h4 class="font-weight-bolder">43</h4>
-                <div class="progress w-75">
-                  <div class="progress-bar bg-dark w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-7">
-      <div class="card z-index-2">
-        <div class="card-header pb-0">
-          <h6>Sales overview</h6>
-          <p class="text-sm">
-            <i class="fa fa-arrow-up text-success"></i>
-            <span class="font-weight-bold">4% more</span> in 2021
-          </p>
-        </div>
-        <div class="card-body p-3">
-          <div class="chart">
-            <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row my-4">
-    <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
-      <div class="card">
-        <div class="card-header pb-0">
-          <div class="row">
-            <div class="col-lg-6 col-7">
-              <h6>Projects</h6>
-              <p class="text-sm mb-0">
-                <i class="fa fa-check text-info" aria-hidden="true"></i>
-                <span class="font-weight-bold ms-1">30 done</span> this month
-              </p>
-            </div>
-            <div class="col-lg-6 col-5 my-auto text-end">
-              <div class="dropdown float-lg-end pe-4">
-                <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa fa-ellipsis-v text-secondary"></i>
-                </a>
-                <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
-                  <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                  <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                  <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
+                .sensor-status-card {
+                    max-width: 600px;
+                    /* Adjust this to match the charts' width */
+                    width: 100%;
+                    box-sizing: border-box;
+                    margin: 0 auto 20px;
+                    /* Center the card and add space below */
+                }
+
+                .chart-row {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    /* Center the charts */
+                }
+
+                .chart {
+                    width: 100%;
+                    /* Full width for the chart */
+                    max-width: 600px;
+                    /* Match the max-width of the sensor-status-card */
+                    margin-bottom: 20px;
+                    /* Space between the charts */
+                }
+            }
+
+            .sensor-status-card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                transition: 0.3s;
+                width: calc(50% - 10px);
+                /* Mengatur lebar untuk menjadi setengah dari container dikurangi margin */
+                border-radius: 5px;
+                padding: 16px;
+                background-color: #fff;
+                text-align: left;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                min-height: 100px;
+                /* Menetapkan ketinggian minimal */
+                display: flex;
+                /* Menambahkan flex untuk menyelaraskan judul dan isi */
+                flex-direction: column;
+                /* Menyusun judul dan isi secara vertikal */
+            }
+
+            .sensor-status-card h4 {
+                margin-bottom: auto;
+                /* Mendorong isi ke bawah jika tidak ada daftar item */
+                text-align: center;
+                /* Menyelaraskan teks ke tengah */
+            }
+
+            .sensor-status-list {
+                display: grid;
+                flex-direction: column;
+                justify-content: start;
+                grid-template-columns: repeat(2, 1fr);
+                /* Create two columns */
+                grid-gap: 8px;
+                /* Space between items */
+                list-style-type: none;
+                padding-left: 0;
+                margin-top: 0;
+            }
+
+            .sensor-status-list li {
+                padding: 8px 16px;
+                background-color: #f2f2f2;
+                border-radius: 4px;
+                font-size: 14px;
+                color: #333;
+                text-align: center;
+            }
+
+            .sensor-status-list li.dead {
+                background-color: #ffcdd2;
+            }
+
+            .sensor-status-list li.alive {
+                background-color: #c8e6c9;
+            }
+        </style>
+
+        <div class="sensor-status-container">
+            <div class="sensor-status-card">
+                <h4>Sensor Aktif</h4>
+                <ul class="sensor-status-list">
+                    @foreach ($sensorStatus as $sensorName => $status)
+                        @if ($status === 'Aktif')
+                            <li class="alive">{{ $sensorName }}</li>
+                        @endif
+                    @endforeach
                 </ul>
-              </div>
             </div>
-          </div>
+            <div class="sensor-status-card">
+                <h4>Sensor Tidak Aktif</h4>
+                <ul class="sensor-status-list">
+                    @foreach ($sensorStatus as $sensorName => $status)
+                        @if ($status === 'Tidak Aktif')
+                            <li class="dead">{{ $sensorName }}</li>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
         </div>
-        <div class="card-body px-0 pb-2">
-          <div class="table-responsive">
-            <table class="table align-items-center mb-0">
-              <thead>
-                <tr>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Companies</th>
-                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Members</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Budget</th>
-                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completion</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Soft UI XD Version</h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="avatar-group mt-2">
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                        <img src="../assets/img/team-1.jpg" alt="team1">
-                      </a>
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                        <img src="../assets/img/team-2.jpg" alt="team2">
-                      </a>
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                        <img src="../assets/img/team-3.jpg" alt="team3">
-                      </a>
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                        <img src="../assets/img/team-4.jpg" alt="team4">
-                      </a>
-                    </div>
-                  </td>
-                  <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> $14,000 </span>
-                  </td>
-                  <td class="align-middle">
-                    <div class="progress-wrapper w-75 mx-auto">
-                      <div class="progress-info">
-                        <div class="progress-percentage">
-                          <span class="text-xs font-weight-bold">60%</span>
-                        </div>
-                      </div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="../assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="atlassian">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Add Progress Track</h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="avatar-group mt-2">
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                        <img src="../assets/img/team-2.jpg" alt="team5">
-                      </a>
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                        <img src="../assets/img/team-4.jpg" alt="team6">
-                      </a>
-                    </div>
-                  </td>
-                  <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> $3,000 </span>
-                  </td>
-                  <td class="align-middle">
-                    <div class="progress-wrapper w-75 mx-auto">
-                      <div class="progress-info">
-                        <div class="progress-percentage">
-                          <span class="text-xs font-weight-bold">10%</span>
-                        </div>
-                      </div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="../assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Fix Platform Errors</h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="avatar-group mt-2">
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                        <img src="../assets/img/team-3.jpg" alt="team8">
-                      </a>
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                        <img src="../assets/img/team-1.jpg" alt="team9">
-                      </a>
-                    </div>
-                  </td>
-                  <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> Not set </span>
-                  </td>
-                  <td class="align-middle">
-                    <div class="progress-wrapper w-75 mx-auto">
-                      <div class="progress-info">
-                        <div class="progress-percentage">
-                          <span class="text-xs font-weight-bold">100%</span>
-                        </div>
-                      </div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm me-3" alt="spotify">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="avatar-group mt-2">
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                        <img src="../assets/img/team-4.jpg" alt="user1">
-                      </a>
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                        <img src="../assets/img/team-3.jpg" alt="user2">
-                      </a>
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                        <img src="../assets/img/team-4.jpg" alt="user3">
-                      </a>
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                        <img src="../assets/img/team-1.jpg" alt="user4">
-                      </a>
-                    </div>
-                  </td>
-                  <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> $20,500 </span>
-                  </td>
-                  <td class="align-middle">
-                    <div class="progress-wrapper w-75 mx-auto">
-                      <div class="progress-info">
-                        <div class="progress-percentage">
-                          <span class="text-xs font-weight-bold">100%</span>
-                        </div>
-                      </div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="../assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm me-3" alt="jira">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Add the New Pricing Page</h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="avatar-group mt-2">
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                        <img src="../assets/img/team-4.jpg" alt="user5">
-                      </a>
-                    </div>
-                  </td>
-                  <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> $500 </span>
-                  </td>
-                  <td class="align-middle">
-                    <div class="progress-wrapper w-75 mx-auto">
-                      <div class="progress-info">
-                        <div class="progress-percentage">
-                          <span class="text-xs font-weight-bold">25%</span>
-                        </div>
-                      </div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-info w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="25"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="d-flex px-2 py-1">
-                      <div>
-                        <img src="../assets/img/small-logos/logo-invision.svg" class="avatar avatar-sm me-3" alt="invision">
-                      </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="mb-0 text-sm">Redesign New Online Shop</h6>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="avatar-group mt-2">
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                        <img src="../assets/img/team-1.jpg" alt="user6">
-                      </a>
-                      <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                        <img src="../assets/img/team-4.jpg" alt="user7">
-                      </a>
-                    </div>
-                  </td>
-                  <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> $2,000 </span>
-                  </td>
-                  <td class="align-middle">
-                    <div class="progress-wrapper w-75 mx-auto">
-                      <div class="progress-info">
-                        <div class="progress-percentage">
-                          <span class="text-xs font-weight-bold">40%</span>
-                        </div>
-                      </div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-info w-40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6">
-      <div class="card h-100">
-        <div class="card-header pb-0">
-          <h6>Orders overview</h6>
-          <p class="text-sm">
-            <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
-            <span class="font-weight-bold">24%</span> this month
-          </p>
-        </div>
-        <div class="card-body p-3">
-          <div class="timeline timeline-one-side">
-            <div class="timeline-block mb-3">
-              <span class="timeline-step">
-                <i class="ni ni-bell-55 text-success text-gradient"></i>
-              </span>
-              <div class="timeline-content">
-                <h6 class="text-dark text-sm font-weight-bold mb-0">$2400, Design changes</h6>
-                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">22 DEC 7:20 PM</p>
-              </div>
-            </div>
-            <div class="timeline-block mb-3">
-              <span class="timeline-step">
-                <i class="ni ni-html5 text-danger text-gradient"></i>
-              </span>
-              <div class="timeline-content">
-                <h6 class="text-dark text-sm font-weight-bold mb-0">New order #1832412</h6>
-                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
-              </div>
-            </div>
-            <div class="timeline-block mb-3">
-              <span class="timeline-step">
-                <i class="ni ni-cart text-info text-gradient"></i>
-              </span>
-              <div class="timeline-content">
-                <h6 class="text-dark text-sm font-weight-bold mb-0">Server payments for April</h6>
-                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 9:34 PM</p>
-              </div>
-            </div>
-            <div class="timeline-block mb-3">
-              <span class="timeline-step">
-                <i class="ni ni-credit-card text-warning text-gradient"></i>
-              </span>
-              <div class="timeline-content">
-                <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order #4395133</h6>
-                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
-              </div>
-            </div>
-            <div class="timeline-block mb-3">
-              <span class="timeline-step">
-                <i class="ni ni-key-25 text-primary text-gradient"></i>
-              </span>
-              <div class="timeline-content">
-                <h6 class="text-dark text-sm font-weight-bold mb-0">Unlock packages for development</h6>
-                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">18 DEC 4:54 AM</p>
-              </div>
-            </div>
-            <div class="timeline-block">
-              <span class="timeline-step">
-                <i class="ni ni-money-coins text-dark text-gradient"></i>
-              </span>
-              <div class="timeline-content">
-                <h6 class="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
-                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
+
+        <div class="mapdiv"
+        style="background-image: url('{{ asset('assets/img/lahan.jpg') }}'); background-repeat:no-repeat;background-size:contain;width:100%">
+
+        <svg version="1.2" viewbox="-25 -90 830 1050" xmlns="http://www.w3.org/2000/svg">
+
+
+            <a xlink:title="Kentang
+Luas 0.89 Ha
+Penanaman 11 September 2023" target="_blank">
+                <path
+                    d="M386.94889,88.81583L394.15017,84.97515L410.47308,80.17429L445.9994,74.41327L451.52039,72.97301L457.7615,85.21519L459.20175,89.77601
+				L453.92081,93.85673L447.6797,95.05695L440.71846,98.65759L438.31804,101.5381L435.19748,102.25823L434.71739,111.85994L438.79812,112.34003
+				L445.51932,116.90084L432.07692,123.382L426.07586,129.14302L420.55487,136.58435L420.79492,140.90512L429.91654,135.38414L446.71953,126.02247
+				L452.00047,129.86315L437.11782,142.58542L461.1221,181.47235L467.12316,181.95244L471.68398,186.03317L476.00474,188.91368L
+				476.96492,195.87492L481.04564,192.99441L486.08654,191.79419L487.5268,197.79526L492.32765,218.43894L489.44714,227.56057L476.96492,232.60147
+				L462.08227,236.68219L443.11889,240.04279L437.11782,219.15907L430.39662,203.0762L428.71633,195.87492L419.35466,187.71346L
+				409.27286,175.23124L401.11141,161.78884L394.39021,135.62418L390.06945,107.05909L386.94889,88.81583z"
+                    id="LKA2448" name="Mahanuvara" style="fill: red;">
+                </path>
+            </a>
+
+            <svg version="1.2" viewbox="-400 -90 830 1050" xmlns="http://www.w3.org/2000/svg">
+            <a xlink:title="Sensor 1" target="_blank">
+            <path d="M14.83 1.83001L16.24 3.24001C15.6854 3.8 15.0249 4.24401 14.2969 4.54617C13.569 4.84834 12.7882 5.00261 12 5.00001C11.2118 5.00261 10.4311 4.84834 9.70311 4.54617C8.97517 4.24401 8.31464 3.8 7.76001 3.24001L9.18001 1.82001C9.92671 2.57118 10.9409 2.99554 12 3.00001C12.5255 3.00042 13.0458 2.89731 13.5314 2.69655C14.017 2.4958 14.4583 2.20134 14.83 1.83001Z" />
+<path d="M17.65 4.65001L19.07 6.07001C17.1951 7.9455 14.6519 8.99944 12 9.00001C9.34804 8.99944 6.80492 7.9455 4.92999 6.07001L6.34999 4.65001C7.0895 5.39597 7.96967 5.98778 8.93951 6.39117C9.90936 6.79455 10.9496 7.0015 12 7.00001C13.0504 7.0015 14.0906 6.79455 15.0605 6.39117C16.0303 5.98778 16.9105 5.39597 17.65 4.65001Z" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 11H14C14 11.5304 13.7893 12.0391 13.4142 12.4142C13.0391 12.7893 12.5304 13 12 13C11.4696 13 10.9609 12.7893 10.5858 12.4142C10.2107 12.0391 10 11.5304 10 11H6C5.46957 11 4.96086 11.2107 4.58579 11.5858C4.21071 11.9609 4 12.4696 4 13V22H20V13C20 12.4696 19.7893 11.9609 19.4142 11.5858C19.0391 11.2107 18.5304 11 18 11ZM6 18V15H18V18H6Z" />
+<path d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" style="width:20px; height:20px;"/>
+            </a>
+            </svg>
+
+            <a xlink:title="Kentang
+Luas 0.55 Ha
+Penanaman 11-12 September 2023" target="_blank">
+                Kentang
+                <path
+                    d="M364.14483,274.12887L374.70671,272.68861
+				L396.5506,274.12887L408.31269,277.72951L414.07372,280.12994L421.75509,283.49054L432.79705,280.61003L438.07799,277.48947L
+				446.47949,278.2096L456.80133,279.8899L464.24265,288.2914L470.24372,297.41302L472.4041,304.85435L470.00368,309.6552L461.36214,313.73593
+				L448.15979,321.17726L436.87778,329.57876L426.79598,335.57983L418.15445,340.62072L408.07265,344.70145L395.83047,349.98239
+				L364.14483,274.12887z"
+                    id="LKA2449" name="Mātale" style="fill: yellow;">
+                </path>
+            </a>
+
+
+            <svg version="1.2" viewbox="-400 -290 830 1050" xmlns="http://www.w3.org/2000/svg">
+            <a xlink:title="Sensor 8" target="_blank">
+            <path d="M14.83 1.83001L16.24 3.24001C15.6854 3.8 15.0249 4.24401 14.2969 4.54617C13.569 4.84834 12.7882 5.00261 12 5.00001C11.2118 5.00261 10.4311 4.84834 9.70311 4.54617C8.97517 4.24401 8.31464 3.8 7.76001 3.24001L9.18001 1.82001C9.92671 2.57118 10.9409 2.99554 12 3.00001C12.5255 3.00042 13.0458 2.89731 13.5314 2.69655C14.017 2.4958 14.4583 2.20134 14.83 1.83001Z" />
+<path d="M17.65 4.65001L19.07 6.07001C17.1951 7.9455 14.6519 8.99944 12 9.00001C9.34804 8.99944 6.80492 7.9455 4.92999 6.07001L6.34999 4.65001C7.0895 5.39597 7.96967 5.98778 8.93951 6.39117C9.90936 6.79455 10.9496 7.0015 12 7.00001C13.0504 7.0015 14.0906 6.79455 15.0605 6.39117C16.0303 5.98778 16.9105 5.39597 17.65 4.65001Z" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 11H14C14 11.5304 13.7893 12.0391 13.4142 12.4142C13.0391 12.7893 12.5304 13 12 13C11.4696 13 10.9609 12.7893 10.5858 12.4142C10.2107 12.0391 10 11.5304 10 11H6C5.46957 11 4.96086 11.2107 4.58579 11.5858C4.21071 11.9609 4 12.4696 4 13V22H20V13C20 12.4696 19.7893 11.9609 19.4142 11.5858C19.0391 11.2107 18.5304 11 18 11ZM6 18V15H18V18H6Z" />
+<path d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" style="width:20px; height:20px;"/>
+            </a>
+            </svg>
+
+            <a xlink:title="Kentang
+Luas 0.72 Ha
+Penanaman 11 September 2023" target="_blank">
+                Kentang
+                <path
+                    d="M314.69603,157.70812L314.69603,156.74794
+				L330.2988,146.4261L345.18145,141.14516L354.54312,140.42503L361.50436,137.30448L373.98658,132.50362L386.4688,128.66294L390.54953,152.18713
+				L396.07051,173.55094L397.99086,178.11175L409.99299,189.87385L420.07479,195.39483L429.19641,210.75757L425.83581,213.87813
+				L408.07265,217.47877L390.78957,218.91903L370.38594,223.95993L348.54205,229.72095L347.58188,225.40018L344.94141,213.87813
+				L339.18039,205.71667L329.33863,188.43359L318.05662,170.67043L313.9759,162.50897L314.69603,157.70812z"
+                    id="LKA2449" name="Mātale" style="fill: yellow;">
+                </path>
+            </a>
+            <svg version="1.2" viewbox="-345 -170 830 1050" xmlns="http://www.w3.org/2000/svg">
+            <a xlink:title="Sensor 4" target="_blank">
+            <path d="M14.83 1.83001L16.24 3.24001C15.6854 3.8 15.0249 4.24401 14.2969 4.54617C13.569 4.84834 12.7882 5.00261 12 5.00001C11.2118 5.00261 10.4311 4.84834 9.70311 4.54617C8.97517 4.24401 8.31464 3.8 7.76001 3.24001L9.18001 1.82001C9.92671 2.57118 10.9409 2.99554 12 3.00001C12.5255 3.00042 13.0458 2.89731 13.5314 2.69655C14.017 2.4958 14.4583 2.20134 14.83 1.83001Z" />
+<path d="M17.65 4.65001L19.07 6.07001C17.1951 7.9455 14.6519 8.99944 12 9.00001C9.34804 8.99944 6.80492 7.9455 4.92999 6.07001L6.34999 4.65001C7.0895 5.39597 7.96967 5.98778 8.93951 6.39117C9.90936 6.79455 10.9496 7.0015 12 7.00001C13.0504 7.0015 14.0906 6.79455 15.0605 6.39117C16.0303 5.98778 16.9105 5.39597 17.65 4.65001Z" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 11H14C14 11.5304 13.7893 12.0391 13.4142 12.4142C13.0391 12.7893 12.5304 13 12 13C11.4696 13 10.9609 12.7893 10.5858 12.4142C10.2107 12.0391 10 11.5304 10 11H6C5.46957 11 4.96086 11.2107 4.58579 11.5858C4.21071 11.9609 4 12.4696 4 13V22H20V13C20 12.4696 19.7893 11.9609 19.4142 11.5858C19.0391 11.2107 18.5304 11 18 11ZM6 18V15H18V18H6Z" />
+<path d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" style="width:20px; height:20px;"/>
+            </a>
+            </svg>
+
+            <a xlink:title="Kentang
+Luas 0.27 Ha
+Penanaman 12-13 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M399.67115,358.14385L399.19107,356.94363
+            L413.59363,350.70252L423.19534,346.86184L446.23945,337.50017L469.04351,376.62714L420.79492,398.23099L399.67115,358.14385
+            z"
+                    id="LKA2449" name="Mātale" style="fill: yellow;">
+                </path>
+            </a>
+
+            <a xlink:title="Kentang
+Luas 0.46 Ha
+Penanaman 12-13 September 2023" target="_blank">
+                Kentang
+                <path
+                    d="M422.9553,401.83164L470.96385,377.82736
+            L482.00581,379.50766L494.24799,411.91343L500.00902,419.11472L508.41051,435.67767L515.85184,444.7993L507.93043,452.00058L
+            503.60966,450.80037L486.56663,432.79716L475.28462,429.91664L474.56449,433.75733L458.00154,450.56032L454.16086,467.8434L444.79919,447.43977
+            L434.23731,451.28045L430.87671,434.23741L425.11568,419.11472L426.55594,414.5539L422.9553,401.83164z"
+                    id="LKA2449" name="Mātale" style="fill: yellow;">
+                </path>
+            </a>
+
+
+            <svg version="1.2" viewbox="-440 -400 830 1050" xmlns="http://www.w3.org/2000/svg">
+            <a xlink:title="Sensor 9" target="_blank">
+            <path d="M14.83 1.83001L16.24 3.24001C15.6854 3.8 15.0249 4.24401 14.2969 4.54617C13.569 4.84834 12.7882 5.00261 12 5.00001C11.2118 5.00261 10.4311 4.84834 9.70311 4.54617C8.97517 4.24401 8.31464 3.8 7.76001 3.24001L9.18001 1.82001C9.92671 2.57118 10.9409 2.99554 12 3.00001C12.5255 3.00042 13.0458 2.89731 13.5314 2.69655C14.017 2.4958 14.4583 2.20134 14.83 1.83001Z" />
+<path d="M17.65 4.65001L19.07 6.07001C17.1951 7.9455 14.6519 8.99944 12 9.00001C9.34804 8.99944 6.80492 7.9455 4.92999 6.07001L6.34999 4.65001C7.0895 5.39597 7.96967 5.98778 8.93951 6.39117C9.90936 6.79455 10.9496 7.0015 12 7.00001C13.0504 7.0015 14.0906 6.79455 15.0605 6.39117C16.0303 5.98778 16.9105 5.39597 17.65 4.65001Z" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 11H14C14 11.5304 13.7893 12.0391 13.4142 12.4142C13.0391 12.7893 12.5304 13 12 13C11.4696 13 10.9609 12.7893 10.5858 12.4142C10.2107 12.0391 10 11.5304 10 11H6C5.46957 11 4.96086 11.2107 4.58579 11.5858C4.21071 11.9609 4 12.4696 4 13V22H20V13C20 12.4696 19.7893 11.9609 19.4142 11.5858C19.0391 11.2107 18.5304 11 18 11ZM6 18V15H18V18H6Z" />
+<path d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" style="width:20px; height:20px;"/>
+            </a>
+            </svg>
+
+            <a xlink:title="Kacang Merah
+Luas 0.1 Ha
+Penanaman 31 Agustus - 1 September 2023" target="_blank">
+                Kacang Merah
+                <path
+                    d="M418.15445,443.59908L406.63239,457.52156L374.70671,442.39887L399.9112,414.31386L416.47415,441.67874L418.15445,443.59908z"
+                    id="LKA2449" name="Mātale" style="fill: red;">
+                </path>
+            </a>
+
+            <a xlink:title="Kubis
+Luas 0.36 Ha
+Penanaman 30 Agustus 2023" target="_blank">
+                Kubis
+                <path
+                    d="M344.22128,432.31707L343.26111,431.83699L343.7412,428.47639L333.17932,422.71536L331.9791,416.2342L338.94034,378.54749L391.5097,376.86719
+            L393.67009,382.14813L397.51077,409.99309L369.18573,441.19865L344.22128,432.31707z"
+                    id="LKA2449" name="Mātale" style="fill: green;">
+                </path>
+            </a>
+
+            <a xlink:title="Kubis
+Luas 0.11 Ha
+Penanaman 31 Agustus - 1 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M342.30094,435.43763L368.22556,446.4796L361.50436,475.52477L328.85855,465.92306L342.30094,435.43763z"
+                    id="LKA2449" name="Mātale" style="fill: green;">
+                </path>
+            </a>
+
+            <a xlink:title="Kacang  Merah
+Luas 0.37 Ha
+Penanaman 31 Agustus - 1 September 2023" target="_blank">
+                Kacang Merah
+                <path
+                    d="M370.1459,452.00058L402.79171,464.00272L398.71098,476.48495L397.27073,503.1297L402.79171,526.41385L349.98231,542.25667L328.13842,538.65603
+            L348.30201,530.49457L357.42363,502.16952L366.30521,469.76375L370.1459,452.00058z"
+                    id="LKA2449" name="Mātale" style="fill: red;">
+                </path>
+            </a>
+
+            <a xlink:title="Kacang  Merah
+Luas 0.3 Ha
+Penanaman 31 Agustus - 1 September 2023" target="_blank">
+                Kacang Merah
+                <path
+                    d="M327.65833,470.00379L359.10393,478.16524L342.0609,527.61406L308.45492,533.61513L290.21167,524.25346L284.69068,517.29222L
+            295.97269,511.29115L310.37526,493.52798L317.81658,480.80572L327.65833,470.00379z"
+                    id="LKA2449" name="Mātale" style="fill: red;">
+                </path>
+            </a>
+
+            <a xlink:title="Kubis
+Luas 0.08 Ha
+Penanaman 30 Agustus - 31 Agustus 2023" target="_blank">
+                Kubis
+                <path
+                    d="M322.37739,427.27617L335.57974,432.55711L323.09752,463.28259L310.85534,461.12221L322.37739,427.27617z"
+                    id="LKA2449" name="Mātale" style="fill: green;">
+                </path>
+            </a>
+
+            <a xlink:title="Kacang Merah
+Luas 0.26 Ha
+Penanaman 31 Agustus - 1 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M254.4453,517.77231L257.08577,506.73034L261.64658,503.36974L262.36671,500.48922L258.52603,481.76589L264.28705,477.20507L
+            279.1697,475.52477L280.85,460.64212L279.88983,451.04041L284.2106,445.27938L290.9318,442.87895L309.17504,442.87895L305.5744,452.72071
+            L301.01359,455.60122L299.57333,460.64212L324.05769,470.00379L312.77568,483.20614L301.73372,480.32563L290.45171,476.96503
+            L288.77141,481.2858L300.77355,482.9661L303.41402,487.04683L300.05342,493.52798L289.2515,500.72927L277.4894,508.65068L274.1288,520.17273
+            L254.4453,517.77231z"
+                    id="LKA2449" name="Mātale" style="fill: red;">
+                </path>
+            </a>
+
+            <a xlink:title="Kubis
+Luas 0.43 Ha
+Penanaman 31 Agustus 2023" target="_blank">
+                Kubis
+                <path
+                    d="M275.56906,441.19865L273.16863,438.55818L257.8059,427.51622L253.24509,423.19545L254.4453,381.66804L267.64765,373.98667L277.00932,371.82629
+            L323.57761,375.90701L321.41722,385.74877L319.97697,402.31172L310.37526,435.43763L308.21487,435.67767L307.2547,437.11793L
+            294.77248,429.19652L292.61209,436.15776L275.56906,441.19865z"
+                    id="LKA2449" name="Mātale" style="fill: green;">
+                </path>
+            </a>
+
+
+            <svg version="1.2" viewbox="-260 -400 830 1050" xmlns="http://www.w3.org/2000/svg">
+            <a xlink:title="Sensor 6" target="_blank">
+            <path d="M14.83 1.83001L16.24 3.24001C15.6854 3.8 15.0249 4.24401 14.2969 4.54617C13.569 4.84834 12.7882 5.00261 12 5.00001C11.2118 5.00261 10.4311 4.84834 9.70311 4.54617C8.97517 4.24401 8.31464 3.8 7.76001 3.24001L9.18001 1.82001C9.92671 2.57118 10.9409 2.99554 12 3.00001C12.5255 3.00042 13.0458 2.89731 13.5314 2.69655C14.017 2.4958 14.4583 2.20134 14.83 1.83001Z" />
+<path d="M17.65 4.65001L19.07 6.07001C17.1951 7.9455 14.6519 8.99944 12 9.00001C9.34804 8.99944 6.80492 7.9455 4.92999 6.07001L6.34999 4.65001C7.0895 5.39597 7.96967 5.98778 8.93951 6.39117C9.90936 6.79455 10.9496 7.0015 12 7.00001C13.0504 7.0015 14.0906 6.79455 15.0605 6.39117C16.0303 5.98778 16.9105 5.39597 17.65 4.65001Z" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 11H14C14 11.5304 13.7893 12.0391 13.4142 12.4142C13.0391 12.7893 12.5304 13 12 13C11.4696 13 10.9609 12.7893 10.5858 12.4142C10.2107 12.0391 10 11.5304 10 11H6C5.46957 11 4.96086 11.2107 4.58579 11.5858C4.21071 11.9609 4 12.4696 4 13V22H20V13C20 12.4696 19.7893 11.9609 19.4142 11.5858C19.0391 11.2107 18.5304 11 18 11ZM6 18V15H18V18H6Z" />
+<path d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" style="width:20px; height:20px;"/>
+            </a>
+            </svg>
+
+            <a xlink:title="Kubis
+Luas 0.58 Ha
+Penanaman 4 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M252.28492,383.82843L251.56479,428.47639L250.60462,468.80358L240.76286,482.00593L231.4012,492.80786L216.51855,488.96717L
+            196.35496,488.24704L188.19351,475.28473L183.87274,462.08238L192.03419,446.4796L210.75752,430.15669L211.95774,421.51515L208.35709,410.71322
+            L210.75752,398.23099L232.12133,382.14813L254.4453,381.66804L252.28492,383.82843z"
+                    id="LKA2449" name="Mātale" style="fill: green;">
+                </path>
+            </a>
+
+            <a xlink:title="Kubis
+Luas 0.10 Ha
+Penanaman 4 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M289.73158,349.74235L298.37312,360.30423L307.97483,367.50552L319.49688,368.46569L322.61744,372.78646L299.57333,370.38603
+            L279.64979,368.70573L269.56799,370.86612L252.28492,381.66804L242.20312,368.22565L289.73158,349.74235z"
+                    id="LKA2449" name="Mātale" style="fill: green;">
+                </path>
+            </a>
+
+            <a xlink:title="Kubis
+Luas 0.22 Ha
+Penanaman 4 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M324.53778,368.94577L325.49795,362.46462L331.25898,357.66376L342.78103,347.10188L347.58188,341.34085L348.06197,335.33978
+            L356.46346,327.41837L370.86603,318.53679L385.26859,348.06205L374.22662,353.10295L380.70778,372.54642L328.85855,374.22672
+            L324.53778,368.94577z"
+                    id="LKA2449" name="Mātale" style="fill: green;">
+                </path>
+            </a>
+
+            <a xlink:title="Kubis
+Luas 0.36 Ha
+Penanaman 30-31 Agustus 2023" target="_blank">
+                Kubis
+                <path
+                    d="M295.97269,347.82201L309.41509,339.18047L313.9759,334.61965L318.29667,330.29888L319.25684,323.57769L319.49688,315.17619L
+            318.53671,306.77469L317.81658,301.25371L320.45705,290.45178L320.21701,284.45071L324.29774,275.80917L328.85855,270.04814L
+            345.4215,265.24729L369.42577,315.41623L360.0641,318.77683L347.58188,327.65841L341.58081,337.02008L335.57974,346.38175L326.69816,354.30316
+            L320.93714,360.78432L313.73586,363.18475L304.61423,359.10402L295.97269,347.82201z"
+                    id="LKA2449" name="Mātale" style="fill: green;">
+                </path>
+            </a>
+
+
+            <svg version="1.2" viewbox="-350 -390 830 1050" xmlns="http://www.w3.org/2000/svg">
+            <a xlink:title="Sensor 7" target="_blank">
+            <path d="M14.83 1.83001L16.24 3.24001C15.6854 3.8 15.0249 4.24401 14.2969 4.54617C13.569 4.84834 12.7882 5.00261 12 5.00001C11.2118 5.00261 10.4311 4.84834 9.70311 4.54617C8.97517 4.24401 8.31464 3.8 7.76001 3.24001L9.18001 1.82001C9.92671 2.57118 10.9409 2.99554 12 3.00001C12.5255 3.00042 13.0458 2.89731 13.5314 2.69655C14.017 2.4958 14.4583 2.20134 14.83 1.83001Z" />
+<path d="M17.65 4.65001L19.07 6.07001C17.1951 7.9455 14.6519 8.99944 12 9.00001C9.34804 8.99944 6.80492 7.9455 4.92999 6.07001L6.34999 4.65001C7.0895 5.39597 7.96967 5.98778 8.93951 6.39117C9.90936 6.79455 10.9496 7.0015 12 7.00001C13.0504 7.0015 14.0906 6.79455 15.0605 6.39117C16.0303 5.98778 16.9105 5.39597 17.65 4.65001Z" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 11H14C14 11.5304 13.7893 12.0391 13.4142 12.4142C13.0391 12.7893 12.5304 13 12 13C11.4696 13 10.9609 12.7893 10.5858 12.4142C10.2107 12.0391 10 11.5304 10 11H6C5.46957 11 4.96086 11.2107 4.58579 11.5858C4.21071 11.9609 4 12.4696 4 13V22H20V13C20 12.4696 19.7893 11.9609 19.4142 11.5858C19.0391 11.2107 18.5304 11 18 11ZM6 18V15H18V18H6Z" />
+<path d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" style="width:20px; height:20px;"/>
+            </a>
+            </svg>
+
+            <a xlink:title="Kentang
+Luas 0.15 Ha
+Penanaman 13 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M337.98017,242.44322L320.93714,245.08369
+            L320.45705,234.52181L314.93607,216.99869L309.17504,205.23659L301.49368,191.79419L296.21274,180.0321L288.53137,160.10854L
+            296.45278,161.06871L306.05449,172.83081L309.89517,171.6306L326.69816,201.15586L331.9791,217.47877L333.89945,228.04065L337.98017,242.44322
+            z"
+                    id="LKA2449" name="Mātale" style="fill: yellow;">
+                </path>
+            </a>
+
+            <a xlink:title="Kubis
+Luas 0.98 Ha
+Penanaman 4 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M288.53137,160.10854L290.69175,170.67043L294.05235,179.07192L298.85321,189.39376L308.21487,208.59719L305.09432,212.91796
+            L312.05556,228.04065L316.61637,242.92331L315.17611,256.3657L317.3365,265.00724L318.53671,274.36891L313.73586,284.21067L313.9759,294.29247
+            L311.33543,306.2946L313.9759,323.0976L305.81445,336.78004L290.69175,344.94149L287.81124,341.10081L282.05021,344.94149L281.81017,348.78218
+            L243.88342,361.02436L234.52175,366.54535L241.96308,354.30316L249.4044,346.86184L253.48513,331.01901L250.36457,319.737L253.96521,308.21495
+            L257.32581,297.41302L252.52496,282.53037L254.4453,266.92759L293.81231,260.92652L295.49261,253.0051L292.61209,248.68433L275.8091,254.6854
+            L256.1256,260.92652L256.36564,248.92438L260.68641,232.36142L261.64658,217.95886L262.12667,208.83723L271.48833,195.39483L
+            274.36885,191.79419L276.04915,181.47235L279.40974,170.19034L280.12987,169.71026L288.53137,160.10854z"
+                    id="LKA2449" name="Mātale" style="fill: green;">
+                </path>
+            </a>
+
+            <svg version="1.2" viewbox="-280 -270 830 1050" xmlns="http://www.w3.org/2000/svg">
+            <a xlink:title="Sensor 5" target="_blank">
+            <path d="M14.83 1.83001L16.24 3.24001C15.6854 3.8 15.0249 4.24401 14.2969 4.54617C13.569 4.84834 12.7882 5.00261 12 5.00001C11.2118 5.00261 10.4311 4.84834 9.70311 4.54617C8.97517 4.24401 8.31464 3.8 7.76001 3.24001L9.18001 1.82001C9.92671 2.57118 10.9409 2.99554 12 3.00001C12.5255 3.00042 13.0458 2.89731 13.5314 2.69655C14.017 2.4958 14.4583 2.20134 14.83 1.83001Z" />
+<path d="M17.65 4.65001L19.07 6.07001C17.1951 7.9455 14.6519 8.99944 12 9.00001C9.34804 8.99944 6.80492 7.9455 4.92999 6.07001L6.34999 4.65001C7.0895 5.39597 7.96967 5.98778 8.93951 6.39117C9.90936 6.79455 10.9496 7.0015 12 7.00001C13.0504 7.0015 14.0906 6.79455 15.0605 6.39117C16.0303 5.98778 16.9105 5.39597 17.65 4.65001Z" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 11H14C14 11.5304 13.7893 12.0391 13.4142 12.4142C13.0391 12.7893 12.5304 13 12 13C11.4696 13 10.9609 12.7893 10.5858 12.4142C10.2107 12.0391 10 11.5304 10 11H6C5.46957 11 4.96086 11.2107 4.58579 11.5858C4.21071 11.9609 4 12.4696 4 13V22H20V13C20 12.4696 19.7893 11.9609 19.4142 11.5858C19.0391 11.2107 18.5304 11 18 11ZM6 18V15H18V18H6Z" />
+<path d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" style="width:20px; height:20px;"/>
+            </a>
+            </svg>
+
+            <a xlink:title="Kacang Merah
+Luas 0.92 Ha
+Penanaman 1 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M609.70855,221.07941L589.785,222.99976L566.02077,212.91796L552.33833,211.23766L543.45675,208.59719L526.8938,161.78884L552.57838,149.30662
+            L541.29637,114.74046L534.33513,101.29806L531.9347,97.93746L544.41692,88.81583L536.25547,81.13446L513.69145,96.97729L499.28889,77.05374
+            L559.53962,52.08929L569.38137,80.41434L577.30278,108.73939L582.82376,128.66294L596.26616,169.47021L611.1488,218.43894L609.70855,221.07941
+            z"
+                    id="LKA2449" name="Mātale" style="fill:red;">
+                </path>
+            </a>
+
+            <svg version="1.2" viewbox="-560 -150 830 1050" xmlns="http://www.w3.org/2000/svg">
+            <a xlink:title="Sensor 2" target="_blank">
+            <path d="M14.83 1.83001L16.24 3.24001C15.6854 3.8 15.0249 4.24401 14.2969 4.54617C13.569 4.84834 12.7882 5.00261 12 5.00001C11.2118 5.00261 10.4311 4.84834 9.70311 4.54617C8.97517 4.24401 8.31464 3.8 7.76001 3.24001L9.18001 1.82001C9.92671 2.57118 10.9409 2.99554 12 3.00001C12.5255 3.00042 13.0458 2.89731 13.5314 2.69655C14.017 2.4958 14.4583 2.20134 14.83 1.83001Z" />
+<path d="M17.65 4.65001L19.07 6.07001C17.1951 7.9455 14.6519 8.99944 12 9.00001C9.34804 8.99944 6.80492 7.9455 4.92999 6.07001L6.34999 4.65001C7.0895 5.39597 7.96967 5.98778 8.93951 6.39117C9.90936 6.79455 10.9496 7.0015 12 7.00001C13.0504 7.0015 14.0906 6.79455 15.0605 6.39117C16.0303 5.98778 16.9105 5.39597 17.65 4.65001Z" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 11H14C14 11.5304 13.7893 12.0391 13.4142 12.4142C13.0391 12.7893 12.5304 13 12 13C11.4696 13 10.9609 12.7893 10.5858 12.4142C10.2107 12.0391 10 11.5304 10 11H6C5.46957 11 4.96086 11.2107 4.58579 11.5858C4.21071 11.9609 4 12.4696 4 13V22H20V13C20 12.4696 19.7893 11.9609 19.4142 11.5858C19.0391 11.2107 18.5304 11 18 11ZM6 18V15H18V18H6Z" />
+<path d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" style="width:20px; height:20px;"/>
+            </a>
+            </svg>
+
+            <a xlink:title="Kacang Merah
+        Luas 1.71 Ha
+        Penanaman 1 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M562.18009,49.9289L568.66124,45.84817L584.50406,44.888L631.55244,37.68672L635.63316,39.36702L627.23167,55.68993L617.14987,64.81155
+            L621.71069,76.81369L649.55564,73.69314L658.67727,92.41648L657.7171,105.37879L669.71923,136.82439L667.55885,149.7867L671.63957,167.78991
+            L678.60081,182.43252L681.24128,193.47449L686.28218,202.83616L676.20039,212.43787L673.55992,223.47984L682.68154,229.00083
+            L676.20039,241.96314L676.20039,253.48519L657.7171,259.48626L654.11645,253.48519L614.02932,259.00617L599.14667,257.32587L
+            589.54496,253.96528L615.22953,241.24301L623.87107,236.20211L627.23167,231.16121L620.75051,224.9201L615.22953,221.5595L605.86786,190.35394
+            L599.8668,171.15051L584.50406,121.46165L582.10363,111.6199L572.02184,80.17429L562.18009,49.9289z"
+                    id="LKA2449" name="Mātale" style="fill:red;">
+                </path>
+            </a>
+
+            <svg version="1.2" viewbox="-610 -100 830 1050" xmlns="http://www.w3.org/2000/svg">
+            <a xlink:title="Sensor 3" target="_blank">
+            <path d="M14.83 1.83001L16.24 3.24001C15.6854 3.8 15.0249 4.24401 14.2969 4.54617C13.569 4.84834 12.7882 5.00261 12 5.00001C11.2118 5.00261 10.4311 4.84834 9.70311 4.54617C8.97517 4.24401 8.31464 3.8 7.76001 3.24001L9.18001 1.82001C9.92671 2.57118 10.9409 2.99554 12 3.00001C12.5255 3.00042 13.0458 2.89731 13.5314 2.69655C14.017 2.4958 14.4583 2.20134 14.83 1.83001Z" />
+<path d="M17.65 4.65001L19.07 6.07001C17.1951 7.9455 14.6519 8.99944 12 9.00001C9.34804 8.99944 6.80492 7.9455 4.92999 6.07001L6.34999 4.65001C7.0895 5.39597 7.96967 5.98778 8.93951 6.39117C9.90936 6.79455 10.9496 7.0015 12 7.00001C13.0504 7.0015 14.0906 6.79455 15.0605 6.39117C16.0303 5.98778 16.9105 5.39597 17.65 4.65001Z" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 11H14C14 11.5304 13.7893 12.0391 13.4142 12.4142C13.0391 12.7893 12.5304 13 12 13C11.4696 13 10.9609 12.7893 10.5858 12.4142C10.2107 12.0391 10 11.5304 10 11H6C5.46957 11 4.96086 11.2107 4.58579 11.5858C4.21071 11.9609 4 12.4696 4 13V22H20V13C20 12.4696 19.7893 11.9609 19.4142 11.5858C19.0391 11.2107 18.5304 11 18 11ZM6 18V15H18V18H6Z" />
+<path d="M13 11C13 11.5523 12.5523 12 12 12C11.4477 12 11 11.5523 11 11C11 10.4477 11.4477 10 12 10C12.5523 10 13 10.4477 13 11Z" style="width:20px; height:20px;"/>
+            </a>
+            </svg>
+
+            <a xlink:title="Kentang
+Luas 0.04 Ha
+Penanaman 1 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M320.93714,245.08369L337.98017,242.44322L343.26111,261.64665L326.45812,266.68754L324.29774,265.00724L322.37739,258.28605
+            L321.17718,247.48412L320.93714,245.08369z"
+                    id="LKA2449" name="Mātale">
+                </path>
+            </a>
+
+            <a xlink:title="Demplot
+Luas 0.04 Ha
+Penanaman 13 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M320.93714,245.08369L337.98017,242.44322L343.26111,261.64665L326.45812,266.68754L324.29774,265.00724L322.37739,258.28605
+            L321.17718,247.48412L320.93714,245.08369z"
+                    id="LKA2449" name="Mātale" style="fill:pink;">
+                </path>
+            </a>
+
+            <a xlink:title="Kentang
+Luas 0.04 Ha
+Penanaman 1 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M418.15445,443.59908L416.47415,441.67874
+            L399.9112,414.31386L409.99299,403.03185L421.03496,440.23848L418.15445,443.59908z"
+                    id="LKA2449" name="Mātale" style="fill:yellow;">
+                </path>
+            </a>
+            <circle cx="302.6" cy="1147.4" id="0">
+            </circle>
+            <circle cx="616.8" cy="745.3" id="1">
+            </circle>
+            <circle cx="149.2" cy="439.8" id="2">
+            </circle>
+        </svg>
+    </div>
 @endsection
-@push('beranda')
-  <script>
-    window.onload = function() {
-      var ctx = document.getElementById("chart-bars").getContext("2d");
-
-      new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          datasets: [{
-            label: "Sales",
-            tension: 0.4,
-            borderWidth: 0,
-            borderRadius: 4,
-            borderSkipped: false,
-            backgroundColor: "#fff",
-            data: [450, 200, 100, 220, 500, 100, 400, 230, 500],
-            maxBarThickness: 6
-          }, ],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              display: false,
-            }
-          },
-          interaction: {
-            intersect: false,
-            mode: 'index',
-          },
-          scales: {
-            y: {
-              grid: {
-                drawBorder: false,
-                display: false,
-                drawOnChartArea: false,
-                drawTicks: false,
-              },
-              ticks: {
-                suggestedMin: 0,
-                suggestedMax: 500,
-                beginAtZero: true,
-                padding: 15,
-                font: {
-                  size: 14,
-                  family: "Open Sans",
-                  style: 'normal',
-                  lineHeight: 2
-                },
-                color: "#fff"
-              },
-            },
-            x: {
-              grid: {
-                drawBorder: false,
-                display: false,
-                drawOnChartArea: false,
-                drawTicks: false
-              },
-              ticks: {
-                display: false
-              },
-            },
-          },
-        },
-      });
-
-
-      var ctx2 = document.getElementById("chart-line").getContext("2d");
-
-      var gradientStroke1 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-      gradientStroke1.addColorStop(1, 'rgba(203,12,159,0.2)');
-      gradientStroke1.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-      gradientStroke1.addColorStop(0, 'rgba(203,12,159,0)'); //purple colors
-
-      var gradientStroke2 = ctx2.createLinearGradient(0, 230, 0, 50);
-
-      gradientStroke2.addColorStop(1, 'rgba(20,23,39,0.2)');
-      gradientStroke2.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-      gradientStroke2.addColorStop(0, 'rgba(20,23,39,0)'); //purple colors
-
-      new Chart(ctx2, {
-        type: "line",
-        data: {
-          labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-          datasets: [{
-              label: "Mobile apps",
-              tension: 0.4,
-              borderWidth: 0,
-              pointRadius: 0,
-              borderColor: "#cb0c9f",
-              borderWidth: 3,
-              backgroundColor: gradientStroke1,
-              fill: true,
-              data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-              maxBarThickness: 6
-
-            },
-            {
-              label: "Websites",
-              tension: 0.4,
-              borderWidth: 0,
-              pointRadius: 0,
-              borderColor: "#3A416F",
-              borderWidth: 3,
-              backgroundColor: gradientStroke2,
-              fill: true,
-              data: [30, 90, 40, 140, 290, 290, 340, 230, 400],
-              maxBarThickness: 6
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              display: false,
-            }
-          },
-          interaction: {
-            intersect: false,
-            mode: 'index',
-          },
-          scales: {
-            y: {
-              grid: {
-                drawBorder: false,
-                display: true,
-                drawOnChartArea: true,
-                drawTicks: false,
-                borderDash: [5, 5]
-              },
-              ticks: {
-                display: true,
-                padding: 10,
-                color: '#b2b9bf',
-                font: {
-                  size: 11,
-                  family: "Open Sans",
-                  style: 'normal',
-                  lineHeight: 2
-                },
-              }
-            },
-            x: {
-              grid: {
-                drawBorder: false,
-                display: false,
-                drawOnChartArea: false,
-                drawTicks: false,
-                borderDash: [5, 5]
-              },
-              ticks: {
-                display: true,
-                color: '#b2b9bf',
-                padding: 20,
-                font: {
-                  size: 11,
-                  family: "Open Sans",
-                  style: 'normal',
-                  lineHeight: 2
-                },
-              }
-            },
-          },
-        },
-      });
-    }
-  </script>
-@endpush
-

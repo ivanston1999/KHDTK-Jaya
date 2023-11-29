@@ -9,6 +9,12 @@ use App\Http\Controllers\SessionsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\kalkulatorController;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\SensorController;
+use App\Http\Controllers\UploadController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,14 +30,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/', [HomeController::class, 'home']);
+	Route::get('/', [HomeController::class, 'home'])->name('beranda');
 	Route::get('beranda', function () {
 		return view('beranda');
 	})->name('beranda');
 
-	Route::middleware(['auth', 'Admin'])->group(function () {
-		Route::get('/admin', 'AdminController@index');
-	});
+	Route::get('admin', function () {
+		return view('admin');
+	})->name('admin');
 
 	Route::get('billing', function () {
 		return view('billing');
@@ -45,9 +51,18 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('rtl');
 	})->name('rtl');
 
-	Route::get('user-management', function () {
-		return view('laravel-examples/user-management');
-	})->name('user-management');
+	//ADMIN - User Management
+	Route::get('user-management', [adminController::class, 'show'])->middleware('role:admin');
+	Route::post('/user-management', [adminController::class, 'createUser'])->middleware('role:admin');
+
+	//
+    Route::get('kalkulator', function () {
+		return view('kalkulator/kalkulator');
+	})->name('kalkulator');
+
+      Route::get('detail', function () {
+		return view('kalkulator/detail');
+	})->name('detail');
 
 	Route::get('tables', function () {
 		return view('tables');
@@ -64,6 +79,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('static-sign-up', function () {
 		return view('static-sign-up');
 	})->name('sign-up');
+
+	Route::get('/upload-lahan', [uploadController::class, 'index'])->name('upload-lahan');
+
+	Route::get('upload-drone', function () {
+		return view('upload-drone');
+	})->name('upload-drone');
 
     Route::get('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
@@ -90,3 +111,27 @@ Route::group(['middleware' => 'guest'], function () {
 Route::get('/login', function () {
     return view('session/login-session');
 })->name('login');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+    Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+});
+
+
+
+Route::resource('kalkulators', kalkulatorController::class);
+Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
+
+ //DetailCOntroller
+Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
+Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
+
+
+
+Route::get('hasil', function () {
+    return view('kalkulator/hasil');
+});
+
+Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
+Route::get('/admin', [adminController::class, 'index'])->name('admin')->middleware('role:admin');
+Route::get('/sensor', [SensorController::class, 'LineChart']);
