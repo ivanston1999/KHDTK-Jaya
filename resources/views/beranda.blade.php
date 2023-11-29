@@ -69,7 +69,6 @@
         }
     </style>
 
-    <body>
         <div class="sensor-status-container">
             <div class="sensor-status-card">
                 <h4>Sensor Aktif</h4>
@@ -486,7 +485,4 @@ Penanaman 1 September 2023" target="_blank">
             </circle>
         </svg>
     </div>
-
-    </body>
 @endsection
-
