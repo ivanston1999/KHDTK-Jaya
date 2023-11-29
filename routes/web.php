@@ -28,6 +28,11 @@ use App\Http\Controllers\SensorController;
 
 Route::group(['middleware' => 'auth'], function () {
 
+	Route::get('/', [HomeController::class, 'home'])->name('beranda');
+	Route::get('beranda', function () {
+		return view('beranda');
+	})->name('beranda');
+
 	Route::get('admin', function () {
 		return view('admin');
 	})->name('admin');
@@ -128,5 +133,5 @@ Route::get('hasil', function () {
     return view('kalkulator/hasil');
 });
 
-Route::get('/sensor', [SensorController::class, 'LineChart']);
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
+Route::get('/sensor', [SensorController::class, 'LineChart']);
