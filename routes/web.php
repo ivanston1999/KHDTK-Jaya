@@ -134,4 +134,5 @@ Route::get('hasil', function () {
 });
 
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
+Route::get('/admin', [adminController::class, 'index'])->name('admin');
 Route::get('/sensor', [SensorController::class, 'LineChart']);
