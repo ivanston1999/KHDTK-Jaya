@@ -50,7 +50,7 @@
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Fitur Admin</h6>
       </li> -->
 
-      {{-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link {{ (Request::is('tables') ? 'active' : '') }}" href="{{ url('tables') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
@@ -59,10 +59,10 @@
           </div>
           <span class="nav-link-text ms-1">Persediaan</span>
         </a>
-      </li> --}}
+      </li>
 
-      <!-- <li class="nav-item">
-        <a class="nav-link {{ (Request::is('billing') ? 'active' : '') }}" href="{{ url('billing') }}">
+      <li class="nav-item">
+        <a class="nav-link {{ (request()->routeIs('uploads.index') ? 'active' : '') }}" href="{{ route('uploads.index') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <title>credit-card</title>
@@ -80,7 +80,7 @@
           </div>
           <span class="nav-link-text ms-1">Upload Foto Lahan</span>
         </a>
-      </li> -->
+      </li>
 
       <!-- <li class="nav-item">
         <a class="nav-link {{ (Request::is('virtual-reality') ? 'active' : '') }}" href="{{ url('virtual-reality') }}">

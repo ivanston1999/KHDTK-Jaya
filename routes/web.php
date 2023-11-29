@@ -47,6 +47,10 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('profile');
 	})->name('profile');
 
+	Route::get('uploads', function () {
+		return view('upload/index');
+	})->name('upload');
+
 	Route::get('rtl', function () {
 		return view('rtl');
 	})->name('rtl');
@@ -135,3 +139,17 @@ Route::get('hasil', function () {
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
 Route::get('/admin', [adminController::class, 'index'])->name('admin');
 Route::get('/sensor', [SensorController::class, 'LineChart']);
+
+//Upload Gambar lahan
+Route::middleware(['auth'])->group(function () {
+    Route::get('/uploads/create', [UploadController::class, 'create'])->name('posts.create');
+    Route::post('/uploads', [UploadController::class, 'store'])->name('posts.store');
+});
+
+Route::resource('uploads', UploadController::class);
+Route::get('/uploads', [UploadController::class, 'index'])->name('uploads');
+
+
+Route::middleware('auth')->group(function () {
+    Route::resource('uploads', UploadController::class);
+});
