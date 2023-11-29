@@ -69,20 +69,13 @@
                                         <a href="{{ url('detail/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View Detail">
                                             <i class="fas fa-user-edit text-secondary"></i>
                                         </a>
-<<<<<<< HEAD
-                                        <span>
-                                            <a href="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
-                                                <i class="fas fa-user-edit text-secondary"></i>
-                                            </a>
-                                        </span>
 
                                         <form action="{{ route('kalkulators.destroy', $kalkulator->id) }}" method="POST">
-=======
+
                                         <a href="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
                                             <i class="fas fa-user-edit text-secondary"></i>
                                         </a>
                                         <form action="{{ route('kalkulators.destroy', $kalkulator->id) }}" method="POST" class="icon-link">
->>>>>>> 72b61c51a37b86f704e8fb1e23d7ceacc77863c9
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="cursor-pointer fas fa-trash text-secondary">
