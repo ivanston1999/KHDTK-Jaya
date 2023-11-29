@@ -18,7 +18,7 @@
             <ul class="navbar-nav justify-content-end">
             <li class="nav-item px-2 d-flex align-items-center">
                 <a href="{{ url('user-profile') }}" class="nav-link text-body font-weight-bold px-0">
-                    <i class="fa fa-user me-sm-1"></i>
+                    <i class="fa fa-user me-sm-1"   ></i>
                 </a>
             </li>
             <li class="nav-item d-xl-none px-2 d-flex align-items-center">
@@ -37,7 +37,7 @@
                 </a>
             </li> --}}
 
-            <li class="nav-item dropdown px-2 d-flex align-items-center">
+            {{-- <li class="nav-item dropdown px-2 d-flex align-items-center">
                 <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
                 </a>
@@ -109,7 +109,7 @@
                     </a>
                 </li>
                 </ul>
-            </li>
+            </li> --}}
             </ul>
         </div>
     </div>
