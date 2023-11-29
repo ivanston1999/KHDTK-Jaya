@@ -21,25 +21,25 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7" >
                                         No
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
                                         Komoditas
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
                                         Varietas
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
                                         Jarak Tanam
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
                                         Luas Lahan
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
                                         Tanggal Tanam
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
                                         Action
                                     </th>
                                 </tr>
@@ -65,17 +65,19 @@
                                     <td class="text-center">
                                         {{ $kalkulator->date }}
                                     </td>
+
                                     <td class="text-center horizontal-icons">
-                                        <a href="{{ url('detail/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View Detail">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
-                                        <a href="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
-                                            <i class="fas fa-user-edit text-secondary"></i>
-                                        </a>
+                                            <a href="{{ url('detail/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View Detail">
+                                                <i class="fas fa-user-edit text-bold"></i>
+                                            </a>
+                                            <a href="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
+                                                
+                                                <i class="fas fa-user-edit text-bold"></i>
+                                            </a>
                                         <form action="{{ route('kalkulators.destroy', $kalkulator->id) }}" method="POST" class="icon-link">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="cursor-pointer fas fa-trash text-secondary">
+                                            <button type="submit" class="cursor-pointer fas fa-trash text-bold">
                                             </button>
                                         </form>
                                     </td>
@@ -85,7 +87,7 @@
                                     <td colspan="7" class="text-center">Belum ada hasil perhitungan</td>
                                 </tr>
                                 @endforelse
-                            </tbody>                          
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -153,8 +155,8 @@
         margin-right: 5px;
     }
 
-    .text-xxs {
-    font-size: 100px; 
+    .text-xl-start {
+    font-size: 14px;
 }
 
     .horizontal-icons {
@@ -164,7 +166,8 @@
 }
 
     .icon-link {
-    margin: 0 5px; 
+    margin: 0 5px;
 }
+
 </style>
 @endsection
