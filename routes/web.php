@@ -50,9 +50,8 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('rtl');
 
 	//ADMIN - User Management
-	Route::get('user-management', 'adminController@show');
-	Route::post('/user-management', 'adminController@createUser');
-
+	Route::get('user-management', [adminController::class, 'show'])->middleware('role:admin');
+	Route::post('/user-management', [adminController::class, 'createUser'])->middleware('role:admin');
 
 	//
     Route::get('kalkulator', function () {
@@ -134,4 +133,5 @@ Route::get('hasil', function () {
 });
 
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
+Route::get('/admin', [adminController::class, 'index'])->name('admin');
 Route::get('/sensor', [SensorController::class, 'LineChart']);
