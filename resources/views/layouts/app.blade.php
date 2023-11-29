@@ -35,7 +35,7 @@
   @endif
 
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="../assets/img/tariparLogo.png">
   <title>
     @yield('title')
   </title>
@@ -76,7 +76,7 @@
   <script src="../assets/js/plugins/fullcalendar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   @stack('rtl')
-  @stack('dashboard')
+  @stack('beranda')
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {

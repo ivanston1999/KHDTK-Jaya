@@ -19,7 +19,6 @@ class SessionsController extends Controller
             'email'=>'required|email',
             'password'=>'required' 
         ]);
-
         if(Auth::attempt($attributes))
         {
             session()->regenerate();
@@ -36,6 +35,6 @@ class SessionsController extends Controller
 
         Auth::logout();
 
-        return redirect('/login');
+        return redirect('/beranda');
     }
 }

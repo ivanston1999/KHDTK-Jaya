@@ -13,6 +13,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\kalkulatorController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\SensorController;
+use App\Http\Controllers\UploadController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +46,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile', function () {
 		return view('profile');
 	})->name('profile');
+
+	Route::get('uploads', function () {
+		return view('upload/index');
+	})->name('upload');
 
 	Route::get('rtl', function () {
 		return view('rtl');
@@ -80,9 +86,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('static-sign-up');
 	})->name('sign-up');
 
-	Route::get('upload-lahan', function () {
-		return view('upload-lahan');
-	})->name('upload-lahan');
+	Route::get('/upload-lahan', [uploadController::class, 'index'])->name('upload-lahan');
 
 	Route::get('upload-drone', function () {
 		return view('upload-drone');
@@ -135,5 +139,19 @@ Route::get('hasil', function () {
 });
 
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
-Route::get('/admin', [adminController::class, 'index'])->name('admin');
+Route::get('/admin', [adminController::class, 'index'])->name('admin')->middleware('role:admin');
 Route::get('/sensor', [SensorController::class, 'LineChart']);
+
+//Upload Gambar lahan
+Route::middleware(['auth'])->group(function () {
+    Route::get('/uploads/create', [UploadController::class, 'create'])->name('posts.create');
+    Route::post('/uploads', [UploadController::class, 'store'])->name('posts.store');
+});
+
+Route::resource('uploads', UploadController::class);
+Route::get('/uploads', [UploadController::class, 'index'])->name('uploads');
+
+
+Route::middleware('auth')->group(function () {
+    Route::resource('uploads', UploadController::class);
+});
