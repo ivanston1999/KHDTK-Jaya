@@ -21,25 +21,25 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         No
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Komoditas
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Varietas
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Jarak Tanam
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Luas Lahan
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Tanggal Tanam
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Action
                                     </th>
                                 </tr>
@@ -153,8 +153,8 @@
         margin-right: 5px;
     }
 
-    .text-xxs {
-    font-size: 100px; 
+    .text-xl-start {
+    font-size: 14px; 
 }
 
     .horizontal-icons {
