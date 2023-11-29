@@ -70,7 +70,7 @@
                                             <i class="fas fa-user-edit text-secondary"></i>
                                         </a>
                                         <span>
-                                            <a hhref="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
+                                            <a href="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
                                                 <i class="fas fa-user-edit text-secondary"></i>
                                             </a>
                                         </span>
