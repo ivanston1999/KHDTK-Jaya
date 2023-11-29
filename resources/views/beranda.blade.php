@@ -3,7 +3,6 @@
 @section('title', 'Taripar Hub')
 
 @section('content')
-    <html>
     <style>
         .sensor-status-container {
             display: flex;
@@ -94,8 +93,5 @@
             </div>
         </div>
     </body>
-
-    </html>
-
 @endsection
 
