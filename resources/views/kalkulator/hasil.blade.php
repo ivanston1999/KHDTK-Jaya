@@ -42,9 +42,8 @@
                                     </th>
                                 </tr>
                             </thead>
-
                             <tbody>
-                                @foreach ($Kalkulators as $row => $kalkulator)
+                                @forelse ($Kalkulators as $row => $kalkulator)
                                 <tr>
                                     <td class="ps-4">
                                         {{ $row + 1 }}
@@ -64,7 +63,6 @@
                                     <td class="text-center">
                                         {{ $kalkulator->date }}
                                     </td>
-
                                     <td class="text-center horizontal-icons">
                                         <a href="{{ url('detail/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View Detail">
                                             <i class="fas fa-user-edit text-secondary"></i>
@@ -80,10 +78,12 @@
                                         </form>
                                     </td>
                                 </tr>
-
-
-                                @endforeach
-                            </tbody>
+                                @empty
+                                <tr>
+                                    <td colspan="7" class="text-center">Belum ada hasil perhitungan</td>
+                                </tr>
+                                @endforelse
+                            </tbody>                          
                         </table>
                     </div>
                 </div>
