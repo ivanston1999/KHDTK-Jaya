@@ -34,18 +34,18 @@
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Creation Date
                                     </th>
+                                </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Action
-                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
                             @foreach ($users as $user)
                             <tr>
                                 <td>{{ $user->id }}</td>
+                                <td class="text-center">{{ $user->role }}</td>
                                 <td class="text-center">{{ $user->name }}</td>
                                 <td class="text-center">{{ $user->email }}</td>
-                                <td class="text-center">{{ $user->role }}</td>
                                 <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td>
                                 <td class="text-center">
                                 </td>

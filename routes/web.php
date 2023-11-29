@@ -52,9 +52,8 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('rtl');
 
 	//ADMIN - User Management
-	Route::get('user-management', 'adminController@show');
-	Route::post('/user-management', 'adminController@createUser');
-
+	Route::get('user-management', [adminController::class, 'show'])->middleware('role:admin');
+	Route::post('/user-management', [adminController::class, 'createUser'])->middleware('role:admin');
 
 	//
     Route::get('kalkulator', function () {
