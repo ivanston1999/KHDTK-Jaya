@@ -1,9 +1,8 @@
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
-  <div class="sidenav-header">
+  <div class="sidenav-header" style="z-index: 10;">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-    <a class="align-items-center d-flex m-0 navbar-brand text-wrap" href="{{ route('beranda') }}">
-      <img src="../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="...">
-      <span class="ms-3 font-weight-bold">Taripar Hub</span>
+    <a class="navbar-brand" href="{{ route('beranda') }}" style="z-index: 10;">
+      <img src="../assets/img/tariparLogo.png" style="max-width: 100%; max-height: 200px; margin-top:-70px" alt="logo">
     </a>
   </div>
   <hr class="horizontal dark mt-0">
@@ -51,7 +50,7 @@
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Fitur Admin</h6>
       </li> -->
 
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a class="nav-link {{ (Request::is('tables') ? 'active' : '') }}" href="{{ url('tables') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
@@ -60,7 +59,7 @@
           </div>
           <span class="nav-link-text ms-1">Persediaan</span>
         </a>
-      </li>
+      </li> --}}
 
       <!-- <li class="nav-item">
         <a class="nav-link {{ (Request::is('billing') ? 'active' : '') }}" href="{{ url('billing') }}">

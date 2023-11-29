@@ -13,6 +13,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\kalkulatorController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\SensorController;
+use App\Http\Controllers\UploadController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +30,7 @@ use App\Http\Controllers\SensorController;
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/', [HomeController::class, 'home']);
+	Route::get('/', [HomeController::class, 'home'])->name('beranda');
 	Route::get('beranda', function () {
 		return view('beranda');
 	})->name('beranda');
@@ -50,9 +52,8 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('rtl');
 
 	//ADMIN - User Management
-	Route::get('user-management', 'adminController@show');
-	Route::post('/user-management', 'adminController@createUser');
-
+	Route::get('user-management', [adminController::class, 'show'])->middleware('role:admin');
+	Route::post('/user-management', [adminController::class, 'createUser'])->middleware('role:admin');
 
 	//
     Route::get('kalkulator', function () {
@@ -79,9 +80,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('static-sign-up');
 	})->name('sign-up');
 
-	Route::get('upload-lahan', function () {
-		return view('upload-lahan');
-	})->name('upload-lahan');
+	Route::get('/upload-lahan', [uploadController::class, 'index'])->name('upload-lahan');
 
 	Route::get('upload-drone', function () {
 		return view('upload-drone');
@@ -133,4 +132,6 @@ Route::get('hasil', function () {
     return view('kalkulator/hasil');
 });
 
+Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
+Route::get('/admin', [adminController::class, 'index'])->name('admin');
 Route::get('/sensor', [SensorController::class, 'LineChart']);

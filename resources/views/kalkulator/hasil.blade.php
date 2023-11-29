@@ -1,5 +1,7 @@
 @extends('layouts.user_type.auth')
 
+@section('title', 'Kalkulator')
+
 @section('content')
 
 <div>
@@ -19,32 +21,31 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         No
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Komoditas
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Varietas
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Jarak Tanam
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Luas Lahan
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Tanggal Tanam
                                     </th>
-                                    <th class="text-center text-chamelcase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-secondary text-xl-start font-weight-bolder opacity-7">
                                         Action
                                     </th>
                                 </tr>
                             </thead>
-
                             <tbody>
-                                @foreach ($Kalkulators as $row => $kalkulator)
+                                @forelse ($Kalkulators as $row => $kalkulator)
                                 <tr>
                                     <td class="ps-4">
                                         {{ $row + 1 }}
@@ -64,11 +65,11 @@
                                     <td class="text-center">
                                         {{ $kalkulator->date }}
                                     </td>
-
-                                    <td class="text-center">
-                                        <a href="{{ url('detail/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="View Detail">
+                                    <td class="text-center horizontal-icons">
+                                        <a href="{{ url('detail/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View Detail">
                                             <i class="fas fa-user-edit text-secondary"></i>
                                         </a>
+<<<<<<< HEAD
                                         <span>
                                             <a href="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
                                                 <i class="fas fa-user-edit text-secondary"></i>
@@ -76,19 +77,25 @@
                                         </span>
 
                                         <form action="{{ route('kalkulators.destroy', $kalkulator->id) }}" method="POST">
+=======
+                                        <a href="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
+                                            <i class="fas fa-user-edit text-secondary"></i>
+                                        </a>
+                                        <form action="{{ route('kalkulators.destroy', $kalkulator->id) }}" method="POST" class="icon-link">
+>>>>>>> 72b61c51a37b86f704e8fb1e23d7ceacc77863c9
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="cursor-pointer fas fa-trash text-secondary">
                                             </button>
                                         </form>
-
-
                                     </td>
                                 </tr>
-
-
-                                @endforeach
-                            </tbody>
+                                @empty
+                                <tr>
+                                    <td colspan="7" class="text-center">Belum ada hasil perhitungan</td>
+                                </tr>
+                                @endforelse
+                            </tbody>                          
                         </table>
                     </div>
                 </div>
@@ -112,6 +119,7 @@
 
     body {
         font-family: 'Arial', sans-serif;
+        font-size: 14px;
     }
 
     h5 {
@@ -154,5 +162,19 @@
         color: #6c757d;
         margin-right: 5px;
     }
+
+    .text-xl-start {
+    font-size: 14px; 
+}
+
+    .horizontal-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .icon-link {
+    margin: 0 5px; 
+}
 </style>
 @endsection

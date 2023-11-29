@@ -22,10 +22,10 @@
             <label for="photo">Upload Foto</label>
             <div class="input-group">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="photo" name="photo" required>
+                    <input type="file" class="custom-file-input" id="photo" name="photo" accept=".jpg,.jpeg,.png" required>
                 </div>
             </div>
-        </div>
+        </div>        
 
         <button type="submit" class="btn btn-primary">Tambahkan</button>
     </form>
