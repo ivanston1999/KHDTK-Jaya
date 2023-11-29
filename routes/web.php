@@ -13,6 +13,8 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\kalkulatorController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\SensorController;
+use App\Http\Controllers\UploadController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -78,9 +80,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('static-sign-up');
 	})->name('sign-up');
 
-	Route::get('upload-lahan', function () {
-		return view('upload-lahan');
-	})->name('upload-lahan');
+	Route::get('/upload-lahan', [uploadController::class, 'index'])->name('upload-lahan');
 
 	Route::get('upload-drone', function () {
 		return view('upload-drone');
