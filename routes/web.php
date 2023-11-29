@@ -137,7 +137,7 @@ Route::get('hasil', function () {
 });
 
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
-Route::get('/admin', [adminController::class, 'index'])->name('admin');
+Route::get('/admin', [adminController::class, 'index'])->name('admin')->middleware('role:admin');
 Route::get('/sensor', [SensorController::class, 'LineChart']);
 
 //Upload Gambar lahan

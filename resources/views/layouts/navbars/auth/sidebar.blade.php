@@ -2,7 +2,7 @@
   <div class="sidenav-header" style="z-index: 10;">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="navbar-brand" href="{{ route('beranda') }}" style="z-index: 10;">
-      <img src="../assets/img/tariparLogo.png" style="max-width: 100%; max-height: 200px; margin-top:-70px" alt="logo">
+      <img src="../assets/img/tariparLogo.png" style="max-width: 100%; max-height: 150px; margin-top:-70px" alt="logo">
     </a>
   </div>
   <hr class="horizontal dark mt-0">
