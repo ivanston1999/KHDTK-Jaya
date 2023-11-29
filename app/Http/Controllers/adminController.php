@@ -59,7 +59,7 @@ class adminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
         $users = User::all();
         return view('admin/user-management', compact('users'));
