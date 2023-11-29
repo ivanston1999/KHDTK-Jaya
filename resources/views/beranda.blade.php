@@ -620,7 +620,7 @@
   </div>
 
 @endsection
-@push('dashboard')
+@push('beranda')
   <script>
     window.onload = function() {
       var ctx = document.getElementById("chart-bars").getContext("2d");
