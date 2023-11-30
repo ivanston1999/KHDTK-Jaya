@@ -42,6 +42,8 @@ Route::group(['middleware' => 'auth'], function () {
 		// ADD USER
 		Route::post('/user-management/add', [RegisterController::class, 'store'])->name('user');
 		
+		// REMOVE USER
+		Route::delete('/user-management/{id}/remove', [adminController::class, 'destroy'])->name('id');
 	});
 	
 	//USER

@@ -21,14 +21,8 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        ID
-                                    </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        role
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Name
+                                        Nama
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Email
@@ -46,23 +40,28 @@
                             </thead>
                             <tbody>
                             @foreach ($users as $user)
-                            <tr>
-                                <td>{{ $user->id }}</td>
-                                <td class="text-center">{{ $user->role }}</td>
-                                <td class="text-center">{{ $user->name }}</td>
-                                <td class="text-center">{{ $user->email }}</td>
-                                <td class="text-center">{{ $user->phone }}</td>
-                                <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn btn-success btn-sm">Edit</a>
-                                    <form action="# " method="POST" style="display:inline-block;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
+                                @if($user->id > 100)
+                                <tr>
+                                    <td>{{ $user->id }}</td>
+                                    <td class="text-center">{{ $user->role }}</td>
+                                    <td class="text-center">{{ $user->name }}</td>
+                                    <td class="text-center">{{ $user->email }}</td>
+                                    <td class="text-center">{{ $user->phone }}</td>
+                                    <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td>
+                                    <td class="text-center">
+                                        <a href="user-management/{{ $user->id }}/edit" class="btn btn-success btn-sm">Edit</a>
+                                        <form action="/user-management/{{ $user->id }}/remove" method="POST" style="display:inline-block;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" 
+                                                onclick="return confirm('Are you sure you want to remove user {{ $user->name }}?')">
+                                                Remove
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endif
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
