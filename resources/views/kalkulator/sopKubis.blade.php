@@ -13,7 +13,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'))
     <div class="container mx-auto  p-8 bg-white shadow-lg rounded-lg" style="border-radius: 40px; margin-top: -25px;">
         <h2 class="text-2xl font-bold text-center mb-6" style="margin-top: -40px;">SOP Pertanian Kubis </h2>
         <div class="overflow-x-auto relative" >
-            <table class="w-full text-sm text-left text-gray-800" style="margin-left: -28px;">
+            <table class="w-full text-sm text-left text-gray-800">
                 <thead class="text-1x1 text-gray-700 uppercase bg-gray-50">
                     <tr>
                         <th scope="col" class="py-3 px-6">Tanggan Pelaksanaan</th>
