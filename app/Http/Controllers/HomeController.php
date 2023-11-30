@@ -34,7 +34,9 @@ class HomeController extends Controller
                 $sensorStatus[$tableName] = 'Tidak Aktif';
             }
         }
-
+        if (auth()->user()->role === 'admin') {
+            return redirect()->route('admin');
+        }
         return view('beranda', [
             'sensorStatus' => $sensorStatus,
         ]);

@@ -18,7 +18,7 @@
             <ul class="navbar-nav justify-content-end">
             <li class="nav-item px-2 d-flex align-items-center">
                 <a href="{{ url('user-profile') }}" class="nav-link text-body font-weight-bold px-0">
-                    <i class="fa fa-user me-sm-1" style="font-size: 30px"></i>
+                    <i class="fa fa-user me-sm-1" style="font-size: 20px"></i>
                 </a>
             </li>
             <li class="nav-item d-xl-none px-2 d-flex align-items-center">

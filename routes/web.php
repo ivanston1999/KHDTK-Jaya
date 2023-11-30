@@ -14,8 +14,8 @@ use App\Http\Controllers\kalkulatorController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\SensorController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\DroneController;
 use App\Http\Controllers\CabaiController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -36,13 +36,28 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('beranda');
 	})->name('beranda');
 
-	Route::get('admin', function () {
-		return view('admin');
-	})->name('admin');
+	//ADMIN
+	Route::middleware(['role:admin'])->group(function () {
+		Route::get('/user-management', [adminController::class, 'show']);
 
-	Route::get('billing', function () {
-		return view('billing');
-	})->name('billing');
+		// ADD USER
+		Route::get('/user-management/add', [adminController::class, 'UserForm']);
+		Route::post('/user-management/add', [RegisterController::class, 'store'])->name('user');
+
+		// EDIT USER
+		Route::get('/user-management/{id}/edit', [adminController::class, 'editUser'])->name('id');
+
+		// REMOVE USER
+		Route::delete('/user-management/{id}/remove', [adminController::class, 'destroy'])->name('id');
+	});
+
+	//USER
+	Route::get('kalkulator', function () {
+		return view('kalkulator/kalkulator');
+	})->name('kalkulator');
+	Route::get('detail', function () {
+		return view('kalkulator/detail');
+	})->name('detail');
 
 	Route::get('profile', function () {
 		return view('profile');
@@ -87,13 +102,19 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('static-sign-up');
 	})->name('sign-up');
 
-	Route::get('/upload-lahan', [uploadController::class, 'index'])->name('upload-lahan');
+	Route::get('/upload-lahan', [UploadController::class, 'index'])->name('upload-lahan');
 
 	Route::get('upload-drone', function () {
-		return view('upload-drone');
+		return view('drone.index');
 	})->name('upload-drone');
 
-    Route::get('/logout', [SessionsController::class, 'destroy']);
+	Route::get('/drone', [DroneController::class, 'index'])->name('upload-drone');
+
+	// Route::get('upload-drone', function () {
+	// 	return view('drone.index');
+	// })->name('upload-drone');
+
+	Route::delete('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/user-profile', [InfoUserController::class, 'store']);
     Route::get('/login', function () {
@@ -157,4 +178,18 @@ Route::get('/uploads', [UploadController::class, 'index'])->name('uploads');
 
 Route::middleware('auth')->group(function () {
     Route::resource('uploads', UploadController::class);
+});
+
+//Upload Gambar Drone
+Route::middleware(['auth'])->group(function () {
+    Route::get('/drones/create', [DroneController::class, 'create'])->name('drones.create');
+    Route::post('/drones', [DroneController::class, 'store'])->name('drones.store');
+});
+
+Route::resource('drones', DroneController::class);
+Route::get('/drones', [DroneController::class, 'index'])->name('drones');
+
+
+Route::middleware('auth')->group(function () {
+    Route::resource('drones', DroneController::class);
 });
