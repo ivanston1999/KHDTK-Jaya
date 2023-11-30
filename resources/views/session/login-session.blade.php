@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login Form</title>
+<!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <style>
   /* Base styles */
   body, html {
@@ -27,18 +30,31 @@
     background: white;
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 4px 4px 4px rgba(0,0,0,0.1);
+    box-shadow: 2px 4px 4px rgb(153, 255, 153); 
     width: 100%;
     max-width: 400px;
   }
 
-  /* Input field styling */
+  /* Input field styling with icons */
+  .input-container {
+    position: relative;
+    margin: 10px 0;
+  }
+
+  .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #777;
+  }
+
   input[type="email"], input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 10px 0px; /* Adjust padding to accommodate icons */
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 50px;
+    text-align:center;
   }
 
   /* Button styling */
@@ -58,21 +74,32 @@
       margin: 20px;
     }
   }
+
+  #Logo-Taripar{
+    width: 170px;
+    margin-left: 110px;
+  }
 </style>
 </head>
 <body>
-
 <div class="flex-container">
   <div class="card">
-    <h2 style="text-align: center;">Taripar Hub</h2>
+    <div class="img">
+      <img src="../assets/img/LogoT.png" id="Logo-Taripar">
+    </div>
     <form method="POST" action="/session">
       @csrf
-      <!-- Token for CSRF protection should be included within form -->
-      <input type="email" name="email" id="email" placeholder="Email" required>
+      <div class="input-container">
+        <i class="fas fa-user input-icon"></i>
+        <input type="email" name="email" id="email" placeholder="Masukkan Email Anda" required>
+      </div>
       @error('email')
       <p class="text-danger text-xs mt-2"> {{$message}}</p>
       @enderror
-      <input type="password" name="password" id="password" placeholder="Password" required>
+      <div class="input-container">
+        <i class="fas fa-lock input-icon"></i>
+        <input type="password" name="password" id="password" placeholder="Masukkan Password Anda" required>
+      </div>
       @error('password')
       <p class="text-danger text-xs mt-2"> {{$password}}</p>
       @enderror
