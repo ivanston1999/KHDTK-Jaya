@@ -94,7 +94,7 @@
                     @include('layouts.footers.auth.footer')
                 </div>
             </main>
-        @elseif (\Request::is('upload-lahan'))  
+        @elseif (\Request::is('uploads'))  
             @include('layouts.navbars.admin.sidebar')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
                 @include('layouts.navbars.auth.nav')
@@ -103,7 +103,7 @@
                     @include('layouts.footers.auth.footer')
                 </div>
             </main>
-        @elseif (\Request::is('upload-drone'))  
+        @elseif (\Request::is('drones'))  
             @include('layouts.navbars.admin.sidebar')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
                 @include('layouts.navbars.auth.nav')
