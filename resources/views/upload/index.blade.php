@@ -77,5 +77,13 @@
     .img-fluid {
         width: 100px;
         weight: 100px;
+        height: auto; 
+        display: block;
+        margin: auto;
+    }
+
+    .table td, .table th {
+        vertical-align: middle;
+        text-align: center;
     }
 </style>
