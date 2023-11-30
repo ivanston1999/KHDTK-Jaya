@@ -98,4 +98,9 @@
     .text-sm {
         text-align: center;
     }
+
+    .img-fluid {
+        width: 100px;
+        weight: 100px;
+    }
 </style>
