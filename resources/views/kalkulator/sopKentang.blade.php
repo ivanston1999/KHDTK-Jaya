@@ -88,16 +88,12 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                                                                                                                         strtotime($ubahDate1 . ' + 7 days')
                                                                                                                     ); ?></td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Penanaman </td>
-                <td class="py-4 px-6">Benih (Bawang Merah)</td>
+                <td class="py-4 px-6">Benih (Kentang)</td>
                 <td><x-checkbox-form :checkboxId="'checkbox306'" /></td>
             </tr>
 
             <tr class="border-b">
-                <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;"><?php echo date(
-                                                                                                                        'd-m-Y',
-                                                                                                                        strtotime($ubahDate1 . ' + 7 days')
-                                                                                                                    ); ?>
-                </td>
+                <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;"></td>
                 <td class="py-4 px-6"></td>
                 <td class="py-4 px-6">Tenaga Kerja untuk Pemotongan Benih</td>
                 <td><x-checkbox-form :checkboxId="'checkbox307'" /></td>
@@ -159,7 +155,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 18 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida </td>
@@ -189,7 +185,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 20 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin </td>
@@ -218,7 +214,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 22 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida </td>
@@ -247,7 +243,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 25 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida </td>
@@ -277,7 +273,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 27 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -306,7 +302,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 29 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -336,14 +332,12 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 30 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Tambahan</td>
                 <td class="py-4 px-6">Tenaga Kerja untuk Pemupukan(Ghana)</td>
                 <td><x-checkbox-form :checkboxId="'checkbox332'" /></td>
-            </tr>
-
             </tr>
         </tbody>
 
@@ -352,7 +346,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 30 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pengolahan Tanah</td>
@@ -368,7 +362,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 31 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -397,7 +391,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 33 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -426,7 +420,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 35 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -455,7 +449,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 38 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -484,7 +478,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 40 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -513,7 +507,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 42 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -542,7 +536,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 45 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -571,7 +565,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 47 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -600,7 +594,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 49 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -629,7 +623,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 52 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -658,7 +652,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 54 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -687,7 +681,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 56 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -716,7 +710,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 59 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Tambahan</td>
@@ -730,7 +724,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 60 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -759,7 +753,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 62 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -788,7 +782,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 64 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -817,7 +811,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 67 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -846,7 +840,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 69 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -875,7 +869,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 71 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -904,7 +898,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 74 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -933,7 +927,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 76 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -962,7 +956,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 78 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -991,7 +985,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 81 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -1020,7 +1014,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 83 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -1049,7 +1043,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 85 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -1078,7 +1072,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 88 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -1107,7 +1101,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 90 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -1136,7 +1130,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 92 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -1165,7 +1159,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 95 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -1194,7 +1188,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 97 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -1223,7 +1217,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 99 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -1252,7 +1246,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 101 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -1281,7 +1275,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 103 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pemupukan Rutin</td>
@@ -1310,7 +1304,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 105 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
@@ -1339,60 +1333,17 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
                     <?php echo date(
                         'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
-                    ); ?>
-                </td>
-                <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Pestisida</td>
-                <td class="py-4 px-6">Tenaga Kerja untuk Neemastram</td>
-                <td><x-checkbox-form :checkboxId="'checkbox434'" /></td>
-            </tr>
-
-            <tr class="border-b">
-                <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 16px;">
-                </td>
-                <td class="py-4 px-6"></td>
-                <td class="py-4 px-6">Neemastram</td>
-                <td><x-checkbox-form :checkboxId="'checkbox434'" /></td>
-            </tr>
-            <tr class="border-b">
-                <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 16px;">
-                </td>
-                <td class="py-4 px-6"></td>
-                <td class="py-4 px-6">Tenaga Kerja untuk Neemastram</td>
-                <td><x-checkbox-form :checkboxId="'checkbox435'" /></td>
-            </tr>
-        </tbody>
-
-        <tbody class="bg-white">
-            <tr class="border-b">
-                <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">
-                    <?php echo date(
-                        'Y-m-d',
-                        strtotime($ubahDate1 . ' + 2 days')
+                        strtotime($ubahDate1 . ' + 111 days')
                     ); ?>
                 </td>
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Panen</td>
                 <td class="py-4 px-6">Tenaga Kerja untuk Panen</td>
-                <td><x-checkbox-form :checkboxId="'checkbox436'" /></td>
+                <td><x-checkbox-form :checkboxId="'checkbox434'" /></td>
             </tr>
         </tbody>
 
 
     </table>
-</div>
-</div>
-
-</body>
-
-
-</div>
-
-</body>
-
-</html>
-
-
-</table>
 </div>
 </div>
 

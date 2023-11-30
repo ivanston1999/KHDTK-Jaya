@@ -3,8 +3,8 @@
 @section('content')
 
 <body class="bg-gray-300">
-    <div class="container mx-auto p-8 bg-white shadow-lg rounded-lg" style="border-radius: 40px;">
-        <h2 class="text-3xl font-bold text-center mb-5" style="margin-top: -70px;">Detail  Kalkulator Pertanian Cabai</h2>
+    <div class="container" >
+        <h2 class="text-3xl font-bold text-center mb-5" style="margin-top: -40px;">Detail  Kalkulator Pertanian Cabai</h2>
         <div class="overflow-x-auto relative">
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-1x1 text-gray-700 uppercase bg-gray-50">
@@ -134,7 +134,7 @@
 </body>
 
 <body class="bg-gray-300">
-    <div class="container mx-auto my-3 p-8 bg-white shadow-lg rounded-lg" style="border-radius: 40px;">
+    <div class="container mx-auto my-3 p-8  rounded-lg" >
         <div class="overflow-x-auto relative">
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-1x1 text-gray-700 uppercase bg-gray-50">
@@ -183,7 +183,7 @@
 </html>
 
 <body class="bg-gray-300">
-    <div class="container mx-auto my-3 p-8 bg-white shadow-lg rounded-lg" style="border-radius: 40px;">
+    <div class="container mx-auto my-3 p-8  rounded-lg" >
         <h2 class="text-2xl font-bold text-center mb-6">Estimasi Populasi</h2>
         <div class="overflow-x-auto relative">
             <table class="w-full text-sm text-left text-gray-500">
@@ -218,11 +218,14 @@
         margin-left: auto;
         margin-right: auto;
         background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        border-radius: 30px;
         max-width: 1000px;
+        padding: 80px ;
+
 
     }
+
 
     table {
         width: 100%;
@@ -268,6 +271,25 @@
         margin: 4px 2px;
         cursor: pointer;
     }
+    .back-button-container {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
 </style>
 
 
