@@ -18,15 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('role');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('role');
             $table->string('password');
             $table->string('phone')->nullable();
             $table->rememberToken();
             $table->timestamps();
-        });
-
-        Schema::table('users', function(Blueprint $table) {
-            DB::statement("ALTER TABLE users AUTO_INCREMENT = 100;");
         });
     }
 

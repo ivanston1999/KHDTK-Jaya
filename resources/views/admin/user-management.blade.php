@@ -28,26 +28,28 @@
                                         Email
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Phone
+                                        No. Telepon
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Creation Date
+                                        Tanggal Dibuat
+                                    </th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        Tanggal Diperbarui
                                     </th>
                                 </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Action
+                                        Opsi
                                 </tr>
                             </thead>
                             <tbody>
                             @foreach ($users as $user)
                                 @if($user->id > 100)
                                 <tr>
-                                    <td>{{ $user->id }}</td>
-                                    <td class="text-center">{{ $user->role }}</td>
                                     <td class="text-center">{{ $user->name }}</td>
                                     <td class="text-center">{{ $user->email }}</td>
                                     <td class="text-center">{{ $user->phone }}</td>
                                     <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td>
+                                    <td class="text-center">{{ $user->updated_at->format('d/m/Y') }}</td>
                                     <td class="text-center">
                                         <a href="user-management/{{ $user->id }}/edit" class="btn btn-success btn-sm">Edit</a>
                                         <form action="/user-management/{{ $user->id }}/remove" method="POST" style="display:inline-block;">
@@ -55,7 +57,7 @@
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm" 
                                                 onclick="return confirm('Are you sure you want to remove user {{ $user->name }}?')">
-                                                Remove
+                                                Hapus
                                             </button>
                                         </form>
                                     </td>
