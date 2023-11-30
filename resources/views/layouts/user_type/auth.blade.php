@@ -46,6 +46,7 @@
                         @include('layouts.footers.auth.footer')
                     </div>
                 </main>
+                @endif
             @else
             @include('layouts.navbars.admin.sidebar')
                 <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
