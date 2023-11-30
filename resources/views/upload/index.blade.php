@@ -9,7 +9,7 @@
             <h1>Upload Gambar Lahan</h1>
         </div>
         <div class="col-12 col-md-4 text-md-right">
-            <a href="{{ route('uploads.create') }}" class="btn btn-primary" style="font-size: 14px; text-transform: lowercase;">+ Tambahkan</a>
+            <a href="{{ route('uploads.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+ Tambahkan</a>
         </div>
     </div>
     <hr>
@@ -39,13 +39,19 @@
                                             <img class="img-fluid w-48 h-48" src="{{ Storage::url($post->featured_image) }}" alt="{{ $post->title }}">
                                         </td>
                                         <td>
-                                            <a href="{{ route('uploads.show', $post->id) }}" class="btn btn-info mr-2">Tampilkan</a>
-                                            <a href="{{ route('uploads.edit', $post->id) }}" class="btn btn-warning mr-2">Edit</a>
-                                            <form method="post" action="{{ route('uploads.destroy', $post->id) }}" class="d-inline">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit" class="btn btn-danger">Hapus</button>
-                                            </form>
+                                            <a href="{{ route('uploads.show', $post->id) }}" class="btn btn-info mr-2" style="text-transform: none;">
+                                                <i class="fa fa-eye"></i>
+                                              </a>
+                                              <a href="{{ route('uploads.edit', $post->id) }}" class="btn btn-warning mr-2" style="text-transform: none;">
+                                                <i class="fa fa-pencil-alt"></i>
+                                              </a>
+                                              <form method="post" action="{{ route('uploads.destroy', $post->id) }}" class="d-inline">
+                                                  @csrf
+                                                  @method('delete')
+                                                  <button type="submit" class="btn btn-danger" style="text-transform: none;">
+                                                      <i class="fa fa-trash"></i>
+                                                  </button>
+                                              </form>                                              
                                         </td>
                                     </tr>
                                 @endforeach
@@ -87,5 +93,9 @@
 
     .table-responsive {
         overflow-x: auto;
+    }
+
+    .text-sm {
+        text-align: center;
     }
 </style>
