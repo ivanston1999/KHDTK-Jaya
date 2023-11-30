@@ -25,13 +25,16 @@
                                         ID
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        role
+                                    </th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Name
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Email
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        role
+                                        Phone
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Creation Date
@@ -45,9 +48,10 @@
                             @foreach ($users as $user)
                             <tr>
                                 <td>{{ $user->id }}</td>
+                                <td class="text-center">{{ $user->role }}</td>
                                 <td class="text-center">{{ $user->name }}</td>
                                 <td class="text-center">{{ $user->email }}</td>
-                                <td class="text-center">{{ $user->role }}</td>
+                                <td class="text-center">{{ $user->phone }}</td>
                                 <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td>
                                 <td class="text-center">
                                     <a href="#" class="btn btn-success btn-sm">Edit</a>

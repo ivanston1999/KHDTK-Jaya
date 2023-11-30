@@ -105,13 +105,13 @@
       @enderror
       <div style="margin: 10px 0;">
         <input type="checkbox" id="rememberMe" checked>
-        <label for="rememberMe">Remember me</label>
+        <label for="rememberMe">Ingat saya</label>
       </div>
-      <button type="submit" class="login-button">Login</button>
+      <button type="submit" class="login-button">Masuk</button>
     </form>
     <p style="text-align: center;">
-      Don't have an account?
-      <a href="register" style="color: #4CAF50; font-weight: bold;">Sign up</a>
+      Belum mempunyai akun?
+      <a href="https://wa.me/81360824551" style="color: #4CAF50; font-weight: bold;">Hubungi nomor ini</a>
     </p>
   </div>
 </div>

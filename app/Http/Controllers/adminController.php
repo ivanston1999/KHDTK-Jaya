@@ -42,7 +42,7 @@ class adminController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function addUserForm()
+    public function UserForm()
     {
         return view('admin/add-user');
     }
