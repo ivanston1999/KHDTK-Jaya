@@ -11,10 +11,10 @@
         <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
           <div class="card z-index-0">
             <div class="card-header text-center pt-4">
-              <h5>Register user</h5>
+              <h5>Add User</h5>
             </div>
             <div class="card-body">
-              <form role="form text-left" method="POST" action="/register">
+              <form role="form text-left" method="POST" action="/user-management/add">
                 @csrf
                 <div class="mb-3">
                   <input type="text" class="form-control" placeholder="Name" name="name" id="name" aria-label="Name" aria-describedby="name" value="{{ old('name') }}">
@@ -35,9 +35,8 @@
                   @enderror
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Register</button>
+                  <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Confirm</button>
                 </div>
-                <p class="text-sm mt-3 mb-0">Already have an account? <a href="login" class="text-dark font-weight-bolder">Sign in</a></p>
               </form>
             </div>
           </div>

@@ -36,24 +36,55 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('beranda');
 	})->name('beranda');
 
-	Route::get('admin', function () {
-		return view('admin');	
-	})->name('admin');
-
-	//ADMIN - User Management
-	Route::get('/user-management', [adminController::class, 'show'])->middleware('role:admin');
-	// ADD USER
-	Route::get('/user-management/add', [adminController::class, 'addUserForm'])->middleware('role:admin');
-	Route::post('/user-management', [adminController::class, 'addUser'])->middleware('role:admin');
+	//ADMIN
+	Route::middleware(['role:admin'])->group(function () {
+		Route::get('/user-management', [adminController::class, 'show']);
+		Route::get('/user-management/add', [adminController::class, 'UserForm']);
+		// ADD USER
+		Route::post('/user-management/add', [RegisterController::class, 'store'])->name('user');
+		
+		// REMOVE USER
+		Route::delete('/user-management/{id}/remove', [adminController::class, 'destroy'])->name('id');
+	});
 	
-	//
+	//USER
 	Route::get('kalkulator', function () {
 		return view('kalkulator/kalkulator');
 	})->name('kalkulator');
-
 	Route::get('detail', function () {
 		return view('kalkulator/detail');
 	})->name('detail');
+
+	Route::resource('kalkulators', kalkulatorController::class);
+	Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
+
+	//DetailCOntroller
+	Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
+	Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
+
+	Route::get('hasil', function () { 
+		return view('kalkulator/hasil');
+	});
+	// Route::middleware(['role:user'])->group(function() {
+	// 	Route::get('kalkulator', function () {
+	// 		return view('kalkulator/kalkulator');
+	// 	})->name('kalkulator');
+	// 	Route::get('detail', function () {
+	// 		return view('kalkulator/detail');
+	// 	})->name('detail');
+
+	// 	Route::resource('kalkulators', kalkulatorController::class);
+	// 	Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
+
+	// 	//DetailCOntroller
+	// 	Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
+	// 	Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
+
+	// 	Route::get('hasil', function () { 
+	// 		return view('kalkulator/hasil');
+	// 	});
+	// });
+
 
 	Route::get('static-sign-in', function () {
 		return view('static-sign-in');
@@ -83,11 +114,9 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('sign-up');
 });
 
-
-
 Route::group(['middleware' => 'guest'], function () {
-	Route::get('/register', [RegisterController::class, 'create']);
-	Route::post('/register', [RegisterController::class, 'store']);
+	// Route::get('/register', [RegisterController::class, 'create']);
+	// Route::post('/register', [RegisterController::class, 'store']);
 	Route::get('/login', [SessionsController::class, 'create']);
 	Route::post('/session', [SessionsController::class, 'store']);
 	Route::get('/login/forgot-password', [ResetController::class, 'create']);
@@ -107,18 +136,6 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-Route::resource('kalkulators', kalkulatorController::class);
-Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
-
-//DetailCOntroller
-Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
-Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
-
-
-
-Route::get('hasil', function () {
-	return view('kalkulator/hasil');
-});
 
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
 Route::get('/admin', [adminController::class, 'index'])->name('admin')->middleware('role:admin');
