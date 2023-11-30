@@ -6,10 +6,10 @@
 <div class="container-fluid">
     <div class="row mb-3">
         <div class="col-12 col-md-8">
-            <h1>Upload Gambar Tanaman</h1>
+            <h1>Upload Gambar Lahan</h1>
         </div>
         <div class="col-12 col-md-4 text-md-right">
-            <a href="{{ route('uploads.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+ Tambahkan</a>
+            <a href="{{ route('drones.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+ Tambahkan</a>
         </div>
     </div>
     <hr>
@@ -22,32 +22,32 @@
                         <table class="table table-bordered text-sm">
                             <thead>
                                 <tr>
-                                    <th>Nama Tanaman</th>
+                                    <th>Nama Lahan</th>
                                     <th>Created At</th>
                                     <th>Updated At</th>
-                                    <th>Gambar Tanaman</th>
+                                    <th>Gambar Lahan</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($uploads as $post)
+                                @foreach ($drones as $post)
                                     <tr>
-                                        <td>{{ $post->title }}</td>
+                                        <td>{{ $post->nama }}</td>
                                         <td>{{ $post->created_at }}</td>
                                         <td>{{ $post->updated_at }}</td>
                                         <td>
-                                            <img class="img-fluid w-48 h-48" src="{{ Storage::url($post->featured_image) }}" alt="{{ $post->title }}">
+                                            <img class="img-fluid w-48 h-48" src="{{ Storage::url($post->gambar) }}" alt="{{ $post->nama }}">
                                         </td>
                                         <td>
-                                            <a href="{{ route('uploads.show', $post->id) }}" class="btn" style="text-transform: none;" title="Lihat">
+                                            <a href="{{ route('drones.show', $post->id) }}" class="btn" style="text-transform: none;" title="Lihat">
                                                 <i class="fa fa-eye"></i>
                                             </a>
-                                            <a href="{{ route('uploads.edit', $post->id) }}" class="btn" style="text-transform: none;" title="Edit">
+                                            <a href="{{ route('drones.edit', $post->id) }}" class="btn" style="text-transform: none;" title="Edit">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
-                                            <form method="post" action="{{ route('uploads.destroy', $post->id) }}" class="d-inline">
+                                            <form method="POST" action="{{ route('drones.destroy', $post->id) }}" class="d-inline">
                                                 @csrf
-                                                @method('delete')
+                                                @method('DELETE')
                                                 <button type="submit" class="btn" style="text-transform: none;" title="Hapus">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
@@ -86,9 +86,4 @@
         vertical-align: middle;
         text-align: center;
     }
-
-    .text-md-right {
-        text-align: right;
-    }
-
 </style>

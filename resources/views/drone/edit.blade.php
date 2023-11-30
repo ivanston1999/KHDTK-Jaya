@@ -1,6 +1,6 @@
 @extends('layouts.user_type.auth')
 
-@section('title', 'Edit')
+@section('title', 'Taripar Hub')
 
 @section('content')
 
@@ -23,7 +23,7 @@
                         @endisset
 
                         <div class="mb-3">
-                            <label for="title" class="form-label">Nama Tanaman</label>
+                            <label for="title" class="form-label">Nama Lahan</label>
                             <input id="title" name="title" type="text" class="form-control" value="{{ $post->title ?? old('title') }}" required autofocus>
                             @error('title')
                                 <div class="mt-2 text-danger">{{ $message }}</div>
@@ -31,7 +31,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="content" class="form-label">Deksripsi Tanaman</label>
+                            <label for="content" class="form-label">Deskripsi</label>
                             <textarea id="content" name="content" class="form-control" required autofocus>{{ $post->content ?? old('content') }}</textarea>
                             @error('content')
                                 <div class="mt-2 text-danger">{{ $message }}</div>
@@ -39,17 +39,17 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="featured_image" class="form-label">Gambar Tanaman</label>
+                            <label for="featured_image" class="form-label">Gambar Lahan</label>
                             <input type="file" id="featured_image" name="featured_image" accept=".jpg, .jpeg, .png" class="form-control">
                             <div class="shrink-0 my-2">
-                                <img id="featured_image_preview" class="img-fluid rounded-md" src="{{ isset($post) ? Storage::url($post->featured_image) : '' }}" alt="">
+                                <img id="featured_image_preview" class="img-fluid rounded-md" src="{{ isset($post) ? Storage::url($post->featured_image) : '' }}" alt="Featured image preview">
                             </div>
                             @error('featured_image')
                                 <div class="mt-2 text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-primary my-3">Simpan</button>
+                        <button type="submit" class="btn btn-primary my-3   ">Simpan</button>
                     </form>
                 </div>
             </div>
