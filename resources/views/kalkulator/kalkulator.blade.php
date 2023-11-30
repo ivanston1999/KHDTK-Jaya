@@ -6,11 +6,11 @@
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; margin-top: -30px; ">
     <div class="wrapper">
         <div class="form">
-<div style="text-align: end;">
-      <a href="{{ route('kalkulators') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button" >Lihat Hasil </a>
-</div>
-<h1 class="title">Kalkulator Pertanian</h1>
-            <form  action="{{ route('kalkulators.store') }}" method="POST" class="myform">
+            <div style="text-align: end;">
+                <a href="{{ route('kalkulators') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">Lihat Hasil </a>
+            </div>
+            <h1 class="title">Kalkulator Pertanian</h1>
+            <form action="{{ route('kalkulators.store') }}" method="POST" class="myform">
                 @csrf
 
                 <div class="control-from">
@@ -34,15 +34,15 @@
                 <div class="control-from">
                     <label for="jarak">Jarak Tanam</label>
                     <select id="jarak" name="jarak" required>
-                       <option value="">Pilih Jarak Tanam</option>
-                            <option value="70 x 20">70 x 20 cm</option>
-                            <option value="70 x 25">70 x 25 cm</option>
+                        <option value="">Pilih Jarak Tanam</option>
+                        <option value="70 x 20">70 x 20 cm</option>
+                        <option value="70 x 25">70 x 25 cm</option>
                     </select>
                 </div>
 
                 <div class="control-from">
-                    <label for="luas" >Luas Lahan</label>
-                    <input type="text" name="luas" id="luas"  value="" required>
+                    <label for="luas">Luas Lahan</label>
+                    <input type="text" name="luas" id="luas" value="" required>
                 </div>
 
                 <div class="full-width">
@@ -125,7 +125,7 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         /* Optional: adds a slight shadow for depth */
         appearance: none;
-           height: 50px;
+        height: 50px;
     }
 
     .myform input {

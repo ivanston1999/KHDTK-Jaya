@@ -71,7 +71,7 @@
                                                 <i class="fas fa-user-edit text-bold"></i>
                                             </a>
                                             <a href="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
-                                                
+
                                                 <i class="fas fa-user-edit text-bold"></i>
                                             </a>
                                         <form action="{{ route('kalkulators.destroy', $kalkulator->id) }}" method="POST" class="icon-link">

@@ -16,7 +16,7 @@
                 @include('layouts.navbars.auth.nav')
                 @yield('content')
             </div>
-        @elseif (\Request::is('admin'))  
+        @elseif (\Request::is('sensor'))  
             @include('layouts.navbars.admin.sidebar')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
                 @include('layouts.navbars.auth.nav')
@@ -25,6 +25,27 @@
                     @include('layouts.footers.auth.footer')
                 </div>
             </main>
+
+            @elseif (\Request::is('kalkulator'))  
+            @include('layouts.navbars.admin.sidebar')
+            <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
+                @include('layouts.navbars.auth.nav')
+                <div class="container-fluid py-4">
+                    @yield('content')
+                    @include('layouts.footers.auth.footer')
+                </div>
+            </main>
+
+            @elseif (\Request::is('admin'))  
+            @include('layouts.navbars.admin.sidebar')
+            <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
+                @include('layouts.navbars.auth.nav')
+                <div class="container-fluid py-4">
+                    @yield('content')
+                    @include('layouts.footers.auth.footer')
+                </div>
+            </main>
+
         @elseif (\Request::is('persediaan'))  
             @include('layouts.navbars.admin.sidebar')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
