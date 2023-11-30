@@ -36,24 +36,8 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('beranda');
 
 	Route::get('admin', function () {
-		return view('admin');
+		return view('admin');	
 	})->name('admin');
-
-	Route::get('billing', function () {
-		return view('billing');
-	})->name('billing');
-
-	Route::get('profile', function () {
-		return view('profile');
-	})->name('profile');
-
-	Route::get('uploads', function () {
-		return view('upload/index');
-	})->name('upload');
-
-	Route::get('rtl', function () {
-		return view('rtl');
-	})->name('rtl');
 
 	//ADMIN - User Management
 	Route::get('/user-management', [adminController::class, 'show'])->middleware('role:admin');
@@ -62,27 +46,19 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/user-management', [adminController::class, 'addUser'])->middleware('role:admin');
 	
 	//
-    Route::get('kalkulator', function () {
+	Route::get('kalkulator', function () {
 		return view('kalkulator/kalkulator');
 	})->name('kalkulator');
 
-      Route::get('detail', function () {
+	Route::get('detail', function () {
 		return view('kalkulator/detail');
 	})->name('detail');
 
-	Route::get('tables', function () {
-		return view('tables');
-	})->name('tables');
-
-    Route::get('virtual-reality', function () {
-		return view('virtual-reality');
-	})->name('virtual-reality');
-
-    Route::get('static-sign-in', function () {
+	Route::get('static-sign-in', function () {
 		return view('static-sign-in');
 	})->name('sign-in');
 
-    Route::get('static-sign-up', function () {
+	Route::get('static-sign-up', function () {
 		return view('static-sign-up');
 	})->name('sign-up');
 
@@ -92,10 +68,10 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('upload-drone');
 	})->name('upload-drone');
 
-    Route::get('/logout', [SessionsController::class, 'destroy']);
+	Route::delete('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/user-profile', [InfoUserController::class, 'store']);
-    Route::get('/login', function () {
+	Route::get('/login', function () {
 		return view('beranda');
 	})->name('sign-up');
 });
@@ -103,24 +79,23 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 Route::group(['middleware' => 'guest'], function () {
-    Route::get('/register', [RegisterController::class, 'create']);
-    Route::post('/register', [RegisterController::class, 'store']);
-    Route::get('/login', [SessionsController::class, 'create']);
-    Route::post('/session', [SessionsController::class, 'store']);
+	Route::get('/register', [RegisterController::class, 'create']);
+	Route::post('/register', [RegisterController::class, 'store']);
+	Route::get('/login', [SessionsController::class, 'create']);
+	Route::post('/session', [SessionsController::class, 'store']);
 	Route::get('/login/forgot-password', [ResetController::class, 'create']);
 	Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
 	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
 	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
-
 });
 
 Route::get('/login', function () {
-    return view('session/login-session');
+	return view('session/login-session');
 })->name('login');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
-    Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+	Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+	Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 });
 
 
@@ -128,14 +103,14 @@ Route::middleware(['auth'])->group(function () {
 Route::resource('kalkulators', kalkulatorController::class);
 Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
 
- //DetailCOntroller
+//DetailCOntroller
 Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
 Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
 
 
 
 Route::get('hasil', function () {
-    return view('kalkulator/hasil');
+	return view('kalkulator/hasil');
 });
 
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
