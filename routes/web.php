@@ -14,6 +14,7 @@ use App\Http\Controllers\kalkulatorController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\SensorController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\DroneController;
 
 
 /*
@@ -62,11 +63,17 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('static-sign-up');
 	})->name('sign-up');
 
-	Route::get('/upload-lahan', [uploadController::class, 'index'])->name('upload-lahan');
+	Route::get('/upload-lahan', [UploadController::class, 'index'])->name('upload-lahan');
 
 	Route::get('upload-drone', function () {
-		return view('upload-drone');
+		return view('drone.index');
 	})->name('upload-drone');
+
+	Route::get('/drone', [DroneController::class, 'index'])->name('upload-drone');
+
+	// Route::get('upload-drone', function () {
+	// 	return view('drone.index');
+	// })->name('upload-drone');
 
 	Route::delete('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
@@ -129,4 +136,18 @@ Route::get('/uploads', [UploadController::class, 'index'])->name('uploads');
 
 Route::middleware('auth')->group(function () {
     Route::resource('uploads', UploadController::class);
+});
+
+//Upload Gambar Drone
+Route::middleware(['auth'])->group(function () {
+    Route::get('/drones/create', [DroneController::class, 'create'])->name('drones.create');
+    Route::post('/drones', [DroneController::class, 'store'])->name('drones.store');
+});
+
+Route::resource('drones', DroneController::class);
+Route::get('/drones', [DroneController::class, 'index'])->name('drones');
+
+
+Route::middleware('auth')->group(function () {
+    Route::resource('drones', DroneController::class);
 });

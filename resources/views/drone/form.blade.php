@@ -16,35 +16,35 @@
         <div class="col-12">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <form method="POST" action="{{ isset($post) ? route('uploads.update', $post->id) : route('uploads.store') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
+                    <form method="POST" action="{{ isset($post) ? route('drones.update', $post->id) : route('drones.store') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
                         @csrf
                         @isset($post)
-                            @method('put')
+                            @method('PUT')
                         @endisset
 
                         <div class="mb-3">
-                            <label for="title" class="form-label">Nama Tanaman</label>
-                            <input id="title" name="title" type="text" class="form-control" value="{{ $post->title ?? old('title') }}" required autofocus>
-                            @error('title')
+                            <label for="nama" class="form-label">Nama Lahan</label>
+                            <input id="nama" name="nama" type="text" class="form-control" value="{{ $post->nama ?? old('nama') }}" required autofocus>
+                            @error('nama')
                                 <div class="mt-2 text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="mb-3">
-                            <label for="content" class="form-label">Deksripsi Tanaman</label>
-                            <textarea id="content" name="content" class="form-control" required autofocus>{{ $post->content ?? old('content') }}</textarea>
-                            @error('content')
+                            <label for="deskripsi" class="form-label">Lokasi lahan</label>
+                            <textarea id="deskripsi" name="deskripsi" class="form-control" required autofocus>{{ $post->deskripsi ?? old('deskripsi') }}</textarea>
+                            @error('deskripsi')
                                 <div class="mt-2 text-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="mb-3">
-                            <label for="featured_image" class="form-label">Gambar Tanaman</label>
-                            <input type="file" id="featured_image" name="featured_image" accept=".jpg, .jpeg, .png" class="form-control">
+                            <label for="gambar" class="form-label">Gambar Lahan</label>
+                            <input type="file" id="gambar" name="gambar" accept=".jpg, .jpeg, .png" class="form-control">
                             <div class="shrink-0 my-2">
-                                <img id="featured_image_preview" class="img-fluid rounded-md" src="{{ isset($post) ? Storage::url($post->featured_image) : '' }}" alt="">
+                                <img id="gambar_preview" class="img-fluid rounded-md" src="{{ isset($post) ? Storage::url($post->gambar) : '' }}" alt="">
                             </div>
-                            @error('featured_image')
+                            @error('gambar')
                                 <div class="mt-2 text-danger">{{ $message }}</div>
                             @enderror
                         </div>
@@ -58,10 +58,10 @@
 </div>
 
 <script>
-    document.getElementById('featured_image').onchange = function(evt) {
+    document.getElementById('gambar').onchange = function(evt) {
         const [file] = this.files;
         if (file) {
-            document.getElementById('featured_image_preview').src = URL.createObjectURL(file);
+            document.getElementById('gambar_preview').src = URL.createObjectURL(file);
         }
     }
 </script>
