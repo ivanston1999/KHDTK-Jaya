@@ -13,7 +13,7 @@
                         <div>
                             <h5 class="mb-0">Hasil Perhitungan</h5>
                         </div >
-                        <a href="{{ route('kalkulators.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button" >+&nbsp; Hitung</a>
+                        <a href="{{ route('kalkulators.create') }}" class="btn bg-black btn-sm mb-0" type="button" >+&nbsp; Hitung</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -100,13 +100,15 @@
     .card {
         margin: 1rem;
         padding: 1rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
     }
 
     .card-header {
         background-color: #f8f9fa;
         border-bottom: 1px solid #eaecef;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
     }
 
     body {

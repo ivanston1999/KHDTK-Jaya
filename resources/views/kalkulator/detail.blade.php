@@ -7,8 +7,8 @@
 
 
 <body class="bg-gray-300" >
-    <div class="container mx-auto  p-8 bg-white shadow-lg rounded-lg" style="border-radius: 40px;">
-        <h2 class="text-3xl font-bold text-center mb-5" style="margin-top: -75px;">Detail Kalkulator Pertanian Bawang Merah </h2>
+    <div class="container">
+        <h2 class="text-3xl font-bold text-center mb-5" style="margin-top: -40px;">Detail Kalkulator Pertanian Bawang Merah </h2>
         <div class="overflow-x-auto relative">
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-1x1 text-gray-700 uppercase bg-gray-50">
@@ -114,7 +114,7 @@
 </body>
 
 <body class="bg-gray-300">
-    <div class="container mx-auto my-3 p-8 bg-white shadow-lg rounded-lg" style="border-radius: 40px; ">
+    <div class="container mx-auto my-3 p-8  rounded-lg">
         <div class="overflow-x-auto relative" style="margin-top: -55px;">
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-1x1 text-gray-700 uppercase bg-gray-50">
@@ -163,7 +163,7 @@
 </html>
 
 <body class="bg-gray-300">
-    <div class="container mx-auto my-3 p-8 bg-white shadow-lg rounded-lg" style="border-radius: 40px; ">
+    <div class="container mx-auto my-3 p-8 ] rounded-lg" >
         <h2 class="text-2xl font-bold text-center mb-6" style="margin-top: -55px;">Estimasi Populasi</h2>
         <div class="overflow-x-auto relative">
             <table class="w-full text-sm text-left text-gray-500">
@@ -191,56 +191,86 @@
 
 <style>
     body {
-    background-color: #f4f4f4;
-    font-family: 'Arial', sans-serif;
-}
-.container {
-    margin-top: -20px; /* Adjust this value as needed */
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    max-width: 1000px;
+        background-color: #f4f4f4;
+        font-family: 'Arial', sans-serif;
+    }
 
+    .container {
+        margin-top: -20px;
+        /* Adjust this value as needed */
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        border-radius: 30px;
+        max-width: 1000px;
+        padding: 80px ;
+
+
+    }
+
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    thead th {
+        background-color: #e0e0e0;
+        color: #333;
+        font-weight: bold;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    tbody td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .text-gray-700 {
+        color: #333;
+    }
+
+    .button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .back-button-container {
+    margin-top: 10px;
+    margin-left: 10px;
 }
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-thead th {
-    background-color: #e0e0e0;
-    color: #333;
-    font-weight: bold;
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-tbody td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-.text-gray-700 {
-    color: #333;
-}
-.button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
+
+.back-button {
     display: inline-block;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
     font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
 }
 
 </style>
