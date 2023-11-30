@@ -68,7 +68,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('upload-drone');
 	})->name('upload-drone');
 
-	Route::get('/logout', [SessionsController::class, 'destroy']);
+	Route::delete('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/user-profile', [InfoUserController::class, 'store']);
 	Route::get('/login', function () {
