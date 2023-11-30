@@ -42,10 +42,9 @@ class adminController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function createUser()
+    public function addUserForm()
     {
-        $users = User::all();
-        return view('admin/user-management', compact('users'));
+        return view('admin/add-user');
     }
 
     /**

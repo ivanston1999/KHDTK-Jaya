@@ -11,7 +11,7 @@
                         <div>
                             <h5 class="mb-0">All Users</h5>
                         </div>
-                        <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New User</a>
+                        <a href="user-management/add" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New User</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -48,6 +48,12 @@
                                 <td class="text-center">{{ $user->email }}</td>
                                 <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td>
                                 <td class="text-center">
+                                    <a href="#" class="btn btn-success btn-sm">Edit</a>
+                                    <form action="# " method="POST" style="display:inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
