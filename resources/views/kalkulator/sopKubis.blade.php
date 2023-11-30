@@ -8,21 +8,21 @@ $date1 = $kalkulator->date;
 $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'))
 ?>
 
+<div class="table-container">
+    <div class="card-title">
+        <h1 class="table-title">SOP Pertanian Kubis</h1>
+    </div>
+    <table class="w-full text-sm text-left text-gray-800">
+        <thead class="text-1x1 text-gray-700 uppercase bg-gray-50">
+            <tr>
+                <th scope="col" class="py-3 px-6 tanggal-pelaksanaan">Tanggal Pelaksanaan</th>
 
-<body class="bg-gray-300">
-    <div class="container mx-auto  p-8 bg-white shadow-lg rounded-lg" style="border-radius: 40px; margin-top: -25px;">
-        <h2 class="text-2xl font-bold text-center mb-6" style="margin-top: -40px;">SOP Pertanian Kubis </h2>
-        <div class="overflow-x-auto relative" >
-            <table class="w-full text-sm text-left text-gray-800">
-                <thead class="text-1x1 text-gray-700 uppercase bg-gray-50">
-                    <tr>
-                        <th scope="col" class="py-3 px-6">Tanggan Pelaksanaan</th>
-                        <th scope="col" class="py-3 px-6">Aktivitas</th>
-                        <th scope="col" class="py-3 px-6">Item</th>
-                        <th scope="col" class="py-3 px-6">Status</th>
+                <th scope="col" class="py-3 px-6">Aktivitas</th>
+                <th scope="col" class="py-3 px-6">Item</th>
+                <th scope="col" class="py-3 px-5 status-column">Status</th>
 
-                    </tr>
-                </thead>
+            </tr>
+        </thead>
 
                 <tbody class="bg-white">
                     <tr class="border-b">
@@ -621,46 +621,70 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'))
 </body>
 
 <style>
+    .table-container {
+        overflow-x: auto;
+    }
+
     table {
         width: 100%;
         border-collapse: collapse;
-        margin: 20px 0;
+        text-align: left;
+        color: #333;
+    }
+
+    thead {
+        background-color: #EEE;
     }
 
     th,
     td {
-        padding: 8px;
-        border: 1px solid #ddd;
-        text-align: left;
+        padding: 10px;
+        border: 1px solid #CCC;
     }
 
-    thead {
-        background-color: #f2f2f2;
+    tbody tr:nth-child(odd) {
+        background-color: #FFF;
     }
 
-    tr:hover {
-        background-color: #eaeaea;
+    tbody tr:nth-child(even) {
+        background-color: #F9F9F9;
     }
 
-    body {
-        font-family: Arial, sans-serif;
+    th {
+        font-weight: bold;
     }
 
-    .container {
-        width: 95%;
-        margin: auto;
-        background-color: #fff;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
+    input[type="checkbox"] {
+        /* Style as needed */
     }
 
-    @media screen and (max-width: 600px) {
-        table {
-            width: 100%;
-            display: block;
-            overflow-x: auto;
-        }
+    .card-title {
+        background-color: #333;
+        /* Dark grey background */
+        border-radius: 8px;
+        /* Rounded corners */
+        padding: 15px;
+        /* Spacing inside the card */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        /* Slightly darker shadow for depth */
+        margin-bottom: 20px;
+        /* Space below the card */
+        text-align: center;
+        /* Center the title */
+    }
+
+    .table-title {
+        margin: 0;
+        /* Remove default margin */
+        font-size: 24px;
+        /* Large font size for the title */
+        color: #fff;
+        /* Light text color for contrast */
+    }
+
+    th.tanggal-pelaksanaan {
+        width: 30%;
+        /* Atau nilai spesifik lain sesuai kebutuhan */
     }
 </style>
 @endsection

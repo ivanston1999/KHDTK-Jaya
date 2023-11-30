@@ -5,7 +5,7 @@
 @section('content')
 
 <body class="bg-gray-300">
-    
+
     <div class="container mx-auto p-8 bg-white shadow-lg rounded-lg" style="border-radius: 40px;">
 
         <h2 class="text-3xl font-bold text-center mb-5" style="margin-top: -70px;">Detail Kalkulator Pertanian Kubis  </h2>
