@@ -39,10 +39,6 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('admin');	
 	})->name('admin');
 
-	Route::get('profile', function () {
-		return view('profile');
-	})->name('profile');
-
 	//ADMIN - User Management
 	Route::get('/user-management', [adminController::class, 'show'])->middleware('role:admin');
 	// ADD USER
@@ -72,7 +68,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('upload-drone');
 	})->name('upload-drone');
 
-	Route::get('/logout', [SessionsController::class, 'destroy']);
+	Route::delete('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/user-profile', [InfoUserController::class, 'store']);
 	Route::get('/login', function () {
