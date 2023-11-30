@@ -51,9 +51,7 @@
                 <div class="button">
                     <button type="submit" id="register" class="btn">Hitung</button>
                     <a href="{{ route('kalkulators') }}" class="btn">Lihat Hasil</a>
-
                 </div>
-
             </form>
         </div>
     </div>
@@ -204,5 +202,40 @@
     .btn:hover {
         background-color: #0056b3;
     }
+    
+    @media (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .myform {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .button {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+    
+    .button button,
+    .button a {
+        margin-bottom: 10px; /* Add space between stacked buttons */
+        width: auto; /* Make buttons take the full width */
+    }
+    
+    .control-from select,
+    .myform input {
+        height: auto; /* Adjust height for touch targets */
+    }
+}
 </style>
 @endsection
