@@ -36,7 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('beranda');
 
 	Route::get('admin', function () {
-		return view('admin');
+		return view('admin');	
 	})->name('admin');
 
 	Route::get('profile', function () {
