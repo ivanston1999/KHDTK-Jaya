@@ -39,10 +39,6 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('admin');	
 	})->name('admin');
 
-	Route::get('profile', function () {
-		return view('profile');
-	})->name('profile');
-
 	//ADMIN - User Management
 	Route::get('/user-management', [adminController::class, 'show'])->middleware('role:admin');
 	// ADD USER
