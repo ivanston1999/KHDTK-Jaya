@@ -38,9 +38,13 @@ Route::group(['middleware' => 'auth'], function () {
 	//ADMIN
 	Route::middleware(['role:admin'])->group(function () {
 		Route::get('/user-management', [adminController::class, 'show']);
-		Route::get('/user-management/add', [adminController::class, 'UserForm']);
+		
 		// ADD USER
+		Route::get('/user-management/add', [adminController::class, 'UserForm']);
 		Route::post('/user-management/add', [RegisterController::class, 'store'])->name('user');
+		
+		// EDIT USER
+		Route::get('/user-management/{id}/edit', [adminController::class, 'editUser'])->name('id');
 		
 		// REMOVE USER
 		Route::delete('/user-management/{id}/remove', [adminController::class, 'destroy'])->name('id');
