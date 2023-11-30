@@ -35,6 +35,6 @@ class SessionsController extends Controller
 
         Auth::logout();
 
-        return redirect('/');
+        return redirect('/beranda');
     }
 }
