@@ -41,6 +41,13 @@
             </div>
             @include('layouts.footers.auth.footer')
 
+            @elseif (\Request::is('admin'))  
+            @include('layouts.navbars.admin.sidebar')
+            <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+                @include('layouts.navbars.auth.nav')
+                @yield('content')
+            </div>
+
         @else
             @include('layouts.navbars.auth.sidebar')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg {{ (Request::is('rtl') ? 'overflow-hidden' : '') }}">
