@@ -15,7 +15,7 @@
             <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
                 @include('layouts.navbars.auth.nav')
                 @yield('content')
-            </div>
+            </div>  
         @elseif (\Request::is('sensor'))  
             @include('layouts.navbars.admin.sidebar')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
