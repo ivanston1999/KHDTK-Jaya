@@ -10,6 +10,11 @@ class HomeController extends Controller
 {
     public function home()
     {
+        // Check if the logged-in user has the 'admin' role
+        if (auth()->user()->role === 'admin') {
+            return redirect()->route('admin'); // Replace with your admin dashboard route name
+        }
+
         $sensorStatus = [];
         $currentTime = now();
 
@@ -35,3 +40,4 @@ class HomeController extends Controller
         ]);
     }
 }
+
