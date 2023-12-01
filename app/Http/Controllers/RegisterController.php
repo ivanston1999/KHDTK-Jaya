@@ -13,15 +13,11 @@ class RegisterController extends Controller
 {
     public function store(Request $request)
     {
-        // GENERATE RANDOM PASSWORD
-        $password = Str::random(12);
-
         $user = new User();
         $user->name = $request->name;
-        $user->email = $request->email;
         $user->phone = $request->phone;
         $user->role = 'user';
-        $user->password = Hash::make($password);
+        $user->password = Hash::make($request->password);
         $user->save();
         return redirect('/user-management');
     }

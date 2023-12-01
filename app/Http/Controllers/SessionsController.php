@@ -16,7 +16,7 @@ class SessionsController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'email'=>'required|email',
+            'name'=>'required',
             'password'=>'required' 
         ]);
         if(Auth::attempt($attributes))
@@ -26,7 +26,7 @@ class SessionsController extends Controller
         }
         else{
 
-            return back()->withErrors(['email'=>'Email or password invalid.']);
+            return back()->withErrors(['name'=>'Nama atau password salah.']);
         }
     }
     
