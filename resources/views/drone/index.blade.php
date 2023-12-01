@@ -90,5 +90,4 @@
     .text-md-right {
         text-align: right;
     }
-
 </style>
