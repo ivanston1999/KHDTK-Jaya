@@ -86,4 +86,9 @@
         vertical-align: middle;
         text-align: center;
     }
+
+    .text-md-right {
+        text-align: right;
+    }
+
 </style>
