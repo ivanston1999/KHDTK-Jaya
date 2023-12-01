@@ -4,73 +4,65 @@
 
 @section('content')
 
-<div>
-    <div class="row">
-        <div class="col-12">
-            <div class="card mb-4 mx-4">
-                <div class="card-header pb-0">
-                    <div class="d-flex flex-row justify-content-between">
-                        <div>
-                            <h5 class="mb-0">All Users</h5>
+    <div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4 mx-4">
+                    <div class="card-header pb-0">
+                        <div class="d-flex flex-row justify-content-between">
+                            <div>
+                                <h5 class="mb-0">Semua Pengguna</h5>
+                            </div>
+                            <a href="user-management/add" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New User</a>
                         </div>
-                        <a href="user-management/add" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New User</a>
                     </div>
-                </div>
-                <div class="card-body px-0 pt-0 pb-2">
-                    <div class="table-responsive p-0">
-                        <table class="table align-items-center mb-0">
-                            <thead>
-                                <tr>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Nama
+                    <div class="card-body px-0 pt-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Nama
+                                        </th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            No. Telepon
+                                        </th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Tanggal Dibuat
+                                        </th>
                                     </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Email
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        No. Telepon
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Tanggal Dibuat
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Tanggal Diperbarui
-                                    </th>
-                                </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Opsi
-                                </tr>
-                            </thead>
-                            <tbody>
-                            @foreach ($users as $user)
-                                @if($user->id > 100)
-                                <tr>
-                                    <td class="text-center">{{ $user->name }}</td>
-                                    <td class="text-center">{{ $user->email }}</td>
-                                    <td class="text-center">{{ $user->phone }}</td>
-                                    <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td>
-                                    <td class="text-center">{{ $user->updated_at->format('d/m/Y') }}</td>
-                                    <td class="text-center">
-                                        <a href="user-management/{{ $user->id }}/edit" class="btn btn-success btn-sm">Edit</a>
-                                        <form action="/user-management/{{ $user->id }}/remove" method="POST" style="display:inline-block;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" 
-                                                onclick="return confirm('Are you sure you want to remove user {{ $user->name }}?')">
-                                                Hapus
-                                            </button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endif
-                            @endforeach
-                            </tbody>
-                        </table>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Opsi
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach ($users as $user)
+                                    @if($user->id > 100)
+                                    <tr>
+                                        <td class="text-center">{{ $user->name }}</td>
+                                        <td class="text-center">{{ $user->phone }}</td>
+                                        <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td>
+                                        <td class="text-center">
+                                            <button class="btn btn-primary btn-sm reveal-password">Reset Password</button>
+                                            <!-- <a href="user-management/{{ $user->id }}/edit" class="btn btn-success btn-sm">Edit</a> -->
+                                            <form action="/user-management/{{ $user->id }}/remove" method="POST" style="display:inline-block;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm" 
+                                                    onclick="return confirm('Are you sure you want to remove user {{ $user->name }}?')">
+                                                    Hapus
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endif
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
- 
 @endsection

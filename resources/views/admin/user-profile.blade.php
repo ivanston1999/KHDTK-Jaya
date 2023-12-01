@@ -105,12 +105,23 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <!-- <div class="col-md-12">
                             <div class="form-group">
                                 <label for="user-email" class="form-control-label">{{ __('Email') }}</label>
                                 <div class="@error('email')border border-danger rounded-3 @enderror">
                                     <input class="form-control" value="{{ auth()->user()->email }}" type="email" placeholder="@example.com" id="user-email" name="email">
                                         @error('email')
+                                            <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                                        @enderror
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="user-phone" class="form-control-label">{{ __('Phone') }}</label>
+                                <div class="@error('email')border border-danger rounded-3 @enderror">
+                                    <input class="form-control" value="{{ auth()->user()->phone }}" type="phone" placeholder="081360824551" id="user-phone" name="phone">
+                                        @error('phone')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
                                 </div>

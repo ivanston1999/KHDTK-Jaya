@@ -26,7 +26,7 @@
 
                 <div class="control-from">
                     <label for="varietas">Varietas</label>
-                    <input type="text" id="varietas" name="varietas" value="" required>
+                    <input type="text" style="font-weight: normal" id="varietas" name="varietas" value="" required>
                 </div>
 
                 <div class="control-from">
@@ -40,7 +40,7 @@
 
                 <div class="control-from">
                     <label for="luas">Luas Lahan</label>
-                    <input type="text" name="luas" id="luas" value="" required>
+                    <input type="text" style="font-weight: normal" name="luas" id="luas" value="" required>
                 </div>
 
                 <div class="full-width">
@@ -216,6 +216,7 @@
     .myform {
         grid-template-columns: 1fr;
         padding: 20px;
+        margin-bottom: 20px;
     }
 
     .full-width {
@@ -224,6 +225,7 @@
 
     .button {
         flex-direction: column; /* Stack buttons vertically */
+        margin-top: 20px;
     }
 
     .button button,
@@ -234,7 +236,11 @@
 
     .control-from select,
     .myform input {
-        height: auto; /* Adjust height for touch targets */
+        height: calc(100%); /* Adjust height for touch targets */
+    }
+
+    .control-from {
+        margin-bottom: 15px; /* Adjust the value to suit the spacing you desire */
     }
 }
 </style>
