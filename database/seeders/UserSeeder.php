@@ -19,8 +19,7 @@ class UserSeeder extends Seeder
             [
                 'id' => 1,
                 'role' => 'admin',
-                'name' => 'admin',
-                'email' => 'admin@softui.com',
+                'name' => 'admin_taripar',
                 'password' => Hash::make('secret'),
                 'created_at' => now(),
                 'updated_at' => now()
@@ -29,7 +28,6 @@ class UserSeeder extends Seeder
                 'id' => 100,
                 'role' => 'user',
                 'name' => 'dummy',
-                'email' => 'dummy@dummy.com',
                 'password' => Hash::make('dummy'),
                 'created_at' => now(),
                 'updated_at' => now()
