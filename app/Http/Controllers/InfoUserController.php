@@ -20,24 +20,23 @@ class InfoUserController extends Controller
     {
 
         $attributes = request()->validate([
-            'name' => ['required', 'max:50'],
-            'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
+            'name' => ['required', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
             'phone'     => ['max:50'],
             'location' => ['max:70'],
             'about_me'    => ['max:150'],
         ]);
-        if($request->get('email') != Auth::user()->email)
+        if($request->get('name') != Auth::user()->name)
         {
             if(env('IS_DEMO') && Auth::user()->id == 1)
             {
-                return redirect()->back()->withErrors(['msg2' => 'You are in a demo version, you can\'t change the email address.']);
+                return redirect()->back()->withErrors(['msg2' => 'You can\'t change name.']);
                 
             }
             
         }
         else{
             $attribute = request()->validate([
-                'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
+                'name' => ['required', 'name', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
             ]);
         }
         
@@ -45,7 +44,6 @@ class InfoUserController extends Controller
         User::where('id',Auth::user()->id)
         ->update([
             'name'    => $attributes['name'],
-            'email' => $attribute['email'],
             'phone'     => $attributes['phone'],
             'location' => $attributes['location'],
             'about_me'    => $attributes["about_me"],
