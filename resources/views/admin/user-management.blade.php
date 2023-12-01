@@ -43,7 +43,7 @@
                                         <td class="text-center">{{ $user->phone }}</td>
                                         <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td>
                                         <td class="text-center">
-                                            <button class="btn btn-primary btn-sm reveal-password">Reset Password</button>
+                                            <!-- <button class="btn btn-primary btn-sm reveal-password">Reset Password</button> -->
                                             <!-- <a href="user-management/{{ $user->id }}/edit" class="btn btn-success btn-sm">Edit</a> -->
                                             <form action="/user-management/{{ $user->id }}/remove" method="POST" style="display:inline-block;">
                                                 @csrf

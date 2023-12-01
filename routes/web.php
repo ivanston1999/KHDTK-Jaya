@@ -113,9 +113,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/drone', [DroneController::class, 'index'])->name('upload-drone');
 
-	// Route::get('upload-drone', function () {
-	// 	return view('drone.index');
-	// })->name('upload-drone');
+	Route::get('upload-drone', function () {
+		return view('drones.index');
+	})->name('upload-drone');
 
 	Route::delete('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
@@ -188,10 +188,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/drones', [DroneController::class, 'store'])->name('drones.store');
 });
 
+;
+
 Route::resource('drones', DroneController::class);
 Route::get('/drones', [DroneController::class, 'index'])->name('drones');
 
+Route::get('/drone/index', [DroneController::class, 'index'])->name('drones');
 
+Route::get('/drone/create', [DroneController::class, 'index'])->name('createdrones');
 Route::middleware('auth')->group(function () {
     Route::resource('drones', DroneController::class);
 });
