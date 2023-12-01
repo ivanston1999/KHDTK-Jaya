@@ -11,7 +11,7 @@
         <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
           <div class="card z-index-0">
             <div class="card-header text-center pt-4">
-              <h5>Tambahkan Pengguna</h5>
+              <h5>Edit Pengguna</h5>
             </div>
             <div class="card-body">
               <form role="form text-left" method="POST" action="/user-management/add">

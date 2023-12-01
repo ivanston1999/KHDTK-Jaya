@@ -42,7 +42,7 @@ class adminController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function addUserForm()
+    public function UserForm()
     {
         return view('admin/add-user');
     }
@@ -67,9 +67,10 @@ class adminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function editUser(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('admin/edit-user', compact('user'));
     }
 
     /**
@@ -83,8 +84,11 @@ class adminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect('/user-management');
     }
 }
