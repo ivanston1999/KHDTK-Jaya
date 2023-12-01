@@ -49,7 +49,7 @@
     color: #777;
   }
 
-  input[type="email"], input[type="password"] {
+  input[type="name"], input[type="password"] {
     width: 100%;
     padding: 10px 0px; /* Adjust padding to accommodate icons */
     border: 1px solid #ddd;
@@ -91,9 +91,9 @@
       @csrf
       <div class="input-container">
         <i class="fas fa-user input-icon"></i>
-        <input type="email" name="email" id="email" placeholder="Masukkan Email Anda" required>
+        <input type="name" name="name" id="name" placeholder="Masukkan Nama Anda" required>
       </div>
-      @error('email')
+      @error('name')
       <p class="text-danger text-xs mt-2"> {{$message}}</p>
       @enderror
       <div class="input-container">
@@ -105,13 +105,13 @@
       @enderror
       <div style="margin: 10px 0;">
         <input type="checkbox" id="rememberMe" checked>
-        <label for="rememberMe">Remember me</label>
+        <label for="rememberMe">Ingat saya</label>
       </div>
-      <button type="submit" class="login-button">Login</button>
+      <button type="submit" class="login-button">Masuk</button>
     </form>
     <p style="text-align: center;">
-      Don't have an account?
-      <a href="register" style="color: #4CAF50; font-weight: bold;">Sign up</a>
+      Belum mempunyai akun?
+      <a href="https://wa.me/6281360824551" style="color: #4CAF50; font-weight: bold;">Hubungi nomor ini</a>
     </p>
   </div>
 </div>

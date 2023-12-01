@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Models\Upload;
+use Illuminate\Http\Response;
+use App\Models\Drone;
 
 class HomeController extends Controller
 {
@@ -34,10 +37,25 @@ class HomeController extends Controller
                 $sensorStatus[$tableName] = 'Tidak Aktif';
             }
         }
-
+        if (auth()->user()->role === 'admin') {
+            return redirect()->route('admin');
+        }
         return view('beranda', [
             'sensorStatus' => $sensorStatus,
         ]);
     }
+    // public function index(): Response
+    // {
+    //     return response()->view('upload.index', [
+    //         'uploads' => Upload::orderBy('updated_at', 'desc')->get(),
+    //     ]);
+    // }
+
+    // public function index(): Response
+    // {
+    //     return response()->view('drone.index', [
+    //         'drones' => Drone::orderBy('updated_at', 'desc')->get(),
+    //     ]);
+    // }
 }
 

@@ -16,15 +16,15 @@
                     Nama Tanaman
                 </h3>
                 <p class="mt-1 text-sm text-gray-600">
-                    {{ $post->title }}
+                    {{ $post->nama }}
                 </p>
             </div>
             <div class="mb-6">
                 <h3 class="text-lg font-medium text-gray-900">
-                    Deskripsi Tanaman
+                    Deskripsi
                 </h3>
                 <p class="mt-1 text-sm text-gray-600">
-                    {{ $post->content }}
+                    {{ $post->deskripsi }}
                 </p>
             </div>
             <div class="mb-6">
@@ -32,7 +32,7 @@
                     Gambar Tanaman
                 </h3>
                 <p class="mt-1 text-sm text-gray-600">
-                    <img class="img-fluid" src="{{ Storage::url($post->featured_image) }}" alt="{{ $post->title }}">
+                    <img class="img-fluid" src="{{ Storage::url($post->gambar) }}" alt="{{ $post->nama }}">
                 </p>
             </div>
             <div class="mb-6">
@@ -51,7 +51,7 @@
                     {{ $post->updated_at }}
                 </p>
             </div>
-            <a href="{{ route('uploads.index') }}" class="btn btn-primary">Kembali</a>
+            <a href="{{ route('drones.index') }}" class="btn btn-primary">Kembali</a>
         </div>
     </div>
 </div>
