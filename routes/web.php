@@ -15,7 +15,7 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\SensorController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\DroneController;
-
+use App\Http\Controllers\CabaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,62 +39,69 @@ Route::group(['middleware' => 'auth'], function () {
 	//ADMIN
 	Route::middleware(['role:admin'])->group(function () {
 		Route::get('/user-management', [adminController::class, 'show']);
-		
+
 		// ADD USER
 		Route::get('/user-management/add', [adminController::class, 'UserForm']);
 		Route::post('/user-management/add', [RegisterController::class, 'store'])->name('user');
-		
+
 		// EDIT USER
 		Route::get('/user-management/{id}/edit', [adminController::class, 'editUser'])->name('id');
-		
+
 		// REMOVE USER
 		Route::delete('/user-management/{id}/remove', [adminController::class, 'destroy'])->name('id');
 	});
-	
+
 	//USER
 	Route::get('kalkulator', function () {
 		return view('kalkulator/kalkulator');
 	})->name('kalkulator');
+
 	Route::get('detail', function () {
 		return view('kalkulator/detail');
 	})->name('detail');
 
-	Route::resource('kalkulators', kalkulatorController::class);
-	Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
+	Route::get('profile', function () {
+		return view('profile');
+	})->name('profile');
 
-	//DetailCOntroller
-	Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
-	Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
+	Route::get('uploads', function () {
+		return view('upload/index');
+	})->name('upload');
 
-	Route::get('hasil', function () { 
-		return view('kalkulator/hasil');
-	});
-	// Route::middleware(['role:user'])->group(function() {
-	// 	Route::get('kalkulator', function () {
-	// 		return view('kalkulator/kalkulator');
-	// 	})->name('kalkulator');
-	// 	Route::get('detail', function () {
-	// 		return view('kalkulator/detail');
-	// 	})->name('detail');
+	Route::get('rtl', function () {
+		return view('rtl');
+	})->name('rtl');
 
-	// 	Route::resource('kalkulators', kalkulatorController::class);
-	// 	Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
+	//ADMIN - User Management
+	Route::get('/user-management', [adminController::class, 'show'])->middleware('role:admin');
+	// ADD USER
+	Route::get('/user-management/add', [adminController::class, 'addUserForm'])->middleware('role:admin');
+	Route::post('/user-management', [adminController::class, 'addUser'])->middleware('role:admin');
 
-	// 	//DetailCOntroller
-	// 	Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
-	// 	Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
+	//
+    Route::get('kalkulator', function () {
+		return view('kalkulator/kalkulator');
+	})->name('kalkulator');
 
-	// 	Route::get('hasil', function () { 
-	// 		return view('kalkulator/hasil');
-	// 	});
-	// });
+      Route::get('detail', function () {
+		return view('kalkulator/detail');
+	})->name('detail');
+
+	Route::get('tables', function () {
+		return view('tables');
+	})->name('tables');
 
 
-	Route::get('static-sign-in', function () {
+
+    Route::get('virtual-reality', function () {
+		return view('virtual-reality');
+	})->name('virtual-reality');
+
+    Route::get('static-sign-in', function () {
 		return view('static-sign-in');
 	})->name('sign-in');
 
-	Route::get('static-sign-up', function () {
+    Route::get('static-sign-up', function () {
 		return view('static-sign-up');
 	})->name('sign-up');
 
@@ -113,33 +120,49 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::delete('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/user-profile', [InfoUserController::class, 'store']);
-	Route::get('/login', function () {
+    Route::get('/login', function () {
 		return view('beranda');
 	})->name('sign-up');
 });
 
+
+
 Route::group(['middleware' => 'guest'], function () {
-	// Route::get('/register', [RegisterController::class, 'create']);
-	// Route::post('/register', [RegisterController::class, 'store']);
-	Route::get('/login', [SessionsController::class, 'create']);
-	Route::post('/session', [SessionsController::class, 'store']);
+    Route::get('/register', [RegisterController::class, 'create']);
+    Route::post('/register', [RegisterController::class, 'store']);
+    Route::get('/login', [SessionsController::class, 'create']);
+    Route::post('/session', [SessionsController::class, 'store']);
 	Route::get('/login/forgot-password', [ResetController::class, 'create']);
 	Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
 	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
 	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
+
 });
 
 Route::get('/login', function () {
-	return view('session/login-session');
+    return view('session/login-session');
 })->name('login');
 
 Route::middleware(['auth'])->group(function () {
-	Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
-	Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+    Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 });
 
 
+//kalkulator
+Route::resource('kalkulators', kalkulatorController::class);
+Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
 
+Route::resource('cabai', CabaiController::class);
+
+ //DetailCOntroller
+Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
+Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
+
+
+Route::get('hasil', function () {
+    return view('kalkulator/hasil');
+});
 
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
 Route::get('/admin', [adminController::class, 'index'])->name('admin')->middleware('role:admin');

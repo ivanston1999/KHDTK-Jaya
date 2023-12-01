@@ -55,6 +55,5 @@ label {
 .input-group {
     margin-bottom: 1rem;
 }
-
 </style>
 @endsection

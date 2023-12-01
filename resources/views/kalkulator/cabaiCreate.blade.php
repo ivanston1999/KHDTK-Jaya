@@ -8,45 +8,23 @@
         <div class="form">
 
             <h2 class="title">Kalkulator Pertanian</h2>
-            <form action="{{ route('kalkulators.store') }}" method="POST" class="myform">
+            <form action="{{ route('cabai.store') }}" method="POST" class="myform">
                 @csrf
 
-                <div class="control-from">
-                    <label for="komoditas">Komoditas</label>
-                    <select id="komoditas" name="komoditas" required>
-                        <option value="">Pilih Komoditas</option>
-                            <option value="jagung">Jagung</option>
-                            <option value="kubis">Kubis</option>
-                            <option value="cabai">Cabai</option>
-                            <option value="bawang_merah">Bawang Merah</option>
-                            <option value="kentang">Kentang</option>
-                    </select>
-                </div>
 
 
                 <div class="control-from">
-                    <label for="varietas">Varietas</label>
-                    <input type="text" id="varietas" name="varietas" value="" required>
+                    <label for="aktivitas">aktivitas</label>
+                    <input type="text" id="aktivitas" name="aktivitas" value="" required>
                 </div>
+
+
 
                 <div class="control-from">
-                    <label for="jarak">Jarak Tanam</label>
-                    <select id="jarak" name="jarak" required>
-                        <option value="">Pilih Jarak Tanam</option>
-                        <option value="70 x 20">70 x 20 cm</option>
-                        <option value="70 x 25">70 x 25 cm</option>
-                    </select>
+                    <label for="item">item </label>
+                    <input type="text" name="item" id="item" value="" required>
                 </div>
 
-                <div class="control-from">
-                    <label for="luas">Luas Lahan</label>
-                    <input type="text" name="luas" id="luas" value="" required>
-                </div>
-
-                <div class="full-width">
-                    <label for="date">Tanggal Tanam</label>
-                    <input type="date" id="date" name="date" value="" required>
-                </div>
 
                 <div class="button">
                     <button type="submit" id="register" class="btn">Hitung</button>
