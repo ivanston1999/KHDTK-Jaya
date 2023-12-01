@@ -91,8 +91,6 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('tables');
 	})->name('tables');
 
-
-
     Route::get('virtual-reality', function () {
 		return view('virtual-reality');
 	})->name('virtual-reality');
@@ -112,10 +110,6 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('upload-drone');
 
 	Route::get('/drone', [DroneController::class, 'index'])->name('upload-drone');
-
-	Route::get('upload-drone', function () {
-		return view('drones.index');
-	})->name('upload-drone');
 
 	Route::delete('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);

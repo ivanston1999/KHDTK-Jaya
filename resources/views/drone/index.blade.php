@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row mb-3">
         <div class="col-12 col-md-8">
-            <h1>Upload Gambar Lahan</h1>
+            <h1>Upload Gambar Drone</h1>
         </div>
         <div class="col-12 col-md-4 text-md-right">
             <a href="{{ route('drones.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+ Tambahkan</a>
