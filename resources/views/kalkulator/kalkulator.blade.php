@@ -15,11 +15,11 @@
                     <label for="komoditas">Komoditas</label>
                     <select id="komoditas" name="komoditas" required>
                         <option value="">Pilih Komoditas</option>
-                        <option value="Jagung">Jagung</option>
-                        <option value="Kubis">Kubis</option>
-                        <option value="Cabai">Cabai</option>
-                        <option value="Bawang Merah">Bawang Merah</option>
-                        <option value="Kentang">Kentang</option>
+                            <option value="jagung">Jagung</option>
+                            <option value="kubis">Kubis</option>
+                            <option value="cabai">Cabai</option>
+                            <option value="bawang_merah">Bawang Merah</option>
+                            <option value="kentang">Kentang</option>
                     </select>
                 </div>
 
@@ -202,7 +202,7 @@
     .btn:hover {
         background-color: #0056b3;
     }
-    
+
     @media (max-width: 768px) {
     .wrapper {
         width: 100%;
@@ -225,13 +225,13 @@
     .button {
         flex-direction: column; /* Stack buttons vertically */
     }
-    
+
     .button button,
     .button a {
         margin-bottom: 10px; /* Add space between stacked buttons */
         width: auto; /* Make buttons take the full width */
     }
-    
+
     .control-from select,
     .myform input {
         height: auto; /* Adjust height for touch targets */

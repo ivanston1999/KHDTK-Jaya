@@ -55,6 +55,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('kalkulator', function () {
 		return view('kalkulator/kalkulator');
 	})->name('kalkulator');
+
 	Route::get('detail', function () {
 		return view('kalkulator/detail');
 	})->name('detail');
@@ -89,6 +90,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('tables', function () {
 		return view('tables');
 	})->name('tables');
+
+
 
     Route::get('virtual-reality', function () {
 		return view('virtual-reality');
@@ -155,7 +158,6 @@ Route::resource('cabai', CabaiController::class);
  //DetailCOntroller
 Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
 Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
-
 
 
 Route::get('hasil', function () {

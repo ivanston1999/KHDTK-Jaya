@@ -1,9 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use App\Models\Cabai;
-use App\Models\Kalkulators;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\kalkulatorController;
 
 class CabaiController extends Controller
 {
@@ -13,9 +12,8 @@ class CabaiController extends Controller
     public function index()
     {
         $Cabai = cabai::all();
-        $Kalkulators = Kalkulators::all();
-       return view('kalkulator/cabaiSop', ['cabai' => $Cabai, 'kalkulators' => $Kalkulators]);
 
+        return view('kalkulator/cabaiSop', ['cabai' => $Cabai]);
     }
 
     /**
