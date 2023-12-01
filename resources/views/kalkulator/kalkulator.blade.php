@@ -18,7 +18,7 @@
                             <option value="jagung">Jagung</option>
                             <option value="kubis">Kubis</option>
                             <option value="cabai">Cabai</option>
-                            <option value="bawang_merah">Bawang Merah</option>
+                            <option value="bawang merah">Bawang Merah</option>
                             <option value="kentang">Kentang</option>
                     </select>
                 </div>
