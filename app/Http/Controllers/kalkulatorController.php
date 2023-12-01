@@ -70,7 +70,7 @@ class kalkulatorController extends Controller
             case 'kubis':
                 return view('kalkulator/detailKubis', compact('kalkulator'));
 
-            case 'bawang_merah':
+            case 'bawang merah':
                 return view('kalkulator/detail', compact('kalkulator'));
 
             case 'kentang':
@@ -96,7 +96,7 @@ class kalkulatorController extends Controller
             case 'kubis':
                 return view('kalkulator/sopKubis', compact('kalkulator'));
 
-            case 'bawang_merah':
+            case 'bawang merah':
                 return view('kalkulator/sop', compact('kalkulator'));
 
             case 'kentang':
