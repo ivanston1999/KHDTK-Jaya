@@ -62,7 +62,7 @@ class SensorController extends Controller
             if ($lastDataPoint) {
                 $lastDataTime = Carbon::parse($lastDataPoint->Tanggal);
                 // Menentukan status sensor berdasarkan waktu terakhir data diterima.
-                $sensorStatus[$tableName] = $lastDataTime->diffInHours($currentTime, false) <= 4 ? 'Aktif' : 'Tidak Aktif';
+                $sensorStatus[$tableName] = $lastDataTime->diffInHours($currentTime, false) <= 3 ? 'Aktif' : 'Tidak Aktif';
             } else {
                 // Jika tidak ada data, tandai sensor sebagai tidak aktif.
                 $sensorStatus[$tableName] = 'Tidak Aktif';

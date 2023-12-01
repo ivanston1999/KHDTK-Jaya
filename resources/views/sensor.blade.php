@@ -30,6 +30,7 @@
             }
 
             @media (max-width: 768px) {
+
                 /* Adjust this value as needed for your responsive breakpoint */
                 .sensor-status-container {
                     display: flex;
@@ -179,16 +180,25 @@
                         return {
                             name: key.replace('sensor', 'Sensor '), // Adjust the sensor name here if needed
                             data: sensorDataArrays[key].map((data) => {
-                                // Check if the value is below 0 and set it to 0 if it is
                                 let value = data[parameter] < 0 ? 0 : data[parameter];
-                                return [Date.parse(data.Tanggal), value];
+                                // Parse the date in the correct format
+                                let date = new Date(data.Tanggal).getTime();
+                                return [date, value];
                             })
                         };
                     });
                 }
 
+
                 // Function to initialize Highcharts
                 function initializeChart(containerId, title, sensorDataArrays, parameter) {
+                    Highcharts.setOptions({
+                        global: {
+                            timezoneOffset: new Date().getTimezoneOffset()
+                        }
+                    });
+
+
                     Highcharts.chart(containerId, {
                         chart: {
                             type: 'line'
