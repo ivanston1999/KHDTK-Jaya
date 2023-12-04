@@ -129,7 +129,9 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-between">
+                    @if (auth()->user()->role === 'user')   
                     <a href="{{route('Ubah Password')}}" class="btn" style="color: white; background-color: black;">Ubah Password</a>
+                    @endif
     <button type="submit" class="btn btn-md mt-2 mb-2" style="color: white; background-color:black">{{ 'Simpan' }}</button>
 </div>
 
