@@ -175,6 +175,7 @@ Route::get('hasil', function () {
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
 Route::get('/admin', [adminController::class, 'index'])->name('admin')->middleware('role:admin');
 Route::get('/sensor', [SensorController::class, 'LineChart']);
+Route::post('/sensors/add-table', [SensorController::class, 'addNewSensorTable']);
 
 //Upload Gambar lahan
 Route::middleware(['auth'])->group(function () {
