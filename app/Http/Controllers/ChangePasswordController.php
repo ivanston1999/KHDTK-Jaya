@@ -30,7 +30,7 @@ class ChangePasswordController extends Controller
                 ->withInput();
         }
 
-        if (!Hash::check($request->input('old-password'), auth()->user()->password)) {
+        if (!Hash::check($request->input('old-password'), Auth::user()->password)) {
             return redirect('/change-password')
                 ->with('error', 'The old password is incorrect.');
         }
