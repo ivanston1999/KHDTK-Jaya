@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Models\User;
+use Illuminate\Support\Facades\Schema;
+
 
 class adminController extends Controller
 {
@@ -14,12 +16,21 @@ class adminController extends Controller
      */
     public function index()
     {
+        
         $sensorStatus = [];
         $currentTime = now();
-
-        for ($sensorId = 1; $sensorId <= 9; $sensorId++) {
+        
+        $i = 1;
+        while (true) {
             // Mengambil data terakhir dari setiap sensor.
-            $tableName = 'sensor' . $sensorId;
+            $tableName = "sensor{$i}";
+            // Check if the table exists
+            $tableExists = Schema::hasTable($tableName);
+
+            if (!$tableExists) {
+                // If the table does not exist, break out of the loop
+                break;
+            }
             $lastDataPoint = DB::table($tableName)
                 ->latest('Tanggal')
                 ->first();
@@ -32,6 +43,8 @@ class adminController extends Controller
                 // Jika tidak ada data, tandai sensor sebagai tidak aktif.
                 $sensorStatus[$tableName] = 'Tidak Aktif';
             }
+
+            $i++;
         }
 
         return view('beranda', [

@@ -69,28 +69,31 @@
   }
 </style>
 
-  <div class="sensor-status-container">
-      <div class="sensor-status-card">
-          <h4>Sensor Aktif</h4>
-          <ul class="sensor-status-list">
-              @foreach ($sensorStatus as $sensorName => $status)
-                  @if ($status === 'Aktif')
-                      <li class="alive">{{ $sensorName }}</li>
-                  @endif
-              @endforeach
-          </ul>
-      </div>
-      <div class="sensor-status-card">
-          <h4>Sensor Tidak Aktif</h4>
-          <ul class="sensor-status-list">
-              @foreach ($sensorStatus as $sensorName => $status)
-                  @if ($status === 'Tidak Aktif')
-                      <li class="dead">{{ $sensorName }}</li>
-                  @endif
-              @endforeach
-          </ul>
-      </div>
-  </div>
+<div class="container">
+    <h2 class="text-center">Status Sensor</h2>
+    <div class="sensor-status-container">
+        <div class="sensor-status-card">
+            <h4>Sensor Aktif</h4>
+            <ul class="sensor-status-list">
+                @foreach ($sensorStatus as $sensorName => $status)
+                    @if ($status === 'Aktif')
+                        <li class="alive">{{ $sensorName }}</li>
+                    @endif
+                @endforeach
+            </ul>
+        </div>
+        <div class="sensor-status-card">
+            <h4>Sensor Tidak Aktif</h4>
+            <ul class="sensor-status-list">
+                @foreach ($sensorStatus as $sensorName => $status)
+                    @if ($status === 'Tidak Aktif')
+                        <li class="dead">{{ $sensorName }}</li>
+                    @endif
+                @endforeach
+            </ul>
+        </div>
+    </div>
+</div>
 
 
   <div class="mapdiv"
