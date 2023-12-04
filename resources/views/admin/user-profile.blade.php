@@ -128,10 +128,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-between">
+                    <a href="{{route('Ubah Password')}}" class="btn" style="color: white; background-color: black;">Ubah Password</a>
+    <button type="submit" class="btn btn-md mt-2 mb-2" style="color: white; background-color:black">{{ 'Simpan' }}</button>
+</div>
 
-                    <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Simpan' }}</button>
-                    </div>
                 </form>
 
             </div>
