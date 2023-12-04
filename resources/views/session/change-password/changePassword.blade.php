@@ -16,8 +16,8 @@
                             <div>
                                 <label for="old_password">Old Password</label>
                                 <div class="">
-                                    <input id="old-passowrd" name="old-passowrd" type="old-passowrd" class="form-control" placeholder="Old-Password" aria-label="Old-Password" aria-describedby="oldPassword-addon">
-                                    @error('old-password')
+                                    <input id="old-passowrd" name="passowrd" type="password" class="form-control" placeholder="Old-Password" aria-label="Old-Password" aria-describedby="oldPassword-addon">
+                                    @error('password')
                                         <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -34,14 +34,14 @@
                             <div>
                                 <label for="password_confirmation">Confirm Password</label>
                                 <div class="">
-                                    <input id="password-confirmation" name="password_confirmation" type="password" class="form-control" placeholder="Password-confirmation" aria-label="Password-confirmation" aria-describedby="Password-addon">
+                                    <input id="password-confirmation" name="password_confirmation" type="password" class="form-control" placeholder="Password-confirmation" aria-label="Password-confirmation">
                                     @error('password')
                                         <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Recover your password</button>
+                                <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Change password</button>
                             </div>
                         </form>
                     </div>
