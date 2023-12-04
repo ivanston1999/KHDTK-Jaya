@@ -14,15 +14,8 @@ class ChangePasswordController extends Controller
 {
     public function changePassword(Request $request)
     {
-        
-        $request->validate([
-            'token' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|min:8|confirmed',
-        ]);
-    
         $status = Password::reset(
-            $request->only('email', 'password', 'password_confirmation', 'token'),
+            $request->only('old_password', 'password', 'password_confirmation'),
             function ($user, $password) {
                 $user->forceFill([
                     'password' => Hash::make($password)
@@ -38,4 +31,9 @@ class ChangePasswordController extends Controller
                     ? redirect('/login')->with('success', __($status))
                     : back()->withErrors(['email' => [__($status)]]);
     }
+    public function changePassForm()
+    {
+        return view('session/change-password/changePassword');
+    }
+
 }
