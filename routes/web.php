@@ -6,8 +6,6 @@ use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\kalkulatorController;
@@ -68,9 +66,27 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('upload/index');
 	})->name('upload');
 
-	Route::get('rtl', function () {
-		return view('rtl');
-	})->name('rtl');
+	Route::get('hasil', function () { 
+		return view('kalkulator/hasil');
+	});
+	Route::middleware(['role:user'])->group(function () {
+		Route::get('password', [SessionsController::class, 'password'])->name('password');
+		Route::post('password', [SessionsController::class, 'password_action'])->name('password.action');
+	});
+	Route::get('hasil', function () { 
+		return view('kalkulator/hasil');
+	});
+	Route::middleware(['role:user'])->group(function () {
+		Route::get('password', [SessionsController::class, 'password'])->name('Ubah Password');
+		Route::post('password', [SessionsController::class, 'password_action'])->name('password.action')->name('Ubah Password');
+	});
+	// Route::middleware(['role:user'])->group(function() {
+	// 	Route::get('kalkulator', function () {
+	// 		return view('kalkulator/kalkulator');
+	// 	})->name('kalkulator');
+	// 	Route::get('detail', function () {
+	// 		return view('kalkulator/detail');
+	// 	})->name('detail');
 
 	//ADMIN - User Management
 	Route::get('/user-management', [adminController::class, 'show'])->middleware('role:admin');
@@ -183,10 +199,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/drones', [DroneController::class, 'store'])->name('drones.store');
 });
 
+;
+
 Route::resource('drones', DroneController::class);
 Route::get('/drones', [DroneController::class, 'index'])->name('drones');
 
+Route::get('/drone/index', [DroneController::class, 'index'])->name('drones');
 
+Route::get('/drone/create', [DroneController::class, 'index'])->name('createdrones');
 Route::middleware('auth')->group(function () {
     Route::resource('drones', DroneController::class);
 });

@@ -25,7 +25,7 @@
                             {{ auth()->user()->name }}
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm">
-                            {{ __('role') }}
+                            {{auth()->user()->role}}
                         </p>
                     </div>
                 </div>
@@ -128,10 +128,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-between">
+                    @if (auth()->user()->role === 'user')   
+                    <a href="{{route('Ubah Password')}}" class="btn" style="color: white; background-color: black;">Ubah Password</a>
+                    @endif
+    <button type="submit" class="btn btn-md mt-2 mb-2" style="color: white; background-color:black">{{ 'Simpan' }}</button>
+</div>
 
-                    <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn bg-gradient-dark btn-md mt-4 mb-4">{{ 'Simpan' }}</button>
-                    </div>
                 </form>
 
             </div>
