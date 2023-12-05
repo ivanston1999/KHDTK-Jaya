@@ -33,7 +33,7 @@
                                 @foreach ($uploads as $post)
                                     <tr>
                                         <td>{{ $post->title }}</td>
-                                        <td>{{ $post->created_at }}</td>
+                                        <td>{{ $post->created_at->timezone('Asia/Jakarta')->format('d/m/Y H:i:s') }}</td>
                                         <td>{{ $post->updated_at }}</td>
                                         <td>
                                             <img class="img-fluid w-48 h-48" src="{{ Storage::url($post->featured_image) }}" alt="{{ $post->title }}">
