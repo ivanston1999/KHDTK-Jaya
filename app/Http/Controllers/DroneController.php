@@ -51,7 +51,7 @@ class DroneController extends Controller
         if($create) {
             // add flash for the success notification
             session()->flash('notif.success', 'Post created successfully!');
-            return redirect()->route('drones.index');
+            return redirect()->route('drones');
         }
 
         return abort(500);
