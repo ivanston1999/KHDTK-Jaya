@@ -480,9 +480,7 @@ Penanaman 1 September 2023" target="_blank">
             </a>
             </svg>
 
-            <a xlink:title="Kentang
-Luas 0.04 Ha
-Penanaman 1 September 2023" target="_blank">
+            <a xlink:title="Kentang Luas 0.04 Ha Penanaman 1 September 2023" target="_blank">
                 Kubis
                 <path
                     d="M320.93714,245.08369L337.98017,242.44322L343.26111,261.64665L326.45812,266.68754L324.29774,265.00724L322.37739,258.28605
@@ -491,9 +489,7 @@ Penanaman 1 September 2023" target="_blank">
                 </path>
             </a>
 
-            <a xlink:title="Demplot
-Luas 0.04 Ha
-Penanaman 13 September 2023" target="_blank">
+            <a xlink:title="Demplot Luas 0.04 Ha Penanaman 13 September 2023" target="_blank">
                 Kubis
                 <path
                     d="M320.93714,245.08369L337.98017,242.44322L343.26111,261.64665L326.45812,266.68754L324.29774,265.00724L322.37739,258.28605
@@ -502,9 +498,7 @@ Penanaman 13 September 2023" target="_blank">
                 </path>
             </a>
 
-            <a xlink:title="Kentang
-Luas 0.04 Ha
-Penanaman 1 September 2023" target="_blank">
+            <a xlink:title="Kentang Luas 0.04 Ha Penanaman 1 September 2023" target="_blank">
                 Kubis
                 <path
                     d="M418.15445,443.59908L416.47415,441.67874
@@ -520,4 +514,5 @@ Penanaman 1 September 2023" target="_blank">
             </circle>
         </svg>
     </div>
+    <!-- Drone-->
 @endsection

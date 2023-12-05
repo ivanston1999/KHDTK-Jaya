@@ -18,6 +18,9 @@ class HomeController extends Controller
             return redirect()->route('admin'); // Replace with your admin dashboard route name
         }
 
+        // Ambil data gambar yang diurutkan berdasarkan created_at
+        // $drones = Drone::orderBy('created_at', 'desc')->get();
+
         $sensorStatus = [];
         $currentTime = now();
 
@@ -40,8 +43,10 @@ class HomeController extends Controller
         if (auth()->user()->role === 'admin') {
             return redirect()->route('admin');
         }
+
         return view('beranda', [
             'sensorStatus' => $sensorStatus,
+            // 'drones' => $drones,
         ]);
     }
     // public function index(): Response

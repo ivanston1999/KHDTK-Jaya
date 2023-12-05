@@ -9,7 +9,7 @@
             <h1>Upload Gambar Drone</h1>
         </div>
         <div class="col-12 col-md-4 text-md-right">
-            <a href="{{ route('drones.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+ Tambahkan</a>
+            <a href="{{ route('drones.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+&nbsp; Tambahkan</a>
         </div>
     </div>
     <hr>
