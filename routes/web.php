@@ -6,8 +6,6 @@ use App\Http\Controllers\InfoUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\kalkulatorController;
@@ -68,9 +66,25 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('upload/index');
 	})->name('upload');
 
-	Route::get('rtl', function () {
-		return view('rtl');
-	})->name('rtl');
+	Route::get('hasil', function () { 
+		return view('kalkulator/hasil');
+	});
+	Route::get('hasil', function () { 
+		return view('kalkulator/hasil');
+	});
+	Route::middleware(['role:user'])->group(function () {
+		Route::get('password', [SessionsController::class, 'password'])->name('Ubah Password');
+		Route::post('password', [SessionsController::class, 'password_action'])->name('password.action')->name('Ubah Password');
+		Route::get('/change-password', [ChangePasswordController::class, 'changePassForm']);
+		Route::post('/change-password', [ChangePasswordController::class, 'changePassword']);
+	});
+	// Route::middleware(['role:user'])->group(function() {
+	// 	Route::get('kalkulator', function () {
+	// 		return view('kalkulator/kalkulator');
+	// 	})->name('kalkulator');
+	// 	Route::get('detail', function () {
+	// 		return view('kalkulator/detail');
+	// 	})->name('detail');
 
 	//ADMIN - User Management
 	Route::get('/user-management', [adminController::class, 'show'])->middleware('role:admin');
@@ -128,7 +142,7 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('/session', [SessionsController::class, 'store']);
 	Route::get('/login/forgot-password', [ResetController::class, 'create']);
 	Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
-	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
+	// Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
 	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
 
 });
@@ -161,6 +175,7 @@ Route::get('hasil', function () {
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
 Route::get('/admin', [adminController::class, 'index'])->name('admin')->middleware('role:admin');
 Route::get('/sensor', [SensorController::class, 'LineChart']);
+Route::post('/sensors/add-table', [SensorController::class, 'addNewSensorTable']);
 
 //Upload Gambar lahan
 Route::middleware(['auth'])->group(function () {
@@ -181,10 +196,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/drones', [DroneController::class, 'store'])->name('drones.store');
 });
 
+;
+
 Route::resource('drones', DroneController::class);
 Route::get('/drones', [DroneController::class, 'index'])->name('drones');
 
+Route::get('/drone/index', [DroneController::class, 'index'])->name('drones');
 
+Route::get('/drone/create', [DroneController::class, 'index'])->name('createdrones');
 Route::middleware('auth')->group(function () {
     Route::resource('drones', DroneController::class);
 });
