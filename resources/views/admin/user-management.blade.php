@@ -1,6 +1,6 @@
 @extends('layouts.user_type.auth')
 
-@section('title', 'Taripar Hub')
+@section('title', 'Manajemen User')
 
 @section('content')
 

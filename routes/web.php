@@ -157,7 +157,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-//kalkulator
+//kalkulatorkalkulators
 Route::resource('kalkulators', kalkulatorController::class);
 Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
 
