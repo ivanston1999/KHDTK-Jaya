@@ -16,17 +16,15 @@ class SessionsController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'name'=>'required',
-            'password'=>'required' 
+            'name' => 'required',
+            'password' => 'required',
         ]);
-        if(Auth::attempt($attributes))
-        {
+    
+        if (Auth::attempt($attributes)) {
             session()->regenerate();
             return redirect('beranda');
-        }
-        else{
-
-            return back()->withErrors(['name'=>'Nama atau password salah.']);
+        } else {
+            return back()->withErrors(['error' => 'Nama atau kata sandi salah. Silakan coba lagi.']);
         }
     }
     
