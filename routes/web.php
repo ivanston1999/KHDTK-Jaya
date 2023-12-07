@@ -75,8 +75,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::middleware(['role:user'])->group(function () {
 		Route::get('password', [SessionsController::class, 'password'])->name('Ubah Password');
 		Route::post('password', [SessionsController::class, 'password_action'])->name('password.action')->name('Ubah Password');
-		Route::get('/change-password', [ChangePasswordController::class, 'changePassForm']);
-		Route::post('/change-password', [ChangePasswordController::class, 'changePassword']);
+		Route::get('/change-password', [ChangePasswordController::class, 'changePassForm'])->name('password.changeForm');
+		Route::post('/change-password', [ChangePasswordController::class, 'changePassword'])->name('password.change');
 	});
 	// Route::middleware(['role:user'])->group(function() {
 	// 	Route::get('kalkulator', function () {

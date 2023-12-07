@@ -9,26 +9,17 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 
 class ChangePasswordController extends Controller
 {
     public function changePassword(Request $request)
     {
-        // $validator = Validator::make($request->all(), [
-        //     'old-password' => 'required',
-        //     'password' => 'required|string|min:8|confirmed',
-        // ]);
-        $validator = request()->validate([
-            'old-password' => 'required',
-            'password' => 'required',
+        $attributes = request()->validate([
+            'old-password' => ['required'],
+            'password' => ['required, alpha_num, min:8'],
         ]);
-
-        if ($validator->fails()) {
-            return redirect('/change-password')
-                ->withErrors($validator)
-                ->withInput();
-        }
 
         if (!Hash::check($request->input('old-password'), Auth::user()->password)) {
             return redirect('/change-password')
@@ -37,7 +28,7 @@ class ChangePasswordController extends Controller
 
         User::where('id', Auth::user()->id)
         ->update([
-            'password' => Hash::make($validator['password']),
+            'password' => Hash::make($attributes['password']),
         ]);
 
         return redirect('/user-profile')
