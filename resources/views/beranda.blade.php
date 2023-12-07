@@ -505,28 +505,57 @@ Penanaman 1 September 2023" target="_blank">
                     style="width:20px; height:20px;" />
             </a>
         </svg>
+            <a xlink:title="Kentang Luas 0.04 Ha Penanaman 1 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M320.93714,245.08369L337.98017,242.44322L343.26111,261.64665L326.45812,266.68754L324.29774,265.00724L322.37739,258.28605
+            L321.17718,247.48412L320.93714,245.08369z"
+                    id="LKA2449" name="Mātale">
+                </path>
+            </a>
 
-        <a xlink:title="Kentang
-Luas 0.04 Ha
-Penanaman 1 September 2023" target="_blank">
+            <a xlink:title="Demplot Luas 0.04 Ha Penanaman 13 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M320.93714,245.08369L337.98017,242.44322L343.26111,261.64665L326.45812,266.68754L324.29774,265.00724L322.37739,258.28605
+            L321.17718,247.48412L320.93714,245.08369z"
+                    id="LKA2449" name="Mātale" style="fill:pink;">
+                </path>
+            </a>
+
+            <a xlink:title="Kentang Luas 0.04 Ha Penanaman 1 September 2023" target="_blank">
+                Kubis
+                <path
+                    d="M418.15445,443.59908L416.47415,441.67874
+            L399.9112,414.31386L409.99299,403.03185L421.03496,440.23848L418.15445,443.59908z"
+                    id="LKA2449" name="Mātale" style="fill:yellow;">
+                </path>
+            </a>
+            <circle cx="302.6" cy="1147.4" id="0">
+            </circle>
+            <circle cx="616.8" cy="745.3" id="1">
+            </circle>
+            <circle cx="149.2" cy="439.8" id="2">
+            </circle>
+        </svg>
+    </div>
+    <!-- Drone-->
+
+        <a xlink:title="Kentang Luas 0.04 Ha Penanaman 1 September 2023" target="_blank">
             Kubis
             <path d="M320.93714,245.08369L337.98017,242.44322L343.26111,261.64665L326.45812,266.68754L324.29774,265.00724L322.37739,258.28605
             L321.17718,247.48412L320.93714,245.08369z" id="LKA2449" name="Mātale">
             </path>
         </a>
 
-        <a xlink:title="Demplot
-Luas 0.04 Ha
-Penanaman 13 September 2023" target="_blank">
+        <a xlink:title="Demplot Luas 0.04 Ha Penanaman 13 September 2023" target="_blank">
             Kubis
             <path d="M320.93714,245.08369L337.98017,242.44322L343.26111,261.64665L326.45812,266.68754L324.29774,265.00724L322.37739,258.28605
             L321.17718,247.48412L320.93714,245.08369z" id="LKA2449" name="Mātale" style="fill:pink;">
             </path>
         </a>
 
-        <a xlink:title="Kentang
-Luas 0.04 Ha
-Penanaman 1 September 2023" target="_blank">
+        <a xlink:title="Kentang Luas 0.04 Ha Penanaman 1 September 2023" target="_blank">
             Kubis
             <path d="M418.15445,443.59908L416.47415,441.67874
             L399.9112,414.31386L409.99299,403.03185L421.03496,440.23848L418.15445,443.59908z" id="LKA2449"
@@ -543,4 +572,4 @@ Penanaman 1 September 2023" target="_blank">
 </div>
 </div>
 
-    @endsection
+@endsection

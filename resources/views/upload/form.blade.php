@@ -49,7 +49,7 @@
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-primary my-3">Simpan</button>
+                        <button type="submit" class="btn btn-primary my-3" style="text-transform: none;">Simpan</button>
                     </form>
                 </div>
             </div>

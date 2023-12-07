@@ -157,7 +157,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-//kalkulator
+//kalkulatorkalkulators
 Route::resource('kalkulators', kalkulatorController::class);
 Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
 
@@ -191,7 +191,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('uploads', UploadController::class);
 });
 
-//Upload Gambar Drone
 Route::middleware(['auth'])->group(function () {
     Route::get('/drones/create', [DroneController::class, 'create'])->name('drones.create');
     Route::post('/drones', [DroneController::class, 'store'])->name('drones.store');

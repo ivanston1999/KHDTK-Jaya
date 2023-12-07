@@ -9,7 +9,7 @@
             <h1>Upload Gambar Tanaman</h1>
         </div>
         <div class="col-12 col-md-4 text-md-right">
-            <a href="{{ route('uploads.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+ Tambahkan</a>
+            <a href="{{ route('uploads.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+&nbsp; Tambahkan</a>
         </div>
     </div>
     <hr>
@@ -33,7 +33,7 @@
                                 @foreach ($uploads as $post)
                                     <tr>
                                         <td>{{ $post->title }}</td>
-                                        <td>{{ $post->created_at }}</td>
+                                        <td>{{ $post->created_at->timezone('Asia/Jakarta')->format('d/m/Y H:i:s') }}</td>
                                         <td>{{ $post->updated_at }}</td>
                                         <td>
                                             <img class="img-fluid w-48 h-48" src="{{ Storage::url($post->featured_image) }}" alt="{{ $post->title }}">
