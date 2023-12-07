@@ -119,7 +119,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="user-phone" class="form-control-label">{{ __('Phone') }}</label>
-                                <div class="@error('email')border border-danger rounded-3 @enderror">
+                                <div class="@error('phone')border border-danger rounded-3 @enderror">
                                     <input class="form-control" value="{{ auth()->user()->phone }}" type="phone" placeholder="081360824551" id="user-phone" name="phone">
                                         @error('phone')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="d-flex justify-content-between">
                     @if (auth()->user()->role === 'user')   
-                    <a href="{{route('Ubah Password')}}" class="btn" style="color: white; background-color: black;">Ubah Password</a>
+                    <a href="/change-password" class="btn" style="color: white; background-color: black;">Ubah Password</a>
                     @endif
     <button type="submit" class="btn btn-md mt-2 mb-2" style="color: white; background-color:black">{{ 'Simpan' }}</button>
 </div>

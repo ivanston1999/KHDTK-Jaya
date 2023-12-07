@@ -33,8 +33,8 @@ class ResetController extends Controller
         }
     }
 
-    public function resetPass($token)
-    {
-        return view('session/reset-password/resetPassword', ['token' => $token]);
-    }
+    // public function resetPass($token)
+    // {
+    //     return view('session/reset-password/resetPassword', ['token' => $token]);
+    // }
 }

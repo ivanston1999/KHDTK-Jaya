@@ -9,7 +9,7 @@
             <h1>Upload Gambar Drone</h1>
         </div>
         <div class="col-12 col-md-4 text-md-right">
-            <a href="{{ route('drones.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+ Tambahkan</a>
+            <a href="{{ route('drones.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+&nbsp; Tambahkan</a>
         </div>
     </div>
     <hr>
@@ -33,7 +33,8 @@
                                 @foreach ($drones as $post)
                                     <tr>
                                         <td>{{ $post->nama }}</td>
-                                        <td>{{ $post->created_at }}</td>
+                                        <td>{{ $post->created_at->timezone('Asia/Jakarta')->format('d/m/Y H:i:s') }}</td>
+                                        {{-- <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td> --}}
                                         <td>{{ $post->updated_at }}</td>
                                         <td>
                                             <img class="img-fluid w-48 h-48" src="{{ Storage::url($post->gambar) }}" alt="{{ $post->nama }}">

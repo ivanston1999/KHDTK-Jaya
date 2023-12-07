@@ -69,16 +69,14 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('hasil', function () { 
 		return view('kalkulator/hasil');
 	});
-	Route::middleware(['role:user'])->group(function () {
-		Route::get('password', [SessionsController::class, 'password'])->name('password');
-		Route::post('password', [SessionsController::class, 'password_action'])->name('password.action');
-	});
 	Route::get('hasil', function () { 
 		return view('kalkulator/hasil');
 	});
 	Route::middleware(['role:user'])->group(function () {
 		Route::get('password', [SessionsController::class, 'password'])->name('Ubah Password');
 		Route::post('password', [SessionsController::class, 'password_action'])->name('password.action')->name('Ubah Password');
+		Route::get('/change-password', [ChangePasswordController::class, 'changePassForm']);
+		Route::post('/change-password', [ChangePasswordController::class, 'changePassword']);
 	});
 	// Route::middleware(['role:user'])->group(function() {
 	// 	Route::get('kalkulator', function () {
@@ -144,7 +142,7 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('/session', [SessionsController::class, 'store']);
 	Route::get('/login/forgot-password', [ResetController::class, 'create']);
 	Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
-	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
+	// Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
 	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
 
 });
@@ -159,7 +157,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-//kalkulator
+//kalkulatorkalkulators
 Route::resource('kalkulators', kalkulatorController::class);
 Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
 
@@ -193,7 +191,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('uploads', UploadController::class);
 });
 
-//Upload Gambar Drone
 Route::middleware(['auth'])->group(function () {
     Route::get('/drones/create', [DroneController::class, 'create'])->name('drones.create');
     Route::post('/drones', [DroneController::class, 'store'])->name('drones.store');

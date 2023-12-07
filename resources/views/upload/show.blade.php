@@ -51,7 +51,7 @@
                     {{ $post->updated_at }}
                 </p>
             </div>
-            <a href="{{ route('uploads.index') }}" class="btn btn-primary">Kembali</a>
+            <a href="{{ route('uploads.index') }}" class="btn btn-primary" style="text-transform: none;">Kembali</a>
         </div>
     </div>
 </div>
