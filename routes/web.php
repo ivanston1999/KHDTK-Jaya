@@ -7,14 +7,13 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\kalkulatorController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\SensorController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\DroneController;
 use App\Http\Controllers\CabaiController;
-use App\Http\Controllers\TestController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -157,12 +156,6 @@ Route::get('/login', function () {
 //     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 // });
 
-// Route::middleware(['auth'])->group(function () {
-// 	Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
-// 	Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-// });
-
-
 //kalkulatorkalkulators
 Route::resource('kalkulators', kalkulatorController::class);
 Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
@@ -177,8 +170,6 @@ Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
 Route::get('hasil', function () {
 	return view('kalkulator/hasil');
 });
-
-// Route::get('/test', [TestController::class, 'index'])->name('test');
 
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
 Route::get('/admin', [adminController::class, 'index'])->name('admin')->middleware('role:admin');
