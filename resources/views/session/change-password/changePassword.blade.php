@@ -16,8 +16,8 @@
                             <div>
                                 <label for="old_password">Old Password</label>
                                 <div class="">
-                                    <input id="old-passowrd" name="passowrd" type="password" class="form-control" placeholder="Old-Password" aria-label="Old-Password" aria-describedby="oldPassword-addon">
-                                    @error('password')
+                                    <input id="old-passowrd" name="old-password" type="password" class="form-control" placeholder="Old-Password" aria-label="Old-Password" aria-describedby="oldPassword-addon">
+                                    @error('old-password')
                                         <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
                                 </div>
@@ -34,8 +34,8 @@
                             <div>
                                 <label for="password_confirmation">Confirm Password</label>
                                 <div class="">
-                                    <input id="password-confirmation" name="password_confirmation" type="password" class="form-control" placeholder="Password-confirmation" aria-label="Password-confirmation">
-                                    @error('password')
+                                    <input id="password-confirmation" name="password_confirmation" type="password" class="form-control" placeholder="Password Confirmation" aria-label="Password-confirmation">
+                                    @error('password_confirmation')
                                         <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                     @enderror
                                 </div>
