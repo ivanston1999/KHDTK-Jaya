@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 use App\Models\Kalkulators;
 
 class hasilAdminController extends Controller
@@ -12,7 +13,7 @@ class hasilAdminController extends Controller
      */
     public function index()
     {
-        $Kalkulators = Kalkulators::all();
+        $Kalkulators = Kalkulators::paginate(10);
         return view('admin/hasil-admin', ['Kalkulators' => $Kalkulators]);
     }
 

@@ -173,16 +173,7 @@ Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkul
 
 Route::resource('cabai', CabaiController::class);
 
-<<<<<<< HEAD
-
-//status
-
-Route::resource('status', StatusController::class);
-
- //DetailCOntroller
-=======
 //DetailCOntroller
->>>>>>> bd25467587a16b7e4e9d94c7ae4a2eada3124e9b
 Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
 Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
 

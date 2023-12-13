@@ -12,7 +12,7 @@
                     <div class="d-flex flex-row justify-content-between" style="margin-bottom: 30px;">
                         <div>
                             <h5 class="mb-0">Hasil Perhitungan Kalkulator Pertanian User </h5>
-                        </div >
+                        </div>
 
                     </div>
                 </div>
@@ -20,11 +20,11 @@
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-0">
                             <thead>
-                                 <h5 class="mb-1">
+                                <h5 class="mb-1">
 
-                        </h5>
+                                </h5>
                                 <tr>
-                                    <th class="text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7" >
+                                    <th class="text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
                                         No
                                     </th>
                                     <th class="text-center text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
@@ -45,7 +45,7 @@
                                     <th class="text-center text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
                                         Action
                                     </th>
-                                     <th class="text-center text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
+                                    <th class="text-center text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
                                         User
                                     </th>
 
@@ -74,13 +74,13 @@
                                     </td>
 
                                     <td class="text-center horizontal-icons">
-                                            <a href="{{ url('detail/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View Detail">
-                                                <i class="fas fa-user-edit text-bold"></i>
-                                            </a>
-                                            <a href="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
+                                        <a href="{{ url('detail/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View Detail">
+                                            <i class="fas fa-user-edit text-bold"></i>
+                                        </a>
+                                        <a href="{{ url('sop/' . $kalkulator->id . '?komoditas=' . $kalkulator->komoditas) }}" class="icon-link" data-bs-toggle="tooltip" data-bs-original-title="View SOP">
 
-                                                <i class="fas fa-user-edit text-bold"></i>
-                                            </a>
+                                            <i class="fas fa-user-edit text-bold"></i>
+                                        </a>
                                         <form action="{{ route('kalkulators.destroy', $kalkulator->id) }}" method="POST" class="icon-link">
                                             @csrf
                                             @method('DELETE')
@@ -89,7 +89,7 @@
                                         </form>
                                     </td>
                                     <td class="text-center">
-                                       {{ $kalkulator->user ? $kalkulator->user->name : 'Tidak diketahui' }}
+                                        {{ $kalkulator->user ? $kalkulator->user->name : 'Tidak diketahui' }}
 
                                     </td>
                                 </tr>
@@ -98,6 +98,7 @@
                                     <td colspan="7" class="text-center">Belum ada hasil perhitungan</td>
                                 </tr>
                                 @endforelse
+
                             </tbody>
                         </table>
                     </div>
@@ -105,6 +106,11 @@
             </div>
         </div>
     </div>
+</div>
+{{-- Tempatkan pagination di bawah tabel --}}
+<div class="pagination-container">
+   {{-- Pagination links --}}
+{{ $Kalkulators->links() }} 
 </div>
 
 <style>
@@ -169,18 +175,72 @@
     }
 
     .text-xl-start {
-    font-size: 14px;
-}
+        font-size: 14px;
+    }
 
     .horizontal-icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     .icon-link {
-    margin: 0 5px;
-}
+        margin: 0 5px;
+    }
+     /* Style tambahan untuk pagination */
+    .pagination-container {
+        text-align: center;
+        margin-top: 20px;
+    }
 
+    .pagination {
+        display: inline-block;
+        padding-left: 0;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+
+    .page-item {
+        display: inline;
+    }
+
+    .page-item a {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #007bff;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+
+    .page-item.active a {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .page-item.disabled a {
+        color: #777;
+        pointer-events: none;
+        cursor: not-allowed;
+        background-color: #fff;
+        border-color: #ddd;
+    }
+
+    .page-link {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    @media screen and (max-width: 600px) {
+        .pagination {
+            font-size: 12px;
+        }
+    }
 </style>
 @endsection
