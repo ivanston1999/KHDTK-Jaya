@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kalkulators;
 use App\Models\Status;
+use App\Models\User;
 use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
@@ -17,8 +18,8 @@ class kalkulatorController extends Controller
      */
     public function index()
     {
-        $Kalkulators = Kalkulators::all();
-        return view('kalkulator/hasil', ['Kalkulators' => $Kalkulators]);
+       $Kalkulators = Kalkulators::with('user')->where('user_id', auth()->user()->id)->get();
+    return view('kalkulator/hasil', ['Kalkulators' => $Kalkulators]);
     }
 
 
@@ -43,19 +44,41 @@ class kalkulatorController extends Controller
             'date' => 'required',
         ]);
 
-        Kalkulators::create($validate);
-        return redirect()->route('kalkulators');
+     if (auth()->check()) {
+        $validate['user_id'] = auth()->id(); // ini akan mengambil id dari pengguna yang terotentikasi
+    } else {
+        // Handle situasi dimana pengguna tidak login jika diperlukan
     }
 
-
+    Kalkulators::create($validate);
+    return redirect()->route('kalkulators');
+    }
     /**
      * Display the specified resource.
      */
-    public function show($id)
-    {
-        $kalkulator = kalkulators::findOrFail($id);
-        return view('kalkulator/hasil', ['kalkulators' => collect([$kalkulator])]);
-    }
+ public function show($id)
+{
+    $kalkulator = kalkulators::findOrFail($id);
+
+    // Data yang akan dikirim ke view
+    $data = ['kalkulators' => collect([$kalkulator])];
+
+    // Mengirim data ke hasil.blade.php
+    return view('kalkulator/hasil', $data);
+}
+
+// Metode tambahan untuk admin, jika diperlukan
+public function showForAdmin($id)
+{
+    $kalkulator = kalkulators::findOrFail($id);
+
+    // Data yang akan dikirim ke view
+    $data = ['kalkulators' => collect([$kalkulator])];
+
+    // Mengirim data ke admin-hasil.blade.php
+    return view('admin/hasil-admin', $data);
+}
+
 
     public function show2($id)
     {
@@ -112,6 +135,10 @@ class kalkulatorController extends Controller
     }
 }
 
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
 
 
 

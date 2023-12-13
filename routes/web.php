@@ -14,6 +14,7 @@ use App\Http\Controllers\SensorController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\DroneController;
 use App\Http\Controllers\CabaiController;
+use App\Http\Controllers\hasilAdminController;
 use App\Http\Controllers\SopController;
 use App\Http\Controllers\StatusController;
 
@@ -49,9 +50,13 @@ Route::group(['middleware' => 'auth'], function () {
 
 		// REMOVE USER
 		Route::delete('/user-management/{id}/remove', [adminController::class, 'destroy'])->name('id');
+        
+        Route::get('/hasil-admin', [hasilAdminController::class, 'index'])->name('hasil-admin');
+
 	});
 
 	//USER
+
 	Route::get('kalkulator', function () {
 		return view('kalkulator/kalkulator');
 	})->name('kalkulator');
@@ -68,10 +73,10 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('upload/index');
 	})->name('upload');
 
-	Route::get('hasil', function () { 
+	Route::get('hasil', function () {
 		return view('kalkulator/hasil');
 	});
-	Route::get('hasil', function () { 
+	Route::get('hasil', function () {
 		return view('kalkulator/hasil');
 	});
 	Route::middleware(['role:user'])->group(function () {
@@ -163,6 +168,10 @@ Route::middleware(['auth'])->group(function () {
 Route::resource('kalkulators', kalkulatorController::class);
 Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkulators');
 
+
+
+// Route::get('/admin/hasil-admin', [KalkulatorController::class, 'showForAdmin'])->name('hasil');
+
 Route::resource('cabai', CabaiController::class);
 
 
@@ -173,6 +182,9 @@ Route::resource('status', StatusController::class);
  //DetailCOntroller
 Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
 Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
+
+
+
 
 
 Route::get('hasil', function () {
