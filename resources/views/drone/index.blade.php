@@ -23,8 +23,8 @@
                             <thead>
                                 <tr>
                                     <th>Nama Lahan</th>
-                                    <th>Created At</th>
-                                    <th>Updated At</th>
+                                    <th>Tanggal Unggah</th>
+                                    <th>Tanggal Perbaharui</th>
                                     <th>Gambar Lahan</th>
                                     <th>Aksi</th>
                                 </tr>
