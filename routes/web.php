@@ -151,10 +151,10 @@ Route::get('/login', function () {
     return view('session/login-session');
 })->name('login');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
-    Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-});
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+//     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+// });
 
 
 //kalkulatorkalkulators
