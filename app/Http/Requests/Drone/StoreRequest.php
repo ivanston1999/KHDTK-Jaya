@@ -24,7 +24,7 @@ class StoreRequest extends FormRequest
         return [
             'nama' => 'required|string|max:255',
             'deskripsi' => 'required|string|max:1000',
-            'gambar' => 'required|image|max:4096|mimes:jpg,jpeg,png',
+            'gambar' => 'required|image|max:10240|mimes:jpg,jpeg,png',
         ];
     }
 
