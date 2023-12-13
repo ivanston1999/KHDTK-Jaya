@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kalkulators;
+use App\Models\Status;
 use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
@@ -83,6 +84,7 @@ class kalkulatorController extends Controller
                 // return view('kalkulator/detail', compact('kalkulator'));
         }
     }
+
 
     public function show3($id)
     {

@@ -16,6 +16,8 @@ use App\Http\Controllers\SensorController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\DroneController;
 use App\Http\Controllers\CabaiController;
+use App\Http\Controllers\SopController;
+use App\Http\Controllers\StatusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -149,6 +151,11 @@ Route::get('/kalkulators', [KalkulatorController::class, 'index'])->name('kalkul
 
 Route::resource('cabai', CabaiController::class);
 
+
+//status
+
+Route::resource('status', StatusController::class);
+
  //DetailCOntroller
 Route::get('/detail/{id}', [KalkulatorController::class, 'show2']);
 Route::get('/sop/{id}', [KalkulatorController::class, 'show3']);
@@ -189,3 +196,8 @@ Route::get('/drones', [DroneController::class, 'index'])->name('drones');
 Route::middleware('auth')->group(function () {
     Route::resource('drones', DroneController::class);
 });
+Route::post('/sop/update-status/{id}', [SopController::class, 'updateStatus'])->name('sop.updateStatus');
+
+    Route::get('sop', function () {
+		return view('sop');
+	})->name('tesSop');
