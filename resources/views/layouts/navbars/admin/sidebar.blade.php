@@ -2,8 +2,7 @@
   <div class="sidenav-header">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="align-items-center d-flex m-0 navbar-brand text-wrap" href="{{ route('admin') }}">
-      <img src="../assets/img/tariparLogo.png" style="max-width: 100%; max-height: 150px; margin-top:-70px" 
-      alt="logo">
+      <img src="../assets/img/tariparLogo.png" style="max-width: 100%; max-height: 150px; margin-top:-70px" alt="logo">
     </a>
   </div>
   <hr class="horizontal dark mt-0">
@@ -37,7 +36,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('kalkulator') || Request::is('hasil-kalkulator') ? 'active' : '') }}" href="{{ url('kalkulator') }}">
+        <a class="nav-link {{ (Request::is('kalkulator') || Request::is('kalkulators') || Request::is('kalkulators/create') ? 'active' : '') }}" href="{{ url('kalkulator') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
                 <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM96 64H288c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z" />
@@ -51,7 +50,8 @@
       </li> -->
 
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('persediaan') ? 'active' : '') }}" href="{{ url('persediaan') }}">
+        <a class="nav-link {{ (Request::is('persediaan') ? 'active' : '') }}"href="https://lookerstudio.google.com/u/0/navigation/reporting" target="_blank">
+        {{-- <a class="nav-link {{ (Request::is('persediaan') ? 'active' : '') }}" href="{{ url('persediaan') }}"> --}}
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512"><path d="M0 488V171.3c0-26.2 15.9-49.7 40.2-59.4L308.1 4.8c7.6-3.1 16.1-3.1 23.8 0L599.8 111.9c24.3 9.7 40.2 33.3 40.2 59.4V488c0 13.3-10.7 24-24 24H568c-13.3 0-24-10.7-24-24V224c0-17.7-14.3-32-32-32H128c-17.7 0-32 14.3-32 32V488c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm488 24l-336 0c-13.3 0-24-10.7-24-24V432H512l0 56c0 13.3-10.7 24-24 24zM128 400V336H512v64H128zm0-96V224H512l0 80H128z"/></svg>
           </div>
@@ -60,7 +60,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link {{ (request()->routeIs('uploads.index') ? 'active' : '') }}" href="{{ route('uploads.index') }}">
+        <a class="nav-link {{ (request()->routeIs('uploads.index') || Request::is('uploads/create') ? 'active' : '') }}" href="{{ route('uploads.index') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M288 109.3V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3l-73.4 73.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l128-128c12.5-12.5 32.8-12.5 45.3 0l128 128c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L288 109.3zM64 352H192c0 35.3 28.7 64 64 64s64-28.7 64-64H448c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V416c0-35.3 28.7-64 64-64zM432 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></svg>
           </div>
@@ -69,7 +69,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link {{ (request()->routeIs('drones.index') ? 'active' : '') }}" href="{{ route('drones.index') }}">
+        <a class="nav-link {{ (request()->routeIs('drones.index') || Request::is('drones/create') ? 'active' : '') }}" href="{{ route('drones.index') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M288 109.3V352c0 17.7-14.3 32-32 32s-32-14.3-32-32V109.3l-73.4 73.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l128-128c12.5-12.5 32.8-12.5 45.3 0l128 128c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L288 109.3zM64 352H192c0 35.3 28.7 64 64 64s64-28.7 64-64H448c35.3 0 64 28.7 64 64v32c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V416c0-35.3 28.7-64 64-64zM432 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></svg>
           </div>

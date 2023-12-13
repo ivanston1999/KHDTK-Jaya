@@ -30,6 +30,7 @@
             }
 
             @media (max-width: 768px) {
+
                 /* Adjust this value as needed for your responsive breakpoint */
                 .sensor-status-container {
                     display: flex;
@@ -124,26 +125,61 @@
 
     <body>
 
-        <div class="sensor-status-container">
-            <div class="sensor-status-card">
-                <h4>Sensor Aktif</h4>
-                <ul class="sensor-status-list">
-                    @foreach ($sensorStatus as $sensorName => $status)
-                        @if ($status === 'Aktif')
-                            <li class="alive">{{ $sensorName }}</li>
-                        @endif
-                    @endforeach
-                </ul>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
             </div>
-            <div class="sensor-status-card">
-                <h4>Sensor Tidak Aktif</h4>
-                <ul class="sensor-status-list">
-                    @foreach ($sensorStatus as $sensorName => $status)
-                        @if ($status === 'Tidak Aktif')
-                            <li class="dead">{{ $sensorName }}</li>
-                        @endif
-                    @endforeach
-                </ul>
+        @elseif(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
+        <div class="container">
+            <h2 class="text-center">Tambah Sensor Baru</h2>
+            <form action="{{ url('/sensors/add-table') }}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <input type="text" class="form-control" id="sensor_name" name="sensor_name" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Tambah</button>
+            </form>
+        </div>
+
+        {{-- Div to hold the charts --}}
+        <div class="chart-row">
+            @if (isset($parameters))
+                @foreach ($parameters as $paramName => $dataArray)
+                    <div id="{{ $paramName }}_chart" class="chart">
+                        {{-- Chart will be rendered here --}}
+                    </div>
+                @endforeach
+            @endif
+        </div>
+
+        <div class="container">
+            <h2 class="text-center">Status Sensor</h2>
+            <div class="sensor-status-container">
+                <div class="sensor-status-card">
+                    <h4>Sensor Aktif</h4>
+                    <ul class="sensor-status-list">
+                        @foreach ($sensorStatus as $sensorName => $status)
+                            @if ($status === 'Aktif')
+                                <li class="alive">{{ $sensorName }}</li>
+                            @endif
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="sensor-status-card">
+                    <h4>Sensor Tidak Aktif</h4>
+                    <ul class="sensor-status-list">
+                        @foreach ($sensorStatus as $sensorName => $status)
+                            @if ($status === 'Tidak Aktif')
+                                <li class="dead">{{ $sensorName }}</li>
+                            @endif
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -160,15 +196,18 @@
             ];
         @endphp
 
-        <div class="chart-row">
-            @foreach ($parameters as $paramName => $dataArrayName)
-                <div id="{{ $paramName }}_chart" class="chart"></div>
-                <!-- Check if we need to close the current row and start a new one -->
-                @if ($loop->iteration % 2 == 0 && !$loop->last)
-        </div>
-        <div class="chart-row">
-            @endif
-            @endforeach
+        <div class="container">
+            <h2 class="text-center">Grafik Sensor</h2>
+            <div class="chart-row">
+                @foreach ($parameters as $paramName => $dataArrayName)
+                    <div id="{{ $paramName }}_chart" class="chart"></div>
+                    <!-- Check if we need to close the current row and start a new one -->
+                    @if ($loop->iteration % 2 == 0 && !$loop->last)
+            </div>
+            <div class="chart-row">
+                @endif
+                @endforeach
+            </div>
         </div>
 
         <script>
@@ -179,19 +218,28 @@
                         return {
                             name: key.replace('sensor', 'Sensor '), // Adjust the sensor name here if needed
                             data: sensorDataArrays[key].map((data) => {
-                                // Check if the value is below 0 and set it to 0 if it is
                                 let value = data[parameter] < 0 ? 0 : data[parameter];
-                                return [Date.parse(data.Tanggal), value];
+                                // Parse the date in the correct format
+                                let date = new Date(data.Tanggal).getTime();
+                                return [date, value];
                             })
                         };
                     });
                 }
 
+
+                // Function to initialize Highcharts
                 // Function to initialize Highcharts
                 function initializeChart(containerId, title, sensorDataArrays, parameter) {
+                    Highcharts.setOptions({
+                        global: {
+                            timezoneOffset: new Date().getTimezoneOffset()
+                        }
+                    });
+
                     Highcharts.chart(containerId, {
                         chart: {
-                            type: 'line'
+                            type: 'spline' // Changed from 'line' to 'spline'
                         },
                         title: {
                             text: title
@@ -205,11 +253,10 @@
                                 formatter: function() {
                                     return Highcharts.dateFormat('%e %b %H:%M', this.value);
                                 },
-                                rotation: -45, // Rotasi label
+                                rotation: -45,
                                 align: 'right'
                             },
                             tickInterval: 3 * 24 * 3600 * 1000, // 3 days in milliseconds
-                            // Anda mungkin ingin menghilangkan waktu dalam format jika hanya menampilkan tanggal
                         },
                         yAxis: {
                             title: {
@@ -225,7 +272,7 @@
                             }
                         },
                         exporting: {
-                            enabled: true // Enable the exporting module
+                            enabled: true
                         },
                         plotOptions: {
                             series: {
@@ -238,7 +285,6 @@
                     });
                 }
 
-
                 // Loop over each parameter and initialize a chart for each
                 @foreach ($parameters as $paramName => $dataArrayName)
                     initializeChart(
@@ -248,6 +294,33 @@
                         '{{ $paramName }}'
                     );
                 @endforeach
+            });
+        </script>
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                @if (isset($sensorDataArrays))
+                    @foreach ($sensorDataArrays as $paramName => $sensorDatasets)
+                        Highcharts.chart('{{ $paramName }}_chart', {
+                            chart: {
+                                type: 'spline'
+                            },
+                            title: {
+                                text: '{{ $paramName }}'
+                            },
+                            xAxis: {
+                                type: 'datetime'
+                            },
+                            yAxis: {
+                                title: {
+                                    text: 'Value'
+                                }
+                            },
+                            series: @json($sensorDatasets)
+                        });
+                    @endforeach
+                @endif
             });
         </script>
 

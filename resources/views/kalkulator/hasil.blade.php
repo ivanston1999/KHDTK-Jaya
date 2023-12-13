@@ -1,6 +1,6 @@
 @extends('layouts.user_type.auth')
 
-@section('', 'Kalkulator')
+@section('title', 'Kalkulator')
 
 @section('content')
 
