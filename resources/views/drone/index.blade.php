@@ -40,19 +40,19 @@
                                             <img class="img-fluid w-48 h-48" src="{{ Storage::url($post->gambar) }}" alt="{{ $post->nama }}">
                                         </td>
                                         <td>
-                                            <a href="{{ route('drones.show', $post->id) }}" class="btn" style="text-transform: none;" title="Lihat">
+                                            <a href="{{ route('uploads.show', $post->id) }}" class="btn" style="text-transform: none;" title="Lihat">
                                                 <i class="fa fa-eye"></i>
                                             </a>
-                                            <a href="{{ route('drones.edit', $post->id) }}" class="btn" style="text-transform: none;" title="Edit">
+                                            <a href="{{ route('uploads.edit', $post->id) }}" class="btn" style="text-transform: none;" title="Edit">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
-                                            <form method="POST" action="{{ route('drones.destroy', $post->id) }}" class="d-inline">
+                                            <form method="post" action="{{ route('uploads.destroy', $post->id) }}" class="d-inline delete-form">
                                                 @csrf
-                                                @method('DELETE')
+                                                @method('delete')
                                                 <button type="submit" class="btn" style="text-transform: none;" title="Hapus">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
-                                            </form>
+                                            </form>  
                                         </td>                                        
                                     </tr>
                                 @endforeach
@@ -90,5 +90,17 @@
 
     .text-md-right {
         text-align: right;
+    }
+
+    .btn:hover i {
+        color: white;
+    }
+
+    a.btn:not(.btn-static):hover {
+        background-color: grey; 
+    }
+
+    .delete-form .btn:hover {
+        background-color: red; 
     }
 </style>
