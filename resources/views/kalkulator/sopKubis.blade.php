@@ -10,6 +10,7 @@ $date1 = $kalkulator->date;
 $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'))
 ?>
 
+
 <div class="table-container">
     <div class="card-title">
         <h1 class="table-title">SOP Pertanian Kubis</h1>
@@ -30,10 +31,12 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'))
                     <tr class="border-b">
                         <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;"> <?php echo $ubahDate1; ?> </td>
                         <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Persiapan Lahan </td>
+
                         <td class="py-4 px-6">Kohe Ayam (non fermentasi)</td>
 
-                       <td><x-checkbox-form :checkboxId="'checkbox01'" /></td>
 
+ <!-- x-checkbox-form Component -->
+ <td><x-checkbox-form :checkboxId="'checkbox01'" /></td>
 
                     </tr>
                     <tr class="border-b">

@@ -3,7 +3,6 @@
 @section('title', 'Kalkulator')
 
 @section('content')
-
 <!--
 ini untuk set tanggal -->
 <?php
@@ -24,6 +23,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'))
                 <th scope="col" class="py-3 px-6">Item</th>
                 <th scope="col" class="py-3 px-5 status-column">Status</th>
 
+                <th scope="col" class="py-3 px-5 status-column">Hasil</th>
             </tr>
         </thead>
 
@@ -36,8 +36,9 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'))
                 <td class="text-1x1 text-gray-700 uppercase bg-gray-50" style="font-weight: bold; font-size: 12px;">Persiapan Lahan </td>
                 <td class="py-4 px-6">Traktor (Bajak)</td>
 
-                <td><x-checkbox-form :checkboxId="'checkbox1'" /></td>
 
+
+              <td><x-checkbox-form :checkboxId="'checkbox1'" /></td>
 
             </tr>
             <tr class="border-b">
@@ -59,9 +60,9 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'))
                                                                                                                         'd-m-Y',
                                                                                                                         strtotime($ubahDate1 . ' + 4 days')
                                                                                                                     ); ?> - <?php echo date(
-                                    'd-m-Y',
-                                    strtotime($ubahDate1 . ' + 5 days')
-                                ); ?>
+                                                                                                                                'd-m-Y',
+                                                                                                                                strtotime($ubahDate1 . ' + 5 days')
+                                                                                                                            ); ?>
                 </td>
                 <td class="py-4 px-6"></td>
                 <td class="py-4 px-6">Traktor (Rotary)</td>

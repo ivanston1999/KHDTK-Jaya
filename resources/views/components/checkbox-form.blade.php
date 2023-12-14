@@ -1,5 +1,4 @@
-
-    <form action="/submit-form" method="POST" style="text-align: center;">
+<form action="/submit-form" method="POST" style="text-align: center;">
         @csrf
         <input type="checkbox" id="{{ $checkboxId }}" onclick="saveCheckboxState('{{ $checkboxId }}')">
         <script>
@@ -18,6 +17,3 @@
         </script>
      <span>Selesai</span>
     </form>
-
-
-
