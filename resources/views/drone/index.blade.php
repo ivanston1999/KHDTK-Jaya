@@ -35,7 +35,7 @@
                                         <td>{{ $post->nama }}</td>
                                         <td>{{ $post->created_at->timezone('Asia/Jakarta')->format('d/m/Y H:i:s') }}</td>
                                         {{-- <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td> --}}
-                                        <td>{{ $post->updated_at }}</td>
+                                        <td>{{ $post->updated_at->timezone('Asia/Jakarta')->format('d/m/Y H:i:s') }}</td>
                                         <td>
                                             <img class="img-fluid w-48 h-48" src="{{ Storage::url($post->gambar) }}" alt="{{ $post->nama }}">
                                         </td>
