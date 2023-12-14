@@ -21,7 +21,7 @@ class ChangePasswordController extends Controller
         // ]);
         $validator = request()->validate([
             'old-password' => 'required',
-            'password' => 'required',
+            'password' => 'required|confirmed',
         ]);
 
         if ($validator->fails()) {
