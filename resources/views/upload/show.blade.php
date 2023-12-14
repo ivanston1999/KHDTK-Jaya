@@ -13,7 +13,7 @@
         <div class="p-6 text-gray-900">
             <div class="mb-6">
                 <h3 class="text-lg font-medium text-gray-900">
-                    Nama Tanaman
+                    Nama Tanaman :
                 </h3>
                 <p class="mt-1 text-sm text-gray-600">
                     {{ $post->title }}
@@ -21,7 +21,7 @@
             </div>
             <div class="mb-6">
                 <h3 class="text-lg font-medium text-gray-900">
-                    Deskripsi Tanaman
+                    Deskripsi Tanaman :
                 </h3>
                 <p class="mt-1 text-sm text-gray-600">
                     {{ $post->content }}
@@ -29,15 +29,7 @@
             </div>
             <div class="mb-6">
                 <h3 class="text-lg font-medium text-gray-900">
-                    Gambar Tanaman
-                </h3>
-                <p class="mt-1 text-sm text-gray-600">
-                    <img class="img-fluid" src="{{ Storage::url($post->featured_image) }}" alt="{{ $post->title }}">
-                </p>
-            </div>
-            <div class="mb-6">
-                <h3 class="text-lg font-medium text-gray-900">
-                    Created At
+                    Tanggal Unggah :
                 </h3>
                 <p class="mt-1 text-sm text-gray-600">
                     {{ $post->created_at }}
@@ -45,12 +37,21 @@
             </div>
             <div class="mb-6">
                 <h3 class="text-lg font-medium text-gray-900">
-                    Updated At
+                    Tanggal Perbaharui :
                 </h3>
                 <p class="mt-1 text-sm text-gray-600">
                     {{ $post->updated_at }}
                 </p>
             </div>
+            <div class="mb-6">
+                <h3 class="text-lg font-medium text-gray-900">
+                    Gambar Tanaman :
+                </h3>
+                <p class="mt-1 text-sm text-gray-600">
+                    <img class="img-fluid" src="{{ Storage::url($post->featured_image) }}" alt="{{ $post->title }}">
+                </p>
+            </div>
+            
             <a href="{{ route('uploads.index') }}" class="btn btn-primary" style="text-transform: none;">Kembali</a>
         </div>
     </div>

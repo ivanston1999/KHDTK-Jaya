@@ -1,5 +1,7 @@
 @extends('layouts.user_type.auth')
 
+@section('title', 'Manajemen User')
+
 @section('content')
 
   <section class="min-vh-100 mb-8">

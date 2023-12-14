@@ -26,7 +26,7 @@ class UpdateRequest extends FormRequest
         return [
             'nama' => 'required|string|min:3|max:250',
             'deskripsi' => 'required|string|min:3|max:6000',
-            'gambar' => 'nullable|image|max:4096|mimes:jpg,jpeg,png',
+            'gambar' => 'nullable|image|max:10240|mimes:jpg,jpeg,png',
         ];
     }
 }

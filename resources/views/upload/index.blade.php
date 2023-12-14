@@ -9,7 +9,7 @@
             <h1>Upload Gambar Tanaman</h1>
         </div>
         <div class="col-12 col-md-4 text-md-right">
-            <a href="{{ route('uploads.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+&nbsp; Tambahkan</a>
+            <a href="{{ route('uploads.create') }}" class="btn btn-primary btn-static" style="font-size: 12px; text-transform: none;">+&nbsp; Tambahkan</a>
         </div>
     </div>
     <hr>
@@ -23,8 +23,8 @@
                             <thead>
                                 <tr>
                                     <th>Nama Tanaman</th>
-                                    <th>Created At</th>
-                                    <th>Updated At</th>
+                                    <th>Tanggal Unggah</th>
+                                    <th>Tanggal Perbaharui</th>
                                     <th>Gambar Tanaman</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -34,7 +34,7 @@
                                     <tr>
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->created_at->timezone('Asia/Jakarta')->format('d/m/Y H:i:s') }}</td>
-                                        <td>{{ $post->updated_at }}</td>
+                                        <td>{{ $post->updated_at->timezone('Asia/Jakarta')->format('d/m/Y H:i:s') }}</td>
                                         <td>
                                             <img class="img-fluid w-48 h-48" src="{{ Storage::url($post->featured_image) }}" alt="{{ $post->title }}">
                                         </td>
@@ -45,13 +45,13 @@
                                             <a href="{{ route('uploads.edit', $post->id) }}" class="btn" style="text-transform: none;" title="Edit">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
-                                            <form method="post" action="{{ route('uploads.destroy', $post->id) }}" class="d-inline">
+                                            <form method="post" action="{{ route('uploads.destroy', $post->id) }}" class="d-inline delete-form">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit" class="btn" style="text-transform: none;" title="Hapus">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
-                                            </form>
+                                            </form>                                            
                                         </td>                                        
                                     </tr>
                                 @endforeach
@@ -89,6 +89,18 @@
 
     .text-md-right {
         text-align: right;
+    }
+
+    .btn:hover i {
+        color: white;
+    }
+
+    a.btn:not(.btn-static):hover {
+        background-color: grey; 
+    }
+
+    .delete-form .btn:hover {
+        background-color: red; 
     }
 
 </style>

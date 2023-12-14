@@ -19,6 +19,8 @@ return new class extends Migration
             $table->integer('jarak');
             $table->integer('luas');
             $table->date('date');
+            $table->unsignedBigInteger('user_id')->after('id'); // Menambahkan kolom user_id setelah kolom id
+        $table->foreign('user_id')->references('id')->on('users'); 
         });
     }
 

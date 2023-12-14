@@ -1,16 +1,8 @@
 @extends('layouts.user_type.auth')
 
-@section('title', 'Kalkulator')
-
 @section('', 'Kalkulator')
 
 @section('content')
-@foreach($kalkulators as $kalkulator)
-<?php
-$date1 = $kalkulator->date;
-$ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
-?>
-@endforeach
 
 <div>
     <div class="row" style="margin-top: -30px;">
@@ -21,7 +13,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                         <div>
                             <h5 class="mb-0">Hasil Perhitungan</h5>
                         </div>
-                        <a href="{{ route('cabai.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; Hitung</a>
+                        <a href="{{ route('status.create') }}" class="btn bg-black btn-sm mb-0" type="button">+&nbsp; Hitung</a>
                     </div>
                 </div>
                 <div class="card-body px-0 pt-0 pb-2">
@@ -29,45 +21,22 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-bold text-xl-start font-weight-bolder opacity-7">
-                                        No
+                                    <th class="text-chamelcase text-bold text-xl-start font-weight-bolder opacity-7">
+                                        Status
                                     </th>
-                                    <th class="text-center text-uppercase text-bold text-xl-start font-weight-bolder opacity-7">
-                                        Date
-                                    </th>
-                                    <th class="text-center text-uppercase text-bold text-xl-start font-weight-bolder opacity-7">
-                                        Aktivitas
-                                    </th>
-                                    <th class="text-center text-uppercase text-bold text-xl-start font-weight-bolder opacity-7">
-                                        Item
-                                    </th>
-
                                 </tr>
                             </thead>
-                            <tbody>
-                                @forelse ($cabai as $row => $cabai)
 
+                            <tbody>
+                                @foreach ($statuses as $status)
                                 <tr>
                                     <td class="ps-4">
-                                        {{ $row + 1 }}
+                                        {{ $status->status }}
                                     </td>
-                                    @foreach($kalkulators as $kalkulator)
-                                     <td class="text-center">
-                                        {{ $ubahDate1  }}
-                                    </td>
-                                      @endforeach
-                                    <td class="text-center">
-                                        {{ $cabai->aktivitas }}
-                                    </td>
-                                    <td class="text-center">
-                                        {{ $cabai->item }}
-                                    </td>
+                                    <!-- Other table data -->
                                 </tr>
-                                @empty
-                                <tr>
-                                    <td colspan="3" class="text-center">Tidak ada data.</td>
-                                </tr>
-                                @endforelse
+                                @endforeach
+
 
                             </tbody>
                         </table>
@@ -77,6 +46,7 @@ $ubahDate1 = date('d-m-Y', strtotime($date1 . ' + 1 days'));
         </div>
     </div>
 </div>
+
 <style>
     .card {
         margin: 1rem;

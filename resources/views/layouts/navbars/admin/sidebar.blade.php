@@ -44,13 +44,22 @@
             <span class="nav-link-text ms-1">Kalkulator</span>
         </a>
       </li>
-
+   </li>
+         <li class="nav-item">
+        <a class="nav-link {{ (Request::is('hasil-admin*') ? 'active' : '') }}" href="{{ url('hasil-admin') }}">
+          <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512"><path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM504 312V248H440c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V136c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H552v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
+          </div>
+          <span class="nav-link-text ms-1">Hasil Kalkulator User</span>
+        </a>
+      </li>
       <!-- <li class="nav-item mt-2">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Fitur Admin</h6>
       </li> -->
 
       <li class="nav-item">
-        <a class="nav-link {{ (Request::is('persediaan') ? 'active' : '') }}" href="{{ url('persediaan') }}">
+        <a class="nav-link {{ (Request::is('persediaan') ? 'active' : '') }}"href="https://lookerstudio.google.com/u/0/navigation/reporting" target="_blank">
+        {{-- <a class="nav-link {{ (Request::is('persediaan') ? 'active' : '') }}" href="{{ url('persediaan') }}"> --}}
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="20" viewBox="0 0 640 512"><path d="M0 488V171.3c0-26.2 15.9-49.7 40.2-59.4L308.1 4.8c7.6-3.1 16.1-3.1 23.8 0L599.8 111.9c24.3 9.7 40.2 33.3 40.2 59.4V488c0 13.3-10.7 24-24 24H568c-13.3 0-24-10.7-24-24V224c0-17.7-14.3-32-32-32H128c-17.7 0-32 14.3-32 32V488c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24zm488 24l-336 0c-13.3 0-24-10.7-24-24V432H512l0 56c0 13.3-10.7 24-24 24zM128 400V336H512v64H128zm0-96V224H512l0 80H128z"/></svg>
           </div>
@@ -83,7 +92,8 @@
           </div>
           <span class="nav-link-text ms-1">Manajemen User</span>
         </a>
-      </li>
+
     </ul>
   </div>
 </aside>
+

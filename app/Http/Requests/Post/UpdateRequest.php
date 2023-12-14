@@ -26,7 +26,7 @@ class UpdateRequest extends FormRequest
         return [
             'title' => 'required|string|min:3|max:250',
             'content' => 'required|string|min:3|max:6000',
-            'featured_image' => 'nullable|image|max:1024|mimes:jpg,jpeg,png',
+            'featured_image' => 'nullable|image|max:10240|mimes:jpg,jpeg,png',
         ];
     }
 }
