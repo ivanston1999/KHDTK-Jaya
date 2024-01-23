@@ -81,7 +81,7 @@
         }
 
         .alert-danger {
-            background-color: #ff6b6b;
+            background-color: red;
             color: white;
             border-color: #ff6b6b;
             padding: 10px;
