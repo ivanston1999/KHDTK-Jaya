@@ -9,7 +9,7 @@
             <h1>Upload Gambar Drone</h1>
         </div>
         <div class="col-12 col-md-4 text-md-right">
-            <a href="{{ route('drones.create') }}" class="btn btn-primary" style="font-size: 12px; text-transform: none;">+&nbsp; Tambahkan</a>
+            <a href="{{ route('drones.create') }}" class="btn btn-primary btn-static" style="font-size: 12px; text-transform: none;">+&nbsp; Tambahkan</a>
         </div>
     </div>
     <hr>
@@ -34,7 +34,6 @@
                                     <tr>
                                         <td>{{ $post->nama }}</td>
                                         <td>{{ $post->created_at->timezone('Asia/Jakarta')->format('d/m/Y H:i:s') }}</td>
-                                        {{-- <td class="text-center">{{ $user->created_at->format('d/m/Y') }}</td> --}}
                                         <td>{{ $post->updated_at->timezone('Asia/Jakarta')->format('d/m/Y H:i:s') }}</td>
                                         <td>
                                             <img class="img-fluid w-48 h-48" src="{{ Storage::url($post->gambar) }}" alt="{{ $post->nama }}">
@@ -46,7 +45,7 @@
                                             <a href="{{ route('drones.edit', $post->id) }}" class="btn" style="text-transform: none;" title="Edit">
                                                 <i class="fa fa-pencil-alt"></i>
                                             </a>
-                                            <form method="POST" action="{{ route('drones.destroy', $post->id) }}" class="d-inline">
+                                            <form method="POST" action="{{ route('drones.destroy', $post->id) }}" class="d-inline delete-form">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn" style="text-transform: none;" title="Hapus">
@@ -91,4 +90,17 @@
     .text-md-right {
         text-align: right;
     }
+
+    .btn:hover i {
+        color: white;
+    }
+
+    a.btn:not(.btn-static):hover {
+        background-color: grey; 
+    }
+
+    .delete-form .btn:hover {
+        background-color: red; 
+    }
+
 </style>
