@@ -172,8 +172,7 @@
                     @include('layouts.footers.auth.footer')
                 </div>
             </main>
-<<<<<<< HEAD
-        @elseif (\Request::is('petas'))  
+        @elseif (\Request::is('petas*'))
             @include('layouts.navbars.admin.sidebar')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
                 @include('layouts.navbars.auth.nav')
@@ -183,9 +182,7 @@
                 </div>
             </main>
         @elseif (\Request::is('user-management*'))
-=======
             @elseif (\Request::is('user-management*'))
->>>>>>> 37ad5afce6a587795acd1bb7c2bf9739b9a8b08d
             @include('layouts.navbars.admin.sidebar')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
                 @include('layouts.navbars.auth.nav')
@@ -194,7 +191,7 @@
                     @include('layouts.footers.auth.footer')
                 </div>
             </main>
-            @elseif (\Request::is('hasil-admin*'))
+        @elseif (\Request::is('hasil-admin*'))
             @include('layouts.navbars.admin.sidebar')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
                 @include('layouts.navbars.auth.nav')
@@ -203,7 +200,7 @@
                     @include('layouts.footers.auth.footer')
                 </div>
             </main>
-            @elseif (\Request::is('sensor-admin*'))
+        @elseif (\Request::is('sensor-admin*'))
             @include('layouts.navbars.admin.sidebar')
             <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg overflow-hidden">
                 @include('layouts.navbars.auth.nav')
